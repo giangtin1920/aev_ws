@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/giangtin/aev/aev_ws/devel/include/aev_pkg/radar_msg.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-
 /home/giangtin/aev/aev_ws/src/aev_pkg/src/Radar/Radar.cpp
 ros/ros.h
 -
@@ -33,6 +17,8 @@ std_msgs/Empty.h
 -
 Radar_Cfg.h
 /home/giangtin/aev/aev_ws/src/aev_pkg/src/Radar/Radar_Cfg.h
+std_msgs/UInt8MultiArray.h
+/home/giangtin/aev/aev_ws/src/aev_pkg/src/Radar/std_msgs/UInt8MultiArray.h
 
 /home/giangtin/aev/aev_ws/src/aev_pkg/src/Radar/Radar_Cfg.cpp
 Radar_Cfg.h
@@ -51,6 +37,8 @@ std_msgs/Empty.h
 -
 aev_pkg/radar_msg.h
 /home/giangtin/aev/aev_ws/src/aev_pkg/src/Radar/aev_pkg/radar_msg.h
+std_msgs/UInt8MultiArray.h
+/home/giangtin/aev/aev_ws/src/aev_pkg/src/Radar/std_msgs/UInt8MultiArray.h
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h
@@ -740,6 +728,40 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
+/opt/ros/melodic/include/std_msgs/MultiArrayDimension.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/opt/ros/melodic/include/std_msgs/MultiArrayLayout.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/MultiArrayDimension.h
+-
+
 /opt/ros/melodic/include/std_msgs/String.h
 string
 -
@@ -754,6 +776,24 @@ ros/serialization.h
 ros/builtin_message_traits.h
 -
 ros/message_operations.h
+-
+
+/opt/ros/melodic/include/std_msgs/UInt8MultiArray.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/MultiArrayLayout.h
 -
 
 /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h

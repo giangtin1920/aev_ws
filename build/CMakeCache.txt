@@ -26,9 +26,6 @@ BUILD_SHARED_LIBS:BOOL=ON
 //List of ';' separated packages to exclude
 CATKIN_BLACKLIST_PACKAGES:STRING=
 
-//catkin devel space
-CATKIN_DEVEL_PREFIX:PATH=/home/giangtin/aev/aev_ws/devel
-
 //Catkin enable testing
 CATKIN_ENABLE_TESTING:BOOL=ON
 
@@ -125,7 +122,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=/home/giangtin/aev/aev_ws/install
+CMAKE_INSTALL_PREFIX:PATH=/usr/local
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/usr/bin/ld
@@ -395,9 +392,6 @@ rostime_DIR:PATH=/opt/ros/melodic/share/rostime/cmake
 
 //The directory containing a CMake configuration file for serial.
 serial_DIR:PATH=/opt/ros/melodic/share/serial/cmake
-
-//The directory containing a CMake configuration file for std_msg.
-std_msg_DIR:PATH=std_msg_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake

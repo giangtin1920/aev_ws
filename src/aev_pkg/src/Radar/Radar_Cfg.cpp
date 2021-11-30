@@ -180,13 +180,11 @@ void RadarObj::stop_radar(void)
     send_cfg(msg);
 }
 
-bool RadarObj::data_handler(std_msgs::String raw_data, uint16_t data_len)
+bool RadarObj::data_handler(std_msgs::UInt8MultiArray raw_data, uint16_t data_len)
 {
     bool is_data_ok = true;
-  //ROS_INFO("-Read: %d %d %d %d %d %d", data_len, 
-    //raw_data.data[0], raw_data.data[1], raw_data.data[2], raw_data.data[3], raw_data.data[4]);
-
-  if (100 < data_len && 1)
+    //ROS_INFO("-Read: %c %c ",raw_data.data[1], raw_data.data[2]);
+  if (data_len > 16)
   {
     std_msgs::String msg;
     std::stringstream ss;
@@ -200,6 +198,9 @@ bool RadarObj::data_handler(std_msgs::String raw_data, uint16_t data_len)
     ROS_INFO("%s", msg.data.c_str());
 
     // Processing
+
+
+
 
     // Update output
     Output.msg_counter++;

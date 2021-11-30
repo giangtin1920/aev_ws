@@ -3,6 +3,7 @@
 #include <std_msgs/String.h>
 #include <std_msgs/Empty.h>
 #include "Radar_Cfg.h"
+#include "std_msgs/UInt8MultiArray.h"
 
 #define DataPort_EN
 
@@ -16,11 +17,11 @@ void timer_uart_Callback(const ros::TimerEvent& e)
   
   if(radarObj.ser_Data_Port.available())
   {
-    ROS_INFO("helo");
     uint16_t dataLen = 0;
     dataLen = radarObj.ser_Data_Port.available();
-    std_msgs::String raw_data;
-    raw_data.data = radarObj.ser_Data_Port.read(radarObj.ser_Data_Port.available());
+    // std_msgs::String raw_data;
+    std_msgs::UInt8MultiArray raw_data;
+    radarObj.ser_Data_Port.read(raw_data.data, radarObj.ser_Data_Port.available());
 
     // Process the data
     if (true == radarObj.data_handler(raw_data, dataLen))

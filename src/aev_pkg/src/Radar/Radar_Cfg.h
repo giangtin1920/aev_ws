@@ -7,6 +7,7 @@
 #include <std_msgs/String.h>
 #include <std_msgs/Empty.h>
 #include "aev_pkg/radar_msg.h"
+#include "std_msgs/UInt8MultiArray.h"
 
 #define CFG_LOOP_RATE 10 
 
@@ -41,7 +42,7 @@ class RadarObj
     bool init_data_port(void);
     void start_radar(void);
     void stop_radar(void);
-    bool data_handler(std_msgs::String data, uint16_t data_len);
+    bool data_handler(std_msgs::UInt8MultiArray data, uint16_t data_len);
 
   private:
     void send_cfg(std::string msg);
