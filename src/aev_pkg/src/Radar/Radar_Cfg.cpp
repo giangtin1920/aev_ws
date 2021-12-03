@@ -7,8 +7,9 @@ RadarObj::RadarObj()
 
 RadarObj::~RadarObj()
 {
-  
+
 }
+
 
 bool RadarObj::init_cfg_port(void)
 {
@@ -31,12 +32,11 @@ bool RadarObj::init_cfg_port(void)
     }else{
         return false;
     }
-
 }
 
 bool RadarObj::init_data_port(void)
 {
-  // Init Radar Data Port
+    // Init Radar Data Port
     try
     {
         ser_Data_Port.setPort(ser_Data_Port_Name);
@@ -55,25 +55,24 @@ bool RadarObj::init_data_port(void)
     }else{
         return 1;
     }
-
 }
 
 void RadarObj::send_cfg(std::string msg)
 {
-  ros::Rate loop_rate1(CFG_LOOP_RATE);
+    ros::Rate loop_rate1(CFG_LOOP_RATE);
 
-  ser_Cfg_Port.write(msg + "\n");
-  ROS_INFO_STREAM("Send: " << msg);
-  loop_rate1.sleep();
+    ser_Cfg_Port.write(msg + "\n");
+    ROS_INFO_STREAM("Send: " << msg);
+    loop_rate1.sleep();
 
-  if(ser_Cfg_Port.available())
-  {
-    std_msgs::String result;
-    result.data = ser_Cfg_Port.read(ser_Cfg_Port.available());
-    ROS_INFO_STREAM("-Read: " << result.data);
-    //read_pub.publish(result);
-  }
-  loop_rate1.sleep();
+    if(ser_Cfg_Port.available())
+    {
+      std_msgs::String result;
+      result.data = ser_Cfg_Port.read(ser_Cfg_Port.available());
+      ROS_INFO_STREAM("-Read: " << result.data);
+      //read_pub.publish(result);
+    }
+    loop_rate1.sleep();
 }
 
 void RadarObj::start_radar(void)
@@ -170,7 +169,6 @@ void RadarObj::start_radar(void)
 
     msg = "sensorStart";
     send_cfg(msg);
-
 }
 
 void RadarObj::stop_radar(void)
@@ -180,33 +178,188 @@ void RadarObj::stop_radar(void)
     send_cfg(msg);
 }
 
-bool RadarObj::data_handler(std_msgs::UInt8MultiArray raw_data, uint16_t data_len)
+structHeader RadarObj::getFrameHeader (uint8_t framePacket[], uint16_t dataLen)
 {
-    bool is_data_ok = true;
-    //ROS_INFO("-Read: %c %c ",raw_data.data[1], raw_data.data[2]);
-  if (data_len > 16)
-  {
-    std_msgs::String msg;
-    std::stringstream ss;
-    ss << "-Read " << data_len << " byte:";
+	structHeader frameHeader;
+	// check that all packet has been read
+    frameHeader.totalPacketLen = framePacket[12] + framePacket[13] * 256.0 + framePacket[14] * 65536.0 + framePacket[15] * 1.6777216E+7;
+	uint32_t idX = 0;
+	// Read the header
+	if ((dataLen >= frameHeader.totalPacketLen) && (dataLen != 0))
+	{
+		//word array to convert 4 bytes to a 32 bit number
+        //word = [1, 2**8, 2**16, 2**24]
 
-    for (int i = 0; i < data_len; i++)
-    {
-      ss << " " << (int)raw_data.data[i];
-    }
-    msg.data = ss.str();
-    ROS_INFO("%s", msg.data.c_str());
+        // Initialize the pointer index
+        for (auto idX = 0; idX < 8; idX++)
+		{
+			frameHeader.magicWord[idX] = framePacket[idX];
+		}
+		idX += 8;
+		 for (auto idX = 0; idX < 4; idX++)
+		{
+			frameHeader.version[idX] = framePacket[idX + 8];
+		}
+		idX += 4;
+        frameHeader.totalPacketLen = framePacket[idX]*1 + framePacket[idX + 1]*256.0 + framePacket[idX + 2]*65536.0 + framePacket[idX + 3]*1.6777216E+7;
+        idX += 4;
+        frameHeader.platform = framePacket[idX]*1 + framePacket[idX + 1]*256.0 + framePacket[idX + 2]*65536.0 + framePacket[idX + 3]*1.6777216E+7;
+        idX += 4;
+        frameHeader.frameNumber = framePacket[idX]*1 + framePacket[idX + 1]*256.0 + framePacket[idX + 2]*65536.0 + framePacket[idX + 3]*1.6777216E+7;
+        idX += 4;
+        frameHeader.timeCpuCycles = framePacket[idX]*1 + framePacket[idX + 1]*256.0 + framePacket[idX + 2]*65536.0 + framePacket[idX + 3]*1.6777216E+7;
+        idX += 4;
+        frameHeader.numDetectedObj = framePacket[idX]*1 + framePacket[idX + 1]*256.0 + framePacket[idX + 2]*65536.0 + framePacket[idX + 3]*1.6777216E+7;
+        idX += 4;
+        frameHeader.numTLVs = framePacket[idX]*1 + framePacket[idX + 1]*256.0 + framePacket[idX + 2]*65536.0 + framePacket[idX + 3]*1.6777216E+7;
+        idX += 4;
+		frameHeader.subFrameNumber = framePacket[idX]*1 + framePacket[idX + 1]*256.0 + framePacket[idX + 2]*65536.0 + framePacket[idX + 3]*1.6777216E+7;
+        idX += 4;
+ 	}
+	frameHeader.idX = idX;
+
+	return frameHeader;
+}
+
+structTLV RadarObj::getTLV (uint8_t framePacket[], uint32_t numTLVs, uint16_t idX)
+{
+	structTLV tlv;
+
+	// Check the header of the TLV message
+	for (auto tlvIdx = 0; tlvIdx < numTLVs; tlvIdx++)
+	{
+		tlv.type = framePacket[idX]*1 + framePacket[idX + 1]*256.0 + framePacket[idX + 2]*65536.0 + framePacket[idX + 3]*1.6777216E+7;
+		idX += 4;
+		tlv.length = framePacket[idX]*1 + framePacket[idX + 1]*256.0 + framePacket[idX + 2]*65536.0 + framePacket[idX + 3]*1.6777216E+7;
+		idX += 4;
+		for (auto i = 0; i < tlv.length ; i++)
+			{
+				tlv.payload.push_back(framePacket[idX + i]);
+			}
+		idX += tlv.length;
+
+		switch (tlv.type)
+		{
+			case MMWDEMO_UART_MSG_DETECTED_POINTS :
+			{
+				// getGtrackPtCloud(payload)
+				uint32_t length = tlv.length;
+				int numDetectedObj = length/16;
+				byte2float data = {0};
+
+				if (numDetectedObj)
+				{
+					for (auto i = 0; i < length; i++)
+						{
+							data.myByte.push_back(tlv.payload[i]);
+						}
+
+					for (auto i = 0; i < numDetectedObj; i++)
+					{
+						ptCloud.x.push_back(data.myFloat[i * 4]);
+						ptCloud.y.push_back(data.myFloat[i * 4 + 1]);
+						ptCloud.z.push_back(data.myFloat[i * 4 + 2]);
+						ptCloud.doppler.push_back(data.myFloat[i * 4 + 3]);
+					}
+					int a = 5;
+				}
+			}
+			break;
+
+			case MMWDEMO_UART_MSG_RANGE_PROFILE:
+			break;
+			case MMWDEMO_UART_MSG_NOISE_PROFILE:
+			break;
+			case MMWDEMO_UART_MSG_DETECTED_POINTS_SIDE_INFO:
+			break;
+			default:
+			break;
+		}
+
+		
+	}
+}
+
+bool RadarObj::data_handler(std_msgs::UInt8MultiArray raw_data, uint16_t dataLen)
+{
+    //if (data_len > 16)
+    // std_msgs::String msg;
+    // std::stringstream ss;
+    bool is_data_ok = false;
+    uint8_t magicWord[] = {2,1,4,3,6,5,8,7};
+    uint16_t numframesAvailable = 0;
+    uint32_t totalPacketLen = 0;
+
+
+    // ss << "-Read " << data_len << " byte:";
+    // for (int i = 0; i < data_len; i++)
+    // {
+    //   ss << " " << (int)raw_data.data[i];
+    // }
+    // msg.data = ss.str();
+    // ROS_INFO("%s", msg.data.c_str());
 
     // Processing
 
+	// Check for all possible locations of the magic word
+	for (uint16_t i = 0; i < dataLen - 7; i++)
+	{
+		if (raw_data.data[i] == 2 && raw_data.data[i+1] == 1 && raw_data.data[i+2] == 4 && raw_data.data[i+3] == 3 && raw_data.data[i+4] == 6 && raw_data.data[i+5] == 5 && raw_data.data[i+6] == 8 && raw_data.data[i+7] == 7)
+		{
+			numframesAvailable++;
+		}
+	}
+	uint32_t startIdx[numframesAvailable + 1];
+	uint16_t framesAvailable = 0;
+	for (uint16_t i = 0; i < dataLen - 7; i++)
+	{
+		if (raw_data.data[i] == 2 && raw_data.data[i+1] == 1 && raw_data.data[i+2] == 4 && raw_data.data[i+3] == 3 && raw_data.data[i+4] == 6 && raw_data.data[i+5] == 5 && raw_data.data[i+6] == 8 && raw_data.data[i+7] == 7)
+		{
+			startIdx[framesAvailable] = i;
+			framesAvailable++;
+		}
+	}
 
+    // Check that startIdx is not empty // byteBuffer has only one frame
+	startIdx[numframesAvailable] = dataLen;
+	uint8_t bytesBuffer[(startIdx[1] - startIdx[0])];
+    if (numframesAvailable)
+	{
+		//Remove the data before the first start index
+		if (startIdx[0] > 0 && startIdx[0] < dataLen)
+		{
+			for (auto i = 0; i < (startIdx[1] - startIdx[0]); i++)
+			{
+				bytesBuffer[i] = raw_data.data[startIdx[0] + i];
+			}
 
+            //update dataLen
+			dataLen = sizeof bytesBuffer / sizeof(uint8_t);
+		}
+	}
+
+    // Read the total packet length // as only 1 frame in buffer // parse Header and TLV
+	uint8_t framePacket[dataLen];
+	for (auto i = 0; i < dataLen; i++)
+	{
+		framePacket[i] = bytesBuffer[i];
+	}
+	structHeader frameHeader = getFrameHeader(framePacket, dataLen);
+	uint32_t idX = frameHeader.idX;
+
+    // Read the TLV messages
+	structTLV tlv = getTLV(framePacket, frameHeader.numTLVs, idX);
 
     // Update output
-    Output.msg_counter++;
-    Output.isObject = true;
-    Output.distance = 5.0f;
-  }
+    //sort(ptCloud.y.begin(), ptCloud.y.end());
 
-  return is_data_ok;
+    if (frameHeader.numDetectedObj)
+    {
+        is_data_ok = true;
+        Output.isObject = true;
+        Output.msg_counter++;
+        Output.distance = ptCloud.y[0];
+    }
+
+    return is_data_ok;
 }

@@ -69,6 +69,7 @@ aev_pkg/CMakeFiles/Radar.dir/src/Radar/Radar.cpp.o
  /opt/ros/melodic/include/std_msgs/UInt8MultiArray.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
+ devel/include/aev_pkg/radar_msg.h
 aev_pkg/CMakeFiles/Radar.dir/src/Radar/Radar_Cfg.cpp.o
  /home/giangtin/aev/aev_ws/src/aev_pkg/src/Radar/Radar_Cfg.cpp
  /home/giangtin/aev/aev_ws/src/aev_pkg/src/Radar/Radar_Cfg.h
@@ -137,3 +138,4 @@ aev_pkg/CMakeFiles/Radar.dir/src/Radar/Radar_Cfg.cpp.o
  /opt/ros/melodic/include/std_msgs/UInt8MultiArray.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
+ devel/include/aev_pkg/radar_msg.h

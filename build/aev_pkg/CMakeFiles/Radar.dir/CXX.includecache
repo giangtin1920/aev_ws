@@ -39,6 +39,14 @@ aev_pkg/radar_msg.h
 /home/giangtin/aev/aev_ws/src/aev_pkg/src/Radar/aev_pkg/radar_msg.h
 std_msgs/UInt8MultiArray.h
 /home/giangtin/aev/aev_ws/src/aev_pkg/src/Radar/std_msgs/UInt8MultiArray.h
+vector
+-
+iostream
+-
+cstdlib
+-
+algorithm
+-
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h
@@ -810,5 +818,21 @@ string
 vector
 -
 time.h
+-
+
+devel/include/aev_pkg/radar_msg.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
 -
 
