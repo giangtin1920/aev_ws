@@ -19,10 +19,10 @@ using namespace std;
 #define ser_Cfg_Port_Name "/dev/ttyUSB0"
 #define ser_Data_Port_Name "/dev/ttyUSB1"
 
-#define MMWDEMO_UART_MSG_DETECTED_POINTS			      1
-#define MMWDEMO_UART_MSG_RANGE_PROFILE				      2
-#define MMWDEMO_UART_MSG_NOISE_PROFILE				      3
-#define MMWDEMO_UART_MSG_DETECTED_POINTS_SIDE_INFO	7
+#define MMWDEMO_UART_MSG_DETECTED_POINTS			1
+#define MMWDEMO_UART_MSG_RANGE_PROFILE				2
+#define MMWDEMO_UART_MSG_NOISE_PROFILE				3
+#define MMWDEMO_UART_MSG_DETECTED_POINTS_SIDE_INFO  7
 
 /* Output of Radar */
 typedef struct
@@ -60,7 +60,7 @@ struct pointStruct
 	vector<float> y ;
 	vector<float> z ;
 	vector<float> doppler ;
-} ptCloud;
+} ;
 
 union byte2float
 {
@@ -85,6 +85,7 @@ class RadarObj
     serial::Serial ser_Data_Port;
 
     Radar_Output_Struct Output;
+    pointStruct ptCloud;
 
     bool init_cfg_port(void);
     bool init_data_port(void);

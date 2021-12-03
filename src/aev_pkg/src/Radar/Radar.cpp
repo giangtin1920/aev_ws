@@ -12,6 +12,7 @@ ros::Publisher radar_pub;
 
 int cnt = 0;
 aev_pkg::radar_msg radar_output_msg;
+
 void timer_uart_Callback(const ros::TimerEvent& e)
 {
   
@@ -34,7 +35,7 @@ void timer_uart_Callback(const ros::TimerEvent& e)
     }
     
     cnt++;
-    if (cnt >= 20)
+    if (cnt >= 1)
     {
         radarObj.stop_radar();
     }
@@ -42,7 +43,7 @@ void timer_uart_Callback(const ros::TimerEvent& e)
 }
 
 int main (int argc, char** argv){
-    ros::init(argc, argv, "Radar");
+    ros::init(argc, argv, "radar");
     ros::NodeHandle nh;
     radar_pub = nh.advertise<aev_pkg::radar_msg>("Radar_Data", 1000);
 
@@ -74,7 +75,5 @@ int main (int argc, char** argv){
     {
         ros::spinOnce();
     }
-
-    return 0;
     
 }

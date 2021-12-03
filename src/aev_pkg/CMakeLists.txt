@@ -207,11 +207,21 @@ include_directories(
 # catkin_add_nosetests(test)
 
 add_executable(
-  Radar 
+  listener
+  src/Radar/listener.cpp
+)
+target_link_libraries(listener ${catkin_LIBRARIES})
+add_dependencies(listener aev_pkg_generate_messages_cpp)
+
+add_executable(
+  radar 
   src/Radar/Radar.cpp
   src/Radar/Radar_Cfg.cpp
 )
+target_link_libraries(radar ${catkin_LIBRARIES})
+add_dependencies(radar aev_pkg_generate_messages_cpp)
 
-target_link_libraries(Radar ${catkin_LIBRARIES})
+
+
 
 
