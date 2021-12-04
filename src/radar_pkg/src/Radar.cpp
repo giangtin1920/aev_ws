@@ -13,35 +13,24 @@ radar_pkg::radar_msg radar_output_msg;
 
 void timer_uart_Callback(const ros::TimerEvent& )
 {
-    ROS_INFO("vo loop");
     if(radarObj.ser_Data_Port.available())
     {
         uint16_t dataLen = 0;
         dataLen = radarObj.ser_Data_Port.available();
-        // std_msgs::String raw_data;
         std_msgs::UInt8MultiArray raw_data;
         radarObj.ser_Data_Port.read(raw_data.data, radarObj.ser_Data_Port.available());
-        ROS_INFO("Read = %u byte", dataLen);
+        ROS_INFO("Read: %u byte", dataLen);
 
-        uint8_t data[dataLen];
-        for (auto i = 0; i < dataLen; i++)
-	    {
-		    data[i] = raw_data.data[i];
-	    }
-
-        radarObj.data_handler(data, dataLen);
-        ROS_INFO("t in msg");
-        // Process the data
-        if (1)
+        // Process the raw_data
+        if (true == radarObj.data_handler(raw_data, dataLen))
         {
             // Send ros message
             radar_output_msg.msg_counter = radarObj.Output.msg_counter;
             radar_output_msg.isObject = radarObj.Output.isObject;
             radar_output_msg.distance = radarObj.Output.distance;
             radar_pub.publish(radar_output_msg);
-            ROS_INFO("pub msg");
+            ROS_INFO("Public message ok");
         }
-    
     }
 }
 

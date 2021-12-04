@@ -24,13 +24,13 @@ using namespace std;
 #define MMWDEMO_UART_MSG_NOISE_PROFILE				3
 #define MMWDEMO_UART_MSG_DETECTED_POINTS_SIDE_INFO  7
 
-/* Output of Radar */
-struct Radar_Output_Struct
+// Output of Radar
+typedef struct
 {
-    uint32_t msg_counter = 0;
-    bool isObject = false;
-    float distance = 10.0f;
-} ;
+  uint32_t msg_counter = 0;
+  bool isObject = false;
+  float distance = 10.0f;
+} Radar_Output_Struct;
 
 struct structHeader
 {
@@ -92,12 +92,13 @@ class RadarObj
     bool init_data_port(void);
     void start_radar(void);
     void stop_radar(void);
-    void data_handler(uint8_t raw_data[], uint16_t data_len);
-    structHeader getFrameHeader (uint8_t framePacket[], uint16_t dataLen);
-    structTLV getTLV (uint8_t framePacket[], uint32_t numTLVs, uint32_t idX);
+    bool data_handler(std_msgs::UInt8MultiArray raw_data, uint16_t dataLen);
 
     private:
     void send_cfg(std::string msg);
+    structHeader getFrameHeader (uint8_t framePacket[], uint16_t dataLen);
+    structTLV getTLV (uint8_t framePacket[], uint32_t numTLVs, uint32_t idX);
+
 };
 
 #endif
