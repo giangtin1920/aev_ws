@@ -282,7 +282,7 @@ structTLV RadarObj::getTLV (uint8_t framePacket[], uint32_t numTLVs, uint32_t id
 						// ptCloud.doppler.push_back(0.4);
 				    }
 
-                    ROS_INFO("xyzv = %f, %f, %f, %f", ptCloud.x[0], ptCloud.y[0], ptCloud.z[0], ptCloud.doppler[0]);
+                    // ROS_INFO("xyzv = %f, %f, %f, %f", ptCloud.x[0], ptCloud.y[0], ptCloud.z[0], ptCloud.doppler[0]);
 				}
 			}
 			break;
@@ -354,6 +354,51 @@ bool RadarObj::data_handler( std_msgs::UInt8MultiArray raw_data, uint16_t dataLe
 
         // processing output
         sort(ptCloud.y.begin(), ptCloud.y.end());
+        float delta = 0.2;
+        float numRangePt = 1;
+        float outDistance = 0;
+        float rangePt = (float)(frameHeader.numDetectedObj)/3;
+        ROS_INFO("numDetected = %zu", ptCloud.y.size());
+        ROS_INFO("rangePt = %f", rangePt);
+
+
+        for (int i = 0; i < frameHeader.numDetectedObj; i++)
+        {
+        ROS_INFO("kq = %f", ptCloud.y[i]);
+        }
+
+        if (frameHeader.numDetectedObj > 1){
+            for (auto i = 0; i < ptCloud.y.size() - 1; i++)
+            {
+                numRangePt = 1;
+                for (auto j = 0; j < ptCloud.y.size() - 1 - i; j++)
+                {
+                    if((ptCloud.y[i + j +1] - ptCloud.y[i]) < delta)
+                    {
+                        numRangePt+=1;
+                    }
+                }
+                ROS_INFO("numRangePt = %f", numRangePt);
+                if(numRangePt >= rangePt)
+                {
+                    for (auto k = i; k < i + (int)numRangePt; k++) {
+                        outDistance += ptCloud.y[k];
+                    }
+                    outDistance = outDistance/(int)numRangePt;
+                    break;
+                }
+            }
+        }
+        if (frameHeader.numDetectedObj == 1)
+        {
+            outDistance = ptCloud.y[0];
+        }
+
+        
+
+        // ptCloud.y.size();
+
+
 
         // update output
         if (frameHeader.numDetectedObj)
@@ -361,8 +406,8 @@ bool RadarObj::data_handler( std_msgs::UInt8MultiArray raw_data, uint16_t dataLe
             is_data_ok = true;
             Output.isObject = true;
             Output.msg_counter++;
-            Output.distance = ptCloud.y[0];
-            ROS_INFO("distance = %f",ptCloud.y[0]);
+            Output.distance = outDistance;
+            ROS_INFO("distance = %f",outDistance);
         }
         else
         {
