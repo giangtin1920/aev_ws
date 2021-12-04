@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: aev_pkg
-Description: Description of aev_pkg
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -laev_pkg
-Requires: roscpp rospy std_msgs
