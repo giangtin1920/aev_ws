@@ -300,6 +300,52 @@ structTLV RadarObj::getTLV (uint8_t framePacket[], uint32_t numTLVs, uint32_t id
     return tlv;
 }
 
+float RadarObj::processingOutput (void)
+{
+    sort(ptCloud.y.begin(), ptCloud.y.end());
+    float delta = 0.2;
+    float numRangePt = 1;
+    float outDistance = 0;
+    float rangePt = (float)(ptCloud.y.size())/3;
+    ROS_INFO("numDetected = %zu", ptCloud.y.size());
+    ROS_INFO("rangePt = %f", rangePt);
+
+    for (int i = 0; i < ptCloud.y.size(); i++)
+        {
+        ROS_INFO("kq = %f", ptCloud.y[i]);
+        }
+
+    if (ptCloud.y.size() > 1){
+        for (auto i = 0; i < ptCloud.y.size() - 1; i++)
+        {
+            numRangePt = 1;
+            for (auto j = 0; j < ptCloud.y.size() - 1 - i; j++)
+            {
+                if((ptCloud.y[i + j +1] - ptCloud.y[i]) < delta)
+                {
+                    numRangePt+=1;
+                }
+            }
+            ROS_INFO("numRangePt = %f", numRangePt);
+            if(numRangePt >= rangePt)
+            {
+                for (auto k = i; k < i + (int)numRangePt; k++) {
+                    outDistance += ptCloud.y[k];
+                }
+                outDistance = outDistance/(int)numRangePt;
+                break;
+            }
+        }
+    }
+    if (ptCloud.y.size() == 1)
+    {
+        outDistance = ptCloud.y[0];
+    }
+
+    return outDistance;
+
+}
+
 bool RadarObj::data_handler( std_msgs::UInt8MultiArray raw_data, uint16_t dataLen)
 {
     bool is_data_ok = false;
@@ -352,53 +398,9 @@ bool RadarObj::data_handler( std_msgs::UInt8MultiArray raw_data, uint16_t dataLe
         structTLV tlv = getTLV(framePacket, frameHeader.numTLVs, idX);
         idX = tlv.idX;
 
+        int b = 0;
         // processing output
-        sort(ptCloud.y.begin(), ptCloud.y.end());
-        float delta = 0.2;
-        float numRangePt = 1;
-        float outDistance = 0;
-        float rangePt = (float)(frameHeader.numDetectedObj)/3;
-        ROS_INFO("numDetected = %zu", ptCloud.y.size());
-        ROS_INFO("rangePt = %f", rangePt);
-
-
-        for (int i = 0; i < frameHeader.numDetectedObj; i++)
-        {
-        ROS_INFO("kq = %f", ptCloud.y[i]);
-        }
-
-        if (frameHeader.numDetectedObj > 1){
-            for (auto i = 0; i < ptCloud.y.size() - 1; i++)
-            {
-                numRangePt = 1;
-                for (auto j = 0; j < ptCloud.y.size() - 1 - i; j++)
-                {
-                    if((ptCloud.y[i + j +1] - ptCloud.y[i]) < delta)
-                    {
-                        numRangePt+=1;
-                    }
-                }
-                ROS_INFO("numRangePt = %f", numRangePt);
-                if(numRangePt >= rangePt)
-                {
-                    for (auto k = i; k < i + (int)numRangePt; k++) {
-                        outDistance += ptCloud.y[k];
-                    }
-                    outDistance = outDistance/(int)numRangePt;
-                    break;
-                }
-            }
-        }
-        if (frameHeader.numDetectedObj == 1)
-        {
-            outDistance = ptCloud.y[0];
-        }
-
-        
-
-        // ptCloud.y.size();
-
-
+        float outDistance = processingOutput();
 
         // update output
         if (frameHeader.numDetectedObj)

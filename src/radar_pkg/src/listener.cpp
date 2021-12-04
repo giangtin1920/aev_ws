@@ -2,9 +2,11 @@
 #include "std_msgs/String.h"
 #include "radar_pkg/radar_msg.h"
 
-void chatterCallback (const std_msgs::String::ConstPtr& msg)
+radar_pkg::radar_msg radar_output_msg;
+
+void chatterCallback (const radar_pkg::radar_msg& radar_output_msg)
 {
-    ROS_INFO("I heard: [%s]", msg->data.c_str());
+    ROS_INFO("I heard: [%f]", radar_output_msg.distance);
 }
 
 int main(int argc, char **argv)

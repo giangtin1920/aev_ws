@@ -93,11 +93,13 @@ class RadarObj
     void start_radar(void);
     void stop_radar(void);
     bool data_handler(std_msgs::UInt8MultiArray raw_data, uint16_t dataLen);
+    float processingOutput (void);
 
     private:
     void send_cfg(std::string msg);
     structHeader getFrameHeader (uint8_t framePacket[], uint16_t dataLen);
     structTLV getTLV (uint8_t framePacket[], uint32_t numTLVs, uint32_t idX);
+    
 
 };
 
