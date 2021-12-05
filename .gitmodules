@@ -1,0 +1,3 @@
+[submodule "/home/giangtin/aev/aev_ws/src/radar_pkg"]
+	path = /home/giangtin/aev/aev_ws/src/radar_pkg
+	url = https://github.com/giangtin1920/radar_pkg.git
