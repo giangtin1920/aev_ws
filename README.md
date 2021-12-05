@@ -1,8 +1,10 @@
 # aev_ws
 AEV workspace catkin
 
-## the first time
-mkdir -p ~/aev/aev_ws /src
+## Building workspace by hand
+
+### create pkg
+mkdir -p ~/aev/aev_ws/src
 cd ~/aev/aev_ws
 catkin_make
 source ~/aev/aev_ws/devel/setup.bash
@@ -64,6 +66,9 @@ target_link_libraries(Radar ${catkin_LIBRARIES})
 ### add Radar node
 copy folder Radar to ~/aev/aev_ws/src/aev_pkg/src$ 
 
+### install serial port
+sudo apt-get install ros-melodic-serial
+
 ### build ws
 cd ~/aev/aev_ws/
 catkin_make
@@ -75,7 +80,7 @@ roscore
 rosrun aev_pkg Radar
 
 
-## for second time
+## Github
 
 mkdir aev
 cd aev/
