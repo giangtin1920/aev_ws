@@ -1,7 +1,7 @@
 # aev_ws
 AEV workspace catkin
 
-## the first
+## the first time
 mkdir -p ~/aev/aev_ws /src
 cd ~/aev/aev_ws
 catkin_make
@@ -11,7 +11,7 @@ cd src
 catkin_create_pkg aev_pkg std_msgs rospy roscpp
 
 
-## create msg
+### create msg
 cd aev_pkg/
 mkdir msg
 cd msg
@@ -22,7 +22,7 @@ bool isObject
 float32 distance
 )
 
-## edit CmakeLists.txt
+### edit CmakeLists.txt
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
@@ -57,21 +57,21 @@ add_executable(
 target_link_libraries(Radar ${catkin_LIBRARIES})
 
 
-## edit package.xml
+### edit package.xml
   <build_depend>message_generation</build_depend>
   <exec_depend>message_runtime</exec_depend>
 
-## add Radar node
+### add Radar node
 copy folder Radar to ~/aev/aev_ws/src/aev_pkg/src$ 
 
-## build ws
+### build ws
 cd ~/aev/aev_ws/
 catkin_make
 
-## run roscore
+### run roscore
 roscore
 
-## run package Radar in another Terminal
+### run package Radar in another Terminal
 rosrun aev_pkg Radar
 
 
