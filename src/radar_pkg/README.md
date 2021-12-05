@@ -1,10 +1,10 @@
 # AEV workspace
 
-aev/aev_ws
+aev/aev_ws/src/radar_pkg
 
 ## Description
 
-As a package to read framedata from mmWave_AOP_MistralRadar(IWR6843)
+As a package to read/parse framedata serial mmWave_AOP_MistralRadar(IWR6843)
 
 
 ## Installation
@@ -36,7 +36,7 @@ As a package to read framedata from mmWave_AOP_MistralRadar(IWR6843)
 ##### Method 1: Download code Radar node
 
     cd ~/aev/aev_ws/src/
-    git clone https://github.com/giangtin1920/aev_ws ???
+    git clone https://github.com/giangtin1920/radar_pkg
 
 ##### Method 2: Building radar package by hand
 
