@@ -4,7 +4,8 @@ aev/aev_ws
 
 ## Description
 
-As a package to read framedata from mmWave_AOP_MistralRadar(IWR6843)
+As a workspace to read framedata from mmWave_AOP_MistralRadar(IWR6843)
+##### Workspace for `giangtin giangtin@giangtin-Asus` only
 
 
 ## Installation

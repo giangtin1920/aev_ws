@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/giangtin/aev/aev_ws/devel:$CMAKE_PREFIX_PATH"
 export PWD='/home/giangtin/aev/aev_ws/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/giangtin/aev/aev_ws/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/giangtin/aev/aev_ws/src:$ROS_PACKAGE_PATH"
