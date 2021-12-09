@@ -1,0 +1,8 @@
+prefix=/home/giangtin/aev/aev_ws/install
+
+Name: usbCAN_pkg
+Description: Description of usbCAN_pkg
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lusbCAN_pkg
+Requires: roscpp rospy std_msgs
