@@ -170,6 +170,7 @@ struct Definition< ::usbCAN_pkg::CAN_msg_<ContainerAllocator> >
 "uint8 type\n"
 "uint8 length\n"
 "uint8[8] data\n"
+"\n"
 ;
   }
 

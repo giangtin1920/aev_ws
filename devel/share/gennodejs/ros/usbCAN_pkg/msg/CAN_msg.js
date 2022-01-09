@@ -105,6 +105,7 @@ class CAN_msg {
     uint8 length
     uint8[8] data
     
+    
     `;
   }
 

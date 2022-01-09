@@ -95,10 +95,10 @@
   "92ef1a7d09d3119fcbbcfe293f3fd075")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<CAN_msg>)))
   "Returns full string definition for message of type '<CAN_msg>"
-  (cl:format cl:nil "uint32 id~%uint8 type~%uint8 length~%uint8[8] data~%~%~%"))
+  (cl:format cl:nil "uint32 id~%uint8 type~%uint8 length~%uint8[8] data~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'CAN_msg)))
   "Returns full string definition for message of type 'CAN_msg"
-  (cl:format cl:nil "uint32 id~%uint8 type~%uint8 length~%uint8[8] data~%~%~%"))
+  (cl:format cl:nil "uint32 id~%uint8 type~%uint8 length~%uint8[8] data~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <CAN_msg>))
   (cl:+ 0
      4

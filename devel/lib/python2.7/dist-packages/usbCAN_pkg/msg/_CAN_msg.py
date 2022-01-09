@@ -15,6 +15,7 @@ class CAN_msg(genpy.Message):
 uint8 type
 uint8 length
 uint8[8] data
+
 """
   __slots__ = ['id','type','length','data']
   _slot_types = ['uint32','uint8','uint8','uint8[8]']

@@ -405,6 +405,12 @@ usbCAN_pkg_BINARY_DIR:STATIC=/home/giangtin/aev/aev_ws/build/usbCAN_pkg
 //Value Computed by CMake
 usbCAN_pkg_SOURCE_DIR:STATIC=/home/giangtin/aev/aev_ws/src/usbCAN_pkg
 
+//Value Computed by CMake
+usbcan_pkg_BINARY_DIR:STATIC=/home/giangtin/aev/aev_ws/build/usbcan_pkg
+
+//Value Computed by CMake
+usbcan_pkg_SOURCE_DIR:STATIC=/home/giangtin/aev/aev_ws/src/usbcan_pkg
+
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake
 

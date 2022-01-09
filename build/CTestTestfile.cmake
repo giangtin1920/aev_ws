@@ -6,4 +6,4 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("radar_pkg")
-subdirs("usbCAN_pkg")
+subdirs("usbcan_pkg")
