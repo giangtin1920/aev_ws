@@ -1,2 +1,2 @@
-set(usbCAN_pkg_MESSAGE_FILES "msg/CAN_msg.msg")
-set(usbCAN_pkg_SERVICE_FILES "")
+set(usbcan_pkg_MESSAGE_FILES "msg/can_msg.msg")
+set(usbcan_pkg_SERVICE_FILES "")

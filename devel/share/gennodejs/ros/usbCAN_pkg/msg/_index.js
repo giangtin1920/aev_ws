@@ -1,8 +1,8 @@
 
 "use strict";
 
-let CAN_msg = require('./CAN_msg.js');
+let can_msg = require('./can_msg.js');
 
 module.exports = {
-  CAN_msg: CAN_msg,
+  can_msg: can_msg,
 };

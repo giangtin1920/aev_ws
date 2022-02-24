@@ -1,4 +1,4 @@
-# Install script for directory: /home/giangtin/aev/aev_ws/src/usbCAN_pkg
+# Install script for directory: /home/giangtin/aev/aev_ws/src/usbcan_pkg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,53 +38,53 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/usbCAN_pkg/msg" TYPE FILE FILES "/home/giangtin/aev/aev_ws/src/usbCAN_pkg/msg/CAN_msg.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/usbcan_pkg/msg" TYPE FILE FILES "/home/giangtin/aev/aev_ws/src/usbcan_pkg/msg/can_msg.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/usbCAN_pkg/cmake" TYPE FILE FILES "/home/giangtin/aev/aev_ws/build/usbCAN_pkg/catkin_generated/installspace/usbCAN_pkg-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/usbcan_pkg/cmake" TYPE FILE FILES "/home/giangtin/aev/aev_ws/build/usbcan_pkg/catkin_generated/installspace/usbcan_pkg-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/giangtin/aev/aev_ws/devel/include/usbCAN_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/giangtin/aev/aev_ws/devel/include/usbcan_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/giangtin/aev/aev_ws/devel/share/roseus/ros/usbCAN_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/giangtin/aev/aev_ws/devel/share/roseus/ros/usbcan_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/giangtin/aev/aev_ws/devel/share/common-lisp/ros/usbCAN_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/giangtin/aev/aev_ws/devel/share/common-lisp/ros/usbcan_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/giangtin/aev/aev_ws/devel/share/gennodejs/ros/usbCAN_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/giangtin/aev/aev_ws/devel/share/gennodejs/ros/usbcan_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbCAN_pkg")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbcan_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbCAN_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbcan_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/giangtin/aev/aev_ws/build/usbCAN_pkg/catkin_generated/installspace/usbCAN_pkg.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/giangtin/aev/aev_ws/build/usbcan_pkg/catkin_generated/installspace/usbcan_pkg.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/usbCAN_pkg/cmake" TYPE FILE FILES "/home/giangtin/aev/aev_ws/build/usbCAN_pkg/catkin_generated/installspace/usbCAN_pkg-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/usbcan_pkg/cmake" TYPE FILE FILES "/home/giangtin/aev/aev_ws/build/usbcan_pkg/catkin_generated/installspace/usbcan_pkg-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/usbCAN_pkg/cmake" TYPE FILE FILES
-    "/home/giangtin/aev/aev_ws/build/usbCAN_pkg/catkin_generated/installspace/usbCAN_pkgConfig.cmake"
-    "/home/giangtin/aev/aev_ws/build/usbCAN_pkg/catkin_generated/installspace/usbCAN_pkgConfig-version.cmake"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/usbcan_pkg/cmake" TYPE FILE FILES
+    "/home/giangtin/aev/aev_ws/build/usbcan_pkg/catkin_generated/installspace/usbcan_pkgConfig.cmake"
+    "/home/giangtin/aev/aev_ws/build/usbcan_pkg/catkin_generated/installspace/usbcan_pkgConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/usbCAN_pkg" TYPE FILE FILES "/home/giangtin/aev/aev_ws/src/usbCAN_pkg/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/usbcan_pkg" TYPE FILE FILES "/home/giangtin/aev/aev_ws/src/usbcan_pkg/package.xml")
 endif()
 

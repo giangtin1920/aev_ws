@@ -1,22 +1,22 @@
 ;; Auto-generated. Do not edit!
 
 
-(when (boundp 'usbCAN_pkg::CAN_msg)
+(when (boundp 'usbcan_pkg::can_msg)
   (if (not (find-package "USBCAN_PKG"))
     (make-package "USBCAN_PKG"))
-  (shadow 'CAN_msg (find-package "USBCAN_PKG")))
+  (shadow 'can_msg (find-package "USBCAN_PKG")))
 (unless (find-package "USBCAN_PKG::CAN_MSG")
   (make-package "USBCAN_PKG::CAN_MSG"))
 
 (in-package "ROS")
-;;//! \htmlinclude CAN_msg.msg.html
+;;//! \htmlinclude can_msg.msg.html
 
 
-(defclass usbCAN_pkg::CAN_msg
+(defclass usbcan_pkg::can_msg
   :super ros::object
   :slots (_id _type _length _data ))
 
-(defmethod usbCAN_pkg::CAN_msg
+(defmethod usbcan_pkg::can_msg
   (:init
    (&key
     ((:id __id) 0)
@@ -83,9 +83,9 @@
    self)
   )
 
-(setf (get usbCAN_pkg::CAN_msg :md5sum-) "92ef1a7d09d3119fcbbcfe293f3fd075")
-(setf (get usbCAN_pkg::CAN_msg :datatype-) "usbCAN_pkg/CAN_msg")
-(setf (get usbCAN_pkg::CAN_msg :definition-)
+(setf (get usbcan_pkg::can_msg :md5sum-) "92ef1a7d09d3119fcbbcfe293f3fd075")
+(setf (get usbcan_pkg::can_msg :datatype-) "usbcan_pkg/can_msg")
+(setf (get usbcan_pkg::can_msg :definition-)
       "uint32 id
 uint8 type
 uint8 length
@@ -96,6 +96,6 @@ uint8[8] data
 
 
 
-(provide :usbCAN_pkg/CAN_msg "92ef1a7d09d3119fcbbcfe293f3fd075")
+(provide :usbcan_pkg/can_msg "92ef1a7d09d3119fcbbcfe293f3fd075")
 
 

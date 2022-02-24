@@ -1,2 +1,2 @@
-set(usbCAN_pkg_MESSAGE_FILES "/home/giangtin/aev/aev_ws/src/usbCAN_pkg/msg/CAN_msg.msg")
-set(usbCAN_pkg_SERVICE_FILES "")
+set(usbcan_pkg_MESSAGE_FILES "/home/giangtin/aev/aev_ws/src/usbcan_pkg/msg/can_msg.msg")
+set(usbcan_pkg_SERVICE_FILES "")

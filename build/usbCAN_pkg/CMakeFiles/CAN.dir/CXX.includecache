@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/giangtin/aev/aev_ws/devel/include/usbCAN_pkg/CAN_msg.h
+/home/giangtin/aev/aev_ws/devel/include/usbcan_pkg/can_msg.h
 string
 -
 vector
@@ -22,11 +22,11 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/giangtin/aev/aev_ws/src/usbCAN_pkg/src/CAN.cpp
+/home/giangtin/aev/aev_ws/src/usbcan_pkg/src/CAN.cpp
 CAN.h
-/home/giangtin/aev/aev_ws/src/usbCAN_pkg/src/CAN.h
+/home/giangtin/aev/aev_ws/src/usbcan_pkg/src/CAN.h
 
-/home/giangtin/aev/aev_ws/src/usbCAN_pkg/src/CAN.h
+/home/giangtin/aev/aev_ws/src/usbcan_pkg/src/CAN.h
 ros/ros.h
 -
 string
@@ -35,38 +35,18 @@ std_msgs/String.h
 -
 std_msgs/Empty.h
 -
-usbCAN_pkg/CAN_msg.h
-/home/giangtin/aev/aev_ws/src/usbCAN_pkg/src/usbCAN_pkg/CAN_msg.h
-can_msgs/Frame.h
--
+usbcan_pkg/can_msg.h
+/home/giangtin/aev/aev_ws/src/usbcan_pkg/src/usbcan_pkg/can_msg.h
 socketcan_interface/socketcan.h
-/home/giangtin/aev/aev_ws/src/usbCAN_pkg/src/socketcan_interface/socketcan.h
+/home/giangtin/aev/aev_ws/src/usbcan_pkg/src/socketcan_interface/socketcan.h
 socketcan_interface/threading.h
-/home/giangtin/aev/aev_ws/src/usbCAN_pkg/src/socketcan_interface/threading.h
+/home/giangtin/aev/aev_ws/src/usbcan_pkg/src/socketcan_interface/threading.h
 socketcan_interface/interface.h
-/home/giangtin/aev/aev_ws/src/usbCAN_pkg/src/socketcan_interface/interface.h
+/home/giangtin/aev/aev_ws/src/usbcan_pkg/src/socketcan_interface/interface.h
 socketcan_interface/string.h
-/home/giangtin/aev/aev_ws/src/usbCAN_pkg/src/socketcan_interface/string.h
+/home/giangtin/aev/aev_ws/src/usbcan_pkg/src/socketcan_interface/string.h
 
-/home/giangtin/aev/aev_ws/src/usbCAN_pkg/src/CAN_init.cpp
-
-/opt/ros/melodic/include/can_msgs/Frame.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-std_msgs/Header.h
--
+/home/giangtin/aev/aev_ws/src/usbcan_pkg/src/CAN_init.cpp
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h
@@ -825,22 +805,6 @@ boost/thread/thread.hpp
 -
 
 /opt/ros/melodic/include/std_msgs/Empty.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-
-/opt/ros/melodic/include/std_msgs/Header.h
 string
 -
 vector

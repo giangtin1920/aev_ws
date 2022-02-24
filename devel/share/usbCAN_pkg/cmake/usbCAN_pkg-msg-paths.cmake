@@ -1,4 +1,4 @@
 # generated from genmsg/cmake/pkg-msg-paths.cmake.develspace.in
 
-set(usbCAN_pkg_MSG_INCLUDE_DIRS "/home/giangtin/aev/aev_ws/src/usbCAN_pkg/msg")
-set(usbCAN_pkg_MSG_DEPENDENCIES std_msgs)
+set(usbcan_pkg_MSG_INCLUDE_DIRS "/home/giangtin/aev/aev_ws/src/usbcan_pkg/msg")
+set(usbcan_pkg_MSG_DEPENDENCIES std_msgs)

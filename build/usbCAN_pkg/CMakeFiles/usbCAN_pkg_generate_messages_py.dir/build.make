@@ -48,42 +48,42 @@ CMAKE_SOURCE_DIR = /home/giangtin/aev/aev_ws/src
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/giangtin/aev/aev_ws/build
 
-# Utility rule file for usbCAN_pkg_generate_messages_py.
+# Utility rule file for usbcan_pkg_generate_messages_py.
 
 # Include the progress variables for this target.
-include usbCAN_pkg/CMakeFiles/usbCAN_pkg_generate_messages_py.dir/progress.make
+include usbcan_pkg/CMakeFiles/usbcan_pkg_generate_messages_py.dir/progress.make
 
-usbCAN_pkg/CMakeFiles/usbCAN_pkg_generate_messages_py: /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbCAN_pkg/msg/_CAN_msg.py
-usbCAN_pkg/CMakeFiles/usbCAN_pkg_generate_messages_py: /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbCAN_pkg/msg/__init__.py
+usbcan_pkg/CMakeFiles/usbcan_pkg_generate_messages_py: /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbcan_pkg/msg/_can_msg.py
+usbcan_pkg/CMakeFiles/usbcan_pkg_generate_messages_py: /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbcan_pkg/msg/__init__.py
 
 
-/home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbCAN_pkg/msg/_CAN_msg.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
-/home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbCAN_pkg/msg/_CAN_msg.py: /home/giangtin/aev/aev_ws/src/usbCAN_pkg/msg/CAN_msg.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG usbCAN_pkg/CAN_msg"
-	cd /home/giangtin/aev/aev_ws/build/usbCAN_pkg && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/giangtin/aev/aev_ws/src/usbCAN_pkg/msg/CAN_msg.msg -IusbCAN_pkg:/home/giangtin/aev/aev_ws/src/usbCAN_pkg/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p usbCAN_pkg -o /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbCAN_pkg/msg
+/home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbcan_pkg/msg/_can_msg.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbcan_pkg/msg/_can_msg.py: /home/giangtin/aev/aev_ws/src/usbcan_pkg/msg/can_msg.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG usbcan_pkg/can_msg"
+	cd /home/giangtin/aev/aev_ws/build/usbcan_pkg && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/giangtin/aev/aev_ws/src/usbcan_pkg/msg/can_msg.msg -Iusbcan_pkg:/home/giangtin/aev/aev_ws/src/usbcan_pkg/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p usbcan_pkg -o /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbcan_pkg/msg
 
-/home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbCAN_pkg/msg/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
-/home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbCAN_pkg/msg/__init__.py: /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbCAN_pkg/msg/_CAN_msg.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for usbCAN_pkg"
-	cd /home/giangtin/aev/aev_ws/build/usbCAN_pkg && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbCAN_pkg/msg --initpy
+/home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbcan_pkg/msg/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbcan_pkg/msg/__init__.py: /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbcan_pkg/msg/_can_msg.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for usbcan_pkg"
+	cd /home/giangtin/aev/aev_ws/build/usbcan_pkg && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbcan_pkg/msg --initpy
 
-usbCAN_pkg_generate_messages_py: usbCAN_pkg/CMakeFiles/usbCAN_pkg_generate_messages_py
-usbCAN_pkg_generate_messages_py: /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbCAN_pkg/msg/_CAN_msg.py
-usbCAN_pkg_generate_messages_py: /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbCAN_pkg/msg/__init__.py
-usbCAN_pkg_generate_messages_py: usbCAN_pkg/CMakeFiles/usbCAN_pkg_generate_messages_py.dir/build.make
+usbcan_pkg_generate_messages_py: usbcan_pkg/CMakeFiles/usbcan_pkg_generate_messages_py
+usbcan_pkg_generate_messages_py: /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbcan_pkg/msg/_can_msg.py
+usbcan_pkg_generate_messages_py: /home/giangtin/aev/aev_ws/devel/lib/python2.7/dist-packages/usbcan_pkg/msg/__init__.py
+usbcan_pkg_generate_messages_py: usbcan_pkg/CMakeFiles/usbcan_pkg_generate_messages_py.dir/build.make
 
-.PHONY : usbCAN_pkg_generate_messages_py
+.PHONY : usbcan_pkg_generate_messages_py
 
 # Rule to build all files generated by this target.
-usbCAN_pkg/CMakeFiles/usbCAN_pkg_generate_messages_py.dir/build: usbCAN_pkg_generate_messages_py
+usbcan_pkg/CMakeFiles/usbcan_pkg_generate_messages_py.dir/build: usbcan_pkg_generate_messages_py
 
-.PHONY : usbCAN_pkg/CMakeFiles/usbCAN_pkg_generate_messages_py.dir/build
+.PHONY : usbcan_pkg/CMakeFiles/usbcan_pkg_generate_messages_py.dir/build
 
-usbCAN_pkg/CMakeFiles/usbCAN_pkg_generate_messages_py.dir/clean:
-	cd /home/giangtin/aev/aev_ws/build/usbCAN_pkg && $(CMAKE_COMMAND) -P CMakeFiles/usbCAN_pkg_generate_messages_py.dir/cmake_clean.cmake
-.PHONY : usbCAN_pkg/CMakeFiles/usbCAN_pkg_generate_messages_py.dir/clean
+usbcan_pkg/CMakeFiles/usbcan_pkg_generate_messages_py.dir/clean:
+	cd /home/giangtin/aev/aev_ws/build/usbcan_pkg && $(CMAKE_COMMAND) -P CMakeFiles/usbcan_pkg_generate_messages_py.dir/cmake_clean.cmake
+.PHONY : usbcan_pkg/CMakeFiles/usbcan_pkg_generate_messages_py.dir/clean
 
-usbCAN_pkg/CMakeFiles/usbCAN_pkg_generate_messages_py.dir/depend:
-	cd /home/giangtin/aev/aev_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giangtin/aev/aev_ws/src /home/giangtin/aev/aev_ws/src/usbCAN_pkg /home/giangtin/aev/aev_ws/build /home/giangtin/aev/aev_ws/build/usbCAN_pkg /home/giangtin/aev/aev_ws/build/usbCAN_pkg/CMakeFiles/usbCAN_pkg_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : usbCAN_pkg/CMakeFiles/usbCAN_pkg_generate_messages_py.dir/depend
+usbcan_pkg/CMakeFiles/usbcan_pkg_generate_messages_py.dir/depend:
+	cd /home/giangtin/aev/aev_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giangtin/aev/aev_ws/src /home/giangtin/aev/aev_ws/src/usbcan_pkg /home/giangtin/aev/aev_ws/build /home/giangtin/aev/aev_ws/build/usbcan_pkg /home/giangtin/aev/aev_ws/build/usbcan_pkg/CMakeFiles/usbcan_pkg_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : usbcan_pkg/CMakeFiles/usbcan_pkg_generate_messages_py.dir/depend
 

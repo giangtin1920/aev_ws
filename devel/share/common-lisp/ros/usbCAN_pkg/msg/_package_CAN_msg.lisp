@@ -1,4 +1,4 @@
-(cl:in-package usbCAN_pkg-msg)
+(cl:in-package usbcan_pkg-msg)
 (cl:export '(ID-VAL
           ID
           TYPE-VAL

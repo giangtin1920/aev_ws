@@ -1,6 +1,6 @@
 // Auto-generated. Do not edit!
 
-// (in-package usbCAN_pkg.msg)
+// (in-package usbcan_pkg.msg)
 
 
 "use strict";
@@ -14,7 +14,7 @@ const _getByteLength = _ros_msg_utils.getByteLength;
 
 //-----------------------------------------------------------
 
-class CAN_msg {
+class can_msg {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
@@ -52,7 +52,7 @@ class CAN_msg {
   }
 
   static serialize(obj, buffer, bufferOffset) {
-    // Serializes a message object of type CAN_msg
+    // Serializes a message object of type can_msg
     // Serialize message field [id]
     bufferOffset = _serializer.uint32(obj.id, buffer, bufferOffset);
     // Serialize message field [type]
@@ -69,9 +69,9 @@ class CAN_msg {
   }
 
   static deserialize(buffer, bufferOffset=[0]) {
-    //deserializes a message object of type CAN_msg
+    //deserializes a message object of type can_msg
     let len;
-    let data = new CAN_msg(null);
+    let data = new can_msg(null);
     // Deserialize message field [id]
     data.id = _deserializer.uint32(buffer, bufferOffset);
     // Deserialize message field [type]
@@ -89,7 +89,7 @@ class CAN_msg {
 
   static datatype() {
     // Returns string type for a message object
-    return 'usbCAN_pkg/CAN_msg';
+    return 'usbcan_pkg/can_msg';
   }
 
   static md5sum() {
@@ -114,7 +114,7 @@ class CAN_msg {
     if (typeof msg !== 'object' || msg === null) {
       msg = {};
     }
-    const resolved = new CAN_msg(null);
+    const resolved = new can_msg(null);
     if (msg.id !== undefined) {
       resolved.id = msg.id;
     }
@@ -147,4 +147,4 @@ class CAN_msg {
     }
 };
 
-module.exports = CAN_msg;
+module.exports = can_msg;

@@ -1,5 +1,5 @@
 
 # Per-language clean rules from dependency scanning.
 foreach(lang )
-  include(CMakeFiles/usbCAN_pkg_gennodejs.dir/cmake_clean_${lang}.cmake OPTIONAL)
+  include(CMakeFiles/usbcan_pkg_gennodejs.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

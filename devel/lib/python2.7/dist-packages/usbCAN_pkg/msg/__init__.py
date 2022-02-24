@@ -1,1 +1,1 @@
-from ._CAN_msg import *
+from ._can_msg import *
