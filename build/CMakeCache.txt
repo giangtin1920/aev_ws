@@ -400,12 +400,6 @@ serial_DIR:PATH=/opt/ros/melodic/share/serial/cmake
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
 
 //Value Computed by CMake
-usbCAN_pkg_BINARY_DIR:STATIC=/home/giangtin/aev/aev_ws/build/usbCAN_pkg
-
-//Value Computed by CMake
-usbCAN_pkg_SOURCE_DIR:STATIC=/home/giangtin/aev/aev_ws/src/usbCAN_pkg
-
-//Value Computed by CMake
 usbcan_pkg_BINARY_DIR:STATIC=/home/giangtin/aev/aev_ws/build/usbcan_pkg
 
 //Value Computed by CMake

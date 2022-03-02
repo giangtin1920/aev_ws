@@ -49,23 +49,110 @@ CMAKE_SOURCE_DIR = /home/giangtin/aev/aev_ws/src
 CMAKE_BINARY_DIR = /home/giangtin/aev/aev_ws/build
 
 # Include any dependencies generated for this target.
-include usbcan_pkg/CMakeFiles/can.dir/depend.make
+include usbcan_pkg/CMakeFiles/CAN.dir/depend.make
 
 # Include the progress variables for this target.
-include usbcan_pkg/CMakeFiles/can.dir/progress.make
+include usbcan_pkg/CMakeFiles/CAN.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include usbcan_pkg/CMakeFiles/can.dir/flags.make
+include usbcan_pkg/CMakeFiles/CAN.dir/flags.make
 
-usbcan_pkg/CMakeFiles/can.dir/requires:
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.o: usbcan_pkg/CMakeFiles/CAN.dir/flags.make
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.o: /home/giangtin/aev/aev_ws/src/usbcan_pkg/src/CAN.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.o"
+	cd /home/giangtin/aev/aev_ws/build/usbcan_pkg && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CAN.dir/src/CAN.cpp.o -c /home/giangtin/aev/aev_ws/src/usbcan_pkg/src/CAN.cpp
 
-.PHONY : usbcan_pkg/CMakeFiles/can.dir/requires
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CAN.dir/src/CAN.cpp.i"
+	cd /home/giangtin/aev/aev_ws/build/usbcan_pkg && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giangtin/aev/aev_ws/src/usbcan_pkg/src/CAN.cpp > CMakeFiles/CAN.dir/src/CAN.cpp.i
 
-usbcan_pkg/CMakeFiles/can.dir/clean:
-	cd /home/giangtin/aev/aev_ws/build/usbcan_pkg && $(CMAKE_COMMAND) -P CMakeFiles/can.dir/cmake_clean.cmake
-.PHONY : usbcan_pkg/CMakeFiles/can.dir/clean
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CAN.dir/src/CAN.cpp.s"
+	cd /home/giangtin/aev/aev_ws/build/usbcan_pkg && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giangtin/aev/aev_ws/src/usbcan_pkg/src/CAN.cpp -o CMakeFiles/CAN.dir/src/CAN.cpp.s
 
-usbcan_pkg/CMakeFiles/can.dir/depend:
-	cd /home/giangtin/aev/aev_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giangtin/aev/aev_ws/src /home/giangtin/aev/aev_ws/src/usbcan_pkg /home/giangtin/aev/aev_ws/build /home/giangtin/aev/aev_ws/build/usbcan_pkg /home/giangtin/aev/aev_ws/build/usbcan_pkg/CMakeFiles/can.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : usbcan_pkg/CMakeFiles/can.dir/depend
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.o.requires:
+
+.PHONY : usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.o.requires
+
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.o.provides: usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.o.requires
+	$(MAKE) -f usbcan_pkg/CMakeFiles/CAN.dir/build.make usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.o.provides.build
+.PHONY : usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.o.provides
+
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.o.provides.build: usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.o
+
+
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.o: usbcan_pkg/CMakeFiles/CAN.dir/flags.make
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.o: /home/giangtin/aev/aev_ws/src/usbcan_pkg/src/CAN_init.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.o"
+	cd /home/giangtin/aev/aev_ws/build/usbcan_pkg && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CAN.dir/src/CAN_init.cpp.o -c /home/giangtin/aev/aev_ws/src/usbcan_pkg/src/CAN_init.cpp
+
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CAN.dir/src/CAN_init.cpp.i"
+	cd /home/giangtin/aev/aev_ws/build/usbcan_pkg && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giangtin/aev/aev_ws/src/usbcan_pkg/src/CAN_init.cpp > CMakeFiles/CAN.dir/src/CAN_init.cpp.i
+
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CAN.dir/src/CAN_init.cpp.s"
+	cd /home/giangtin/aev/aev_ws/build/usbcan_pkg && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giangtin/aev/aev_ws/src/usbcan_pkg/src/CAN_init.cpp -o CMakeFiles/CAN.dir/src/CAN_init.cpp.s
+
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.o.requires:
+
+.PHONY : usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.o.requires
+
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.o.provides: usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.o.requires
+	$(MAKE) -f usbcan_pkg/CMakeFiles/CAN.dir/build.make usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.o.provides.build
+.PHONY : usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.o.provides
+
+usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.o.provides.build: usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.o
+
+
+# Object files for target CAN
+CAN_OBJECTS = \
+"CMakeFiles/CAN.dir/src/CAN.cpp.o" \
+"CMakeFiles/CAN.dir/src/CAN_init.cpp.o"
+
+# External object files for target CAN
+CAN_EXTERNAL_OBJECTS =
+
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.o
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.o
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: usbcan_pkg/CMakeFiles/CAN.dir/build.make
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /opt/ros/melodic/lib/libroscpp.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /opt/ros/melodic/lib/librosconsole.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /opt/ros/melodic/lib/librosconsole_log4cxx.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /opt/ros/melodic/lib/librosconsole_backend_interface.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /opt/ros/melodic/lib/libxmlrpcpp.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /opt/ros/melodic/lib/libroscpp_serialization.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /opt/ros/melodic/lib/librostime.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /opt/ros/melodic/lib/libcpp_common.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN: usbcan_pkg/CMakeFiles/CAN.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN"
+	cd /home/giangtin/aev/aev_ws/build/usbcan_pkg && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CAN.dir/link.txt --verbose=$(VERBOSE)
+
+# Rule to build all files generated by this target.
+usbcan_pkg/CMakeFiles/CAN.dir/build: /home/giangtin/aev/aev_ws/devel/lib/usbcan_pkg/CAN
+
+.PHONY : usbcan_pkg/CMakeFiles/CAN.dir/build
+
+usbcan_pkg/CMakeFiles/CAN.dir/requires: usbcan_pkg/CMakeFiles/CAN.dir/src/CAN.cpp.o.requires
+usbcan_pkg/CMakeFiles/CAN.dir/requires: usbcan_pkg/CMakeFiles/CAN.dir/src/CAN_init.cpp.o.requires
+
+.PHONY : usbcan_pkg/CMakeFiles/CAN.dir/requires
+
+usbcan_pkg/CMakeFiles/CAN.dir/clean:
+	cd /home/giangtin/aev/aev_ws/build/usbcan_pkg && $(CMAKE_COMMAND) -P CMakeFiles/CAN.dir/cmake_clean.cmake
+.PHONY : usbcan_pkg/CMakeFiles/CAN.dir/clean
+
+usbcan_pkg/CMakeFiles/CAN.dir/depend:
+	cd /home/giangtin/aev/aev_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giangtin/aev/aev_ws/src /home/giangtin/aev/aev_ws/src/usbcan_pkg /home/giangtin/aev/aev_ws/build /home/giangtin/aev/aev_ws/build/usbcan_pkg /home/giangtin/aev/aev_ws/build/usbcan_pkg/CMakeFiles/CAN.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : usbcan_pkg/CMakeFiles/CAN.dir/depend
 
