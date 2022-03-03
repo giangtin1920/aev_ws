@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/radar_pkg_generate_messages_lisp"
-  "/home/giangtin/aev/aev_ws/devel/share/common-lisp/ros/radar_pkg/msg/radar_msg.lisp"
+  "../devel/share/common-lisp/ros/radar_pkg/msg/radar_msg.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

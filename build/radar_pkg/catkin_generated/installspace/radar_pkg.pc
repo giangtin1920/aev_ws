@@ -1,4 +1,4 @@
-prefix=/home/giangtin/aev/aev_ws/install
+prefix=/usr/local
 
 Name: radar_pkg
 Description: Description of radar_pkg

@@ -131,8 +131,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/giangtin/aev/aev_ws/build/gtest/cmake_install.cmake")
-  include("/home/giangtin/aev/aev_ws/build/radar_pkg/cmake_install.cmake")
-  include("/home/giangtin/aev/aev_ws/build/usbcan_pkg/cmake_install.cmake")
+  include("/home/giangtin/aev/aev_ws/build/ttcRadar_pkg/cmake_install.cmake")
 
 endif()
 

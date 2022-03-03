@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/listener.dir/src/listener.cpp.o"
-  "/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/listener.pdb"
-  "/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/listener"
+  "../devel/lib/radar_pkg/listener.pdb"
+  "../devel/lib/radar_pkg/listener"
 )
 
 # Per-language clean rules from dependency scanning.

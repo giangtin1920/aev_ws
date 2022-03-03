@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/giangtin/aev/aev_ws/src/radar_pkg/src/Radar_Cfg.cpp" "/home/giangtin/aev/aev_ws/build/radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o"
   "/home/giangtin/aev/aev_ws/src/radar_pkg/src/ttcRadar.cpp" "/home/giangtin/aev/aev_ws/build/radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar.cpp.o"
+  "/home/giangtin/aev/aev_ws/src/radar_pkg/src/ttcRadar_Cfg.cpp" "/home/giangtin/aev/aev_ws/build/radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -18,7 +18,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/giangtin/aev/aev_ws/devel/include"
+  "devel/include"
   "/home/giangtin/aev/aev_ws/src/radar_pkg/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"

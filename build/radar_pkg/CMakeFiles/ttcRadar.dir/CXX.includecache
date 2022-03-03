@@ -6,27 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/giangtin/aev/aev_ws/devel/include/radar_pkg/radar_msg.h
-string
+/home/giangtin/aev/aev_ws/src/radar_pkg/src/ttcRadar.cpp
+ros/ros.h
 -
-vector
+serial/serial.h
 -
-map
+std_msgs/String.h
 -
-ros/types.h
+std_msgs/Empty.h
 -
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
+ttcRadar_Cfg.h
+/home/giangtin/aev/aev_ws/src/radar_pkg/src/ttcRadar_Cfg.h
+std_msgs/UInt8MultiArray.h
+/home/giangtin/aev/aev_ws/src/radar_pkg/src/std_msgs/UInt8MultiArray.h
 
-/home/giangtin/aev/aev_ws/src/radar_pkg/src/Radar_Cfg.cpp
-Radar_Cfg.h
-/home/giangtin/aev/aev_ws/src/radar_pkg/src/Radar_Cfg.h
+/home/giangtin/aev/aev_ws/src/radar_pkg/src/ttcRadar_Cfg.cpp
+ttcRadar_Cfg.h
+/home/giangtin/aev/aev_ws/src/radar_pkg/src/ttcRadar_Cfg.h
 
-/home/giangtin/aev/aev_ws/src/radar_pkg/src/Radar_Cfg.h
+/home/giangtin/aev/aev_ws/src/radar_pkg/src/ttcRadar_Cfg.h
 string
 -
 ros/ros.h
@@ -49,20 +47,8 @@ cstdlib
 -
 algorithm
 -
-
-/home/giangtin/aev/aev_ws/src/radar_pkg/src/ttcRadar.cpp
-ros/ros.h
+math.h
 -
-serial/serial.h
--
-std_msgs/String.h
--
-std_msgs/Empty.h
--
-Radar_Cfg.h
-/home/giangtin/aev/aev_ws/src/radar_pkg/src/Radar_Cfg.h
-std_msgs/UInt8MultiArray.h
-/home/giangtin/aev/aev_ws/src/radar_pkg/src/std_msgs/UInt8MultiArray.h
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h
@@ -834,5 +820,21 @@ string
 vector
 -
 time.h
+-
+
+devel/include/radar_pkg/radar_msg.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
 -
 

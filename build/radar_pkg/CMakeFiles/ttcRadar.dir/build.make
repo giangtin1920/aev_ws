@@ -81,71 +81,71 @@ radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar.cpp.o.provides: radar_pkg/CMakeFi
 radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar.cpp.o.provides.build: radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar.cpp.o
 
 
-radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o: radar_pkg/CMakeFiles/ttcRadar.dir/flags.make
-radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o: /home/giangtin/aev/aev_ws/src/radar_pkg/src/Radar_Cfg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o"
-	cd /home/giangtin/aev/aev_ws/build/radar_pkg && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o -c /home/giangtin/aev/aev_ws/src/radar_pkg/src/Radar_Cfg.cpp
+radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o: radar_pkg/CMakeFiles/ttcRadar.dir/flags.make
+radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o: /home/giangtin/aev/aev_ws/src/radar_pkg/src/ttcRadar_Cfg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o"
+	cd /home/giangtin/aev/aev_ws/build/radar_pkg && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o -c /home/giangtin/aev/aev_ws/src/radar_pkg/src/ttcRadar_Cfg.cpp
 
-radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.i"
-	cd /home/giangtin/aev/aev_ws/build/radar_pkg && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giangtin/aev/aev_ws/src/radar_pkg/src/Radar_Cfg.cpp > CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.i
+radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.i"
+	cd /home/giangtin/aev/aev_ws/build/radar_pkg && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giangtin/aev/aev_ws/src/radar_pkg/src/ttcRadar_Cfg.cpp > CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.i
 
-radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.s"
-	cd /home/giangtin/aev/aev_ws/build/radar_pkg && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giangtin/aev/aev_ws/src/radar_pkg/src/Radar_Cfg.cpp -o CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.s
+radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.s"
+	cd /home/giangtin/aev/aev_ws/build/radar_pkg && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giangtin/aev/aev_ws/src/radar_pkg/src/ttcRadar_Cfg.cpp -o CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.s
 
-radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o.requires:
+radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o.requires:
 
-.PHONY : radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o.requires
+.PHONY : radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o.requires
 
-radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o.provides: radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o.requires
-	$(MAKE) -f radar_pkg/CMakeFiles/ttcRadar.dir/build.make radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o.provides.build
-.PHONY : radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o.provides
+radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o.provides: radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o.requires
+	$(MAKE) -f radar_pkg/CMakeFiles/ttcRadar.dir/build.make radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o.provides.build
+.PHONY : radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o.provides
 
-radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o.provides.build: radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o
+radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o.provides.build: radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o
 
 
 # Object files for target ttcRadar
 ttcRadar_OBJECTS = \
 "CMakeFiles/ttcRadar.dir/src/ttcRadar.cpp.o" \
-"CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o"
+"CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o"
 
 # External object files for target ttcRadar
 ttcRadar_EXTERNAL_OBJECTS =
 
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar.cpp.o
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: radar_pkg/CMakeFiles/ttcRadar.dir/build.make
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/libroscpp.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/librosconsole.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/librosconsole_log4cxx.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/librosconsole_backend_interface.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/libxmlrpcpp.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/libroscpp_serialization.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/librostime.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/libcpp_common.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/libserial.so
-/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar: radar_pkg/CMakeFiles/ttcRadar.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar"
+devel/lib/radar_pkg/ttcRadar: radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar.cpp.o
+devel/lib/radar_pkg/ttcRadar: radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o
+devel/lib/radar_pkg/ttcRadar: radar_pkg/CMakeFiles/ttcRadar.dir/build.make
+devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/libroscpp.so
+devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/librosconsole.so
+devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/librosconsole_log4cxx.so
+devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/librosconsole_backend_interface.so
+devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/libxmlrpcpp.so
+devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/libroscpp_serialization.so
+devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/librostime.so
+devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/libcpp_common.so
+devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_system.so
+devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libpthread.so
+devel/lib/radar_pkg/ttcRadar: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+devel/lib/radar_pkg/ttcRadar: /opt/ros/melodic/lib/libserial.so
+devel/lib/radar_pkg/ttcRadar: radar_pkg/CMakeFiles/ttcRadar.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../devel/lib/radar_pkg/ttcRadar"
 	cd /home/giangtin/aev/aev_ws/build/radar_pkg && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ttcRadar.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-radar_pkg/CMakeFiles/ttcRadar.dir/build: /home/giangtin/aev/aev_ws/devel/lib/radar_pkg/ttcRadar
+radar_pkg/CMakeFiles/ttcRadar.dir/build: devel/lib/radar_pkg/ttcRadar
 
 .PHONY : radar_pkg/CMakeFiles/ttcRadar.dir/build
 
 radar_pkg/CMakeFiles/ttcRadar.dir/requires: radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar.cpp.o.requires
-radar_pkg/CMakeFiles/ttcRadar.dir/requires: radar_pkg/CMakeFiles/ttcRadar.dir/src/Radar_Cfg.cpp.o.requires
+radar_pkg/CMakeFiles/ttcRadar.dir/requires: radar_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o.requires
 
 .PHONY : radar_pkg/CMakeFiles/ttcRadar.dir/requires
 

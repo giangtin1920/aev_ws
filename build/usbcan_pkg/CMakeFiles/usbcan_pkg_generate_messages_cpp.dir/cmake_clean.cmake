@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/usbcan_pkg_generate_messages_cpp"
-  "/home/giangtin/aev/aev_ws/devel/include/usbcan_pkg/can_msg.h"
+  "../devel/include/usbcan_pkg/can_msg.h"
 )
 
 # Per-language clean rules from dependency scanning.

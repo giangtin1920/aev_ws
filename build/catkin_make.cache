@@ -1,2 +1,2 @@
-radar_pkg:usbcan_pkg
+ttcRadar_pkg
 -DCATKIN_DEVEL_PREFIX=/home/giangtin/aev/aev_ws/devel -DCMAKE_INSTALL_PREFIX=/home/giangtin/aev/aev_ws/install -G Unix Makefiles

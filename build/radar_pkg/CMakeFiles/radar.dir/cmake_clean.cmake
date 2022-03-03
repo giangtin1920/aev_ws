@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/radar.dir/src/Radar.cpp.o"
   "CMakeFiles/radar.dir/src/Radar_Cfg.cpp.o"
-  "/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/radar.pdb"
-  "/home/giangtin/aev/aev_ws/devel/lib/radar_pkg/radar"
+  "../devel/lib/radar_pkg/radar.pdb"
+  "../devel/lib/radar_pkg/radar"
 )
 
 # Per-language clean rules from dependency scanning.

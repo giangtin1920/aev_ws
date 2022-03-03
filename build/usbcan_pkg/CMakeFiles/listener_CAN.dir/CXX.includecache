@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/giangtin/aev/aev_ws/devel/include/usbcan_pkg/can_msg.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-
 /home/giangtin/aev/aev_ws/src/usbcan_pkg/src/CAN.h
 ros/ros.h
 -
@@ -848,5 +832,21 @@ string
 vector
 -
 time.h
+-
+
+devel/include/usbcan_pkg/can_msg.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
 -
 
