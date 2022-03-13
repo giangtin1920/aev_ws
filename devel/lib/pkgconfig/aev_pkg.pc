@@ -1,0 +1,8 @@
+prefix=/home/giangtin/aev/aev_ws/devel
+
+Name: aev_pkg
+Description: Description of aev_pkg
+Version: 0.0.0
+Cflags: -I/home/giangtin/aev/aev_ws/devel/include -I/home/giangtin/aev/aev_ws/src/aev_pkg/include
+Libs: -L${prefix}/lib -laev_pkg
+Requires: roscpp rospy std_msgs

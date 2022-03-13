@@ -1,6 +1,0 @@
-[submodule "src/radar_pkg"]
-	path = src/radar_pkg
-	url = https://github.com/giangtin1920/radar_pkg.git
-[submodule "src/usbCAN_pkg"]
-	path = src/usbCAN_pkg
-	url = https://github.com/giangtin1920/usbCAN_pkg

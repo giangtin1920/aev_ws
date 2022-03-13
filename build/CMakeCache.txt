@@ -284,6 +284,12 @@ _gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
 //Path to a file.
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
+//Value Computed by CMake
+aev_pkg_BINARY_DIR:STATIC=/home/giangtin/aev/aev_ws/build/aev_pkg
+
+//Value Computed by CMake
+aev_pkg_SOURCE_DIR:STATIC=/home/giangtin/aev/aev_ws/src/aev_pkg
+
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/melodic/share/catkin/cmake
 
@@ -366,12 +372,6 @@ message_generation_DIR:PATH=/opt/ros/melodic/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/melodic/share/message_runtime/cmake
 
-//Value Computed by CMake
-radar_pkg_BINARY_DIR:STATIC=/home/giangtin/aev/aev_ws/build/radar_pkg
-
-//Value Computed by CMake
-radar_pkg_SOURCE_DIR:STATIC=/home/giangtin/aev/aev_ws/src/radar_pkg
-
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/melodic/share/rosconsole/cmake
 
@@ -398,18 +398,6 @@ serial_DIR:PATH=/opt/ros/melodic/share/serial/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
-
-//Value Computed by CMake
-ttcRadar_pkg_BINARY_DIR:STATIC=/home/giangtin/aev/aev_ws/build/ttcRadar_pkg
-
-//Value Computed by CMake
-ttcRadar_pkg_SOURCE_DIR:STATIC=/home/giangtin/aev/aev_ws/src/ttcRadar_pkg
-
-//Value Computed by CMake
-usbcan_pkg_BINARY_DIR:STATIC=/home/giangtin/aev/aev_ws/build/usbcan_pkg
-
-//Value Computed by CMake
-usbcan_pkg_SOURCE_DIR:STATIC=/home/giangtin/aev/aev_ws/src/usbcan_pkg
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake
