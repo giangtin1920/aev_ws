@@ -45,8 +45,8 @@ As a workspace to read framedata from mmWave_AOP_MistralRadar(IWR6843)
 
 ### Run node radar in another Terminal
 
-    rosrun radar_pkg radar
+    rosrun aev_pkg ttcRadar
     
 ### Run node listener in another Terminal
 
-    rosrun radar_pkg listener
+    rosrun aev_pkg ttcListener
