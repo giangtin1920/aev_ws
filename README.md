@@ -2,6 +2,12 @@
 
 aev/aev_ws
 
+**Note**: branch of ttcRadar_pkg `https://github.com/giangtin1920/ttcRadar_pkg` named aev_pkg.
+
+*
+
+*
+
 ## Description
 
 As a workspace to read framedata from mmWave_AOP_MistralRadar(IWR6843)
