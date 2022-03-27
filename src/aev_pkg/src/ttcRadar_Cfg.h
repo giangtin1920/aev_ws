@@ -21,7 +21,8 @@ using namespace std;
 #define ser_Data_Port_Name "/dev/ttyUSB1"
 
 // switch(modeRadar) case ENABLE_RADAR_TTC: ...
-#define modeRadar           0
+#define modeRadar           1
+
 #define ENABLE_RADAR_TTC    1
 #define ENABLE_RADAR_MPC    0
 
@@ -37,13 +38,17 @@ using namespace std;
 // Output of Radar
 typedef struct
 {
-    vector <bool> isObject;
+    uint16_t numObj = 0;
+    vector <uint8_t> IdObj;
     vector <bool> isApproach;
-    uint16_t numTrackedObj = 0;
-    uint32_t msg_counter = 0;
-    vector <float>  distance = {20.0};
-    vector <float> velocity;
-    vector <float>  timeCollision; 
+    vector <float> alpha;
+    vector <float> posX;
+    vector <float>  posY;
+    vector <float>  dis;
+    vector <float> vel;
+    vector <float>  ttc;
+    bool isObject;
+
 } Radar_Output_Struct;
 
 struct structPacket
@@ -119,6 +124,7 @@ union byte2float
 
 class ttcRAdarObj
 {
+
     public:
     ttcRAdarObj();
     // explicit
@@ -148,6 +154,7 @@ class ttcRAdarObj
     bool data_handler(std_msgs::UInt8MultiArray raw_data, uint16_t dataLen);
     bool processingGtrackTarget(void);
     float processingPtMinDistance (structHeader frameHeader);
+    void clear_msg(aev_pkg::ttcRadar_msg &msg);
 
 
     private:

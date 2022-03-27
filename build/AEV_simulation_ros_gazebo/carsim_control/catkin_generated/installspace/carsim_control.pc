@@ -1,0 +1,8 @@
+prefix=/home/giangtin/aev/aev_ws/install
+
+Name: carsim_control
+Description: Description of carsim_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -8,6 +8,7 @@ aev_pkg::ttcRadar_msg ttcRadar_output_msg;
 
 void timer_uart_Callback(const ros::TimerEvent& )
 {
+    static uint32_t msg_counter = 0;
     uint16_t dataLen = ttcRadarObj.ser_Data_Port.available();
     if (!dataLen) return;
 
@@ -17,27 +18,36 @@ void timer_uart_Callback(const ros::TimerEvent& )
 
     // Processing the raw_data
     if (!ttcRadarObj.data_handler(raw_data, dataLen)) return;
-    switch (modeRadar)
-    {
-        case ENABLE_RADAR_TTC:
-        {
-            for (auto i = 0; i < ttcRadarObj.Output.numTrackedObj; i++)
-            {
-                ttcRadar_output_msg.msg_counter = ttcRadarObj.Output.msg_counter;
-                ttcRadar_output_msg.isObject = ttcRadarObj.Output.isObject[i];
-                ttcRadar_output_msg.distance = ttcRadarObj.Output.distance[i];
-                ttcRadar_pub.publish(ttcRadar_output_msg);
-                ROS_INFO("Public message ok (TTC) \r\n");
+    switch (modeRadar) {
+        case ENABLE_RADAR_TTC: {
+            msg_counter++;
+            ttcRadarObj.clear_msg(ttcRadar_output_msg);
+            if (!ttcRadarObj.Output.numObj) ttcRadar_output_msg.isObject = false;
+            for (auto i = 0; i < ttcRadarObj.Output.numObj; i++) {
+                ttcRadar_output_msg.numObj = ttcRadarObj.Output.numObj;
+                ttcRadar_output_msg.IdObj.push_back(ttcRadarObj.Output.IdObj[i]);
+                ttcRadar_output_msg.isApproach.push_back(ttcRadarObj.Output.isApproach[i]);
+                ttcRadar_output_msg.alpha.push_back(ttcRadarObj.Output.alpha[i]);
+                ttcRadar_output_msg.posX.push_back(ttcRadarObj.ptTargets.posX[i]);
+                ttcRadar_output_msg.posY.push_back(ttcRadarObj.ptTargets.posY[i]);
+                ttcRadar_output_msg.dis.push_back(ttcRadarObj.Output.dis[i]);
+                ttcRadar_output_msg.vel.push_back(ttcRadarObj.Output.vel[i]);
+                ttcRadar_output_msg.ttc.push_back(ttcRadarObj.Output.ttc[i]);
+
+                ttcRadar_output_msg.msg_counter = msg_counter;
+                ttcRadar_output_msg.isObject = ttcRadarObj.Output.isObject;
             }
+            ttcRadar_pub.publish(ttcRadar_output_msg);
+            ROS_INFO("Public message ok (TTC) \r\n");
         }
         break;
 
-        case ENABLE_RADAR_MPC:
-        {
-            // Send ros message
-            ttcRadar_output_msg.msg_counter = ttcRadarObj.Output.msg_counter;
-            ttcRadar_output_msg.isObject = ttcRadarObj.Output.isObject[0];
-            ttcRadar_output_msg.distance = ttcRadarObj.Output.distance[0];
+        case ENABLE_RADAR_MPC: {
+            msg_counter++;
+            ttcRadarObj.clear_msg(ttcRadar_output_msg);
+            ttcRadar_output_msg.msg_counter = msg_counter;
+            ttcRadar_output_msg.isObject = ttcRadarObj.Output.isObject;
+            ttcRadar_output_msg.distance = ttcRadarObj.Output.dis[0];
             ttcRadar_pub.publish(ttcRadar_output_msg);
             ROS_INFO("Public message ok (MPC) \r\n");
         }
@@ -45,8 +55,7 @@ void timer_uart_Callback(const ros::TimerEvent& )
 
         default:
         break;
-    }
-        
+    }      
 }
 
 int main (int argc, char** argv)
@@ -70,8 +79,7 @@ int main (int argc, char** argv)
     ttcRadarObj.start_radar();
 
     // While loop do nothing, data received by interrupt
-    while(ros::ok())
-    {
+    while(ros::ok()) {
         ros::spinOnce();
     }   
 }

@@ -1,0 +1,8 @@
+prefix=/home/giangtin/aev/aev_ws/devel
+
+Name: carsim_discription
+Description: Description of carsim_discription
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

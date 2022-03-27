@@ -1,5 +1,25 @@
 (cl:in-package aev_pkg-msg)
-(cl:export '(MSG_COUNTER-VAL
+(cl:export '(NUMOBJ-VAL
+          NUMOBJ
+          IDOBJ-VAL
+          IDOBJ
+          ISAPPROACH-VAL
+          ISAPPROACH
+          ALPHA-VAL
+          ALPHA
+          POSX-VAL
+          POSX
+          POSY-VAL
+          POSY
+          DIS-VAL
+          DIS
+          VEL-VAL
+          VEL
+          TTC-VAL
+          TTC
+          SAFETYZONE-VAL
+          SAFETYZONE
+          MSG_COUNTER-VAL
           MSG_COUNTER
           ISOBJECT-VAL
           ISOBJECT

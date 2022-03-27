@@ -1,2 +1,2 @@
 aev_pkg
--DCATKIN_DEVEL_PREFIX=/home/giangtin/aev/aev_ws/devel -DCMAKE_INSTALL_PREFIX=/home/giangtin/aev/aev_ws/install -G Unix Makefiles
+-G CodeBlocks - Unix Makefiles -DCMAKE_BUILD_TYPE=Debug -DCATKIN_DEVEL_PREFIX=/home/giangtin/aev/aev_ws/devel -DCMAKE_INSTALL_PREFIX=/home/giangtin/aev/aev_ws/install
