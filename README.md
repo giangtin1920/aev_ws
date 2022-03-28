@@ -56,3 +56,12 @@ As a workspace to read framedata from mmWave_AOP_MistralRadar(IWR6843)
 ### Run node listener in another Terminal
 
     rosrun aev_pkg ttcListener
+    
+### Application GUI in QT_ROS
+
+https://github.com/giangtin1920/radarScanQT_ROS
+    
+### Simulation in Gazebo
+
+https://github.com/giangtin1920/AEV_simulation_ros_gazebo
+    
