@@ -521,7 +521,7 @@ bool ttcRAdarObj::processingGtrackTarget(void)
         ROS_INFO("alpha:        deg,     %f", Output.alpha[i]*180/M_PI);
         ROS_INFO("distance:     m,       %f", Output.dis[i]);
         ROS_INFO("gamma:        deg,     %f", gamma*180/M_PI);
-        ROS_INFO("velocity::    m/s,     %f", Output.vel[i]);
+        ROS_INFO("velocity:    m/s,     %f", Output.vel[i]);
         ROS_INFO("is Approach:  m,       %f", ttcPosX);
     }
 
