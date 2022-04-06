@@ -100,7 +100,7 @@ void ttcRAdarObj::start_radar(void)
     msg = "adcbufCfg -1 0 1 1 1";
     send_cfg(msg);
 
-    msg = "profileCfg 0 60 100 25 69 0 0 50 1 256 6000 0 0 30";
+    msg = "profileCfg 0 60 20 10 35 0 0 40 10 256 12500 0 0 30";
     send_cfg(msg);
 
     msg = "chirpCfg 0 0 0 0 0 0 0 1";
@@ -113,7 +113,7 @@ void ttcRAdarObj::start_radar(void)
     send_cfg(msg);
 
     // 55 is 55ms delay between 2 output frame
-    msg = "frameCfg 0 1 32 0 55 1 0";
+    msg = "frameCfg 0 2 32 0 55 1 0";
     send_cfg(msg);
 
     msg = "lowPower 0 0";
@@ -123,9 +123,9 @@ void ttcRAdarObj::start_radar(void)
     send_cfg(msg);
 
     //Threshold scale [0..100]
-    msg = "cfarCfg -1 0 2 8 4 3 0 20 0";
+    msg = "cfarCfg -1 0 2 8 4 3 0 2 0";
     send_cfg(msg);
-    msg = "cfarCfg -1 1 0 4 2 3 1 15 0";
+    msg = "cfarCfg -1 1 0 4 2 3 1 10 0";
     send_cfg(msg);
 
     msg = "multiObjBeamForming -1 1 0.5";
@@ -162,15 +162,15 @@ void ttcRAdarObj::start_radar(void)
     send_cfg(msg);
 
     // View config (degrees) : [ -1 <minAzimuthDeg> <maxAzimuthDeg> <minElevationDeg> <maxElevationDeg> ]
-    msg = "aoaFovCfg -1 -45 45 -10 10";
+    msg = "aoaFovCfg -1 -60 60 0 30";
     send_cfg(msg);
 
     // Config point filtering in range direction (meter)
-    msg = "cfarFovCfg -1 0 0 20";
+    msg = "cfarFovCfg -1 0 0 30";
     send_cfg(msg);
 
     // Config point filtering in Doppler direction (meter/sec)
-    msg = "cfarFovCfg -1 1 -10 10";
+    msg = "cfarFovCfg -1 1 -20 20";
     send_cfg(msg);
 
     // msg = "calibData 0 0 0";
@@ -179,25 +179,25 @@ void ttcRAdarObj::start_radar(void)
     // *****************TRACKING COMMANDS*****************************
     // https://dev.ti.com/tirex/explore/content/mmwave_industrial_toolbox_4_7_0/labs/people_counting/docs/3D_people_counting_tracker_layer_tuning_guide.pdf
     
-    msg = "staticBoundaryBox -8 8 0 20 -1 1";
+    msg = "staticBoundaryBox -3 3 0 2 0 2";
     send_cfg(msg);
 
-    msg = "boundaryBox -8 8 0 20 -1 1";
+    msg = "boundaryBox -5 5 0 25 0 2";
     send_cfg(msg);
 
-    msg = "gatingParam 3 2 2 2 20";
+    msg = "gatingParam 50 4 6 4 20";
     send_cfg(msg);
 
-    msg = "stateParam 15 10 10 20 5";
+    msg = "stateParam 3 1 1 1 1";
     send_cfg(msg);
 
-    msg = "allocationParam 200 150 0.05 10 0.3 10";
+    msg = "allocationParam 200 150 0.05 5 16 30";
     send_cfg(msg);
 
-    msg = "maxAcceleration 2 2 2";
+    msg = "maxAcceleration 8 8 8";
     send_cfg(msg);
 
-    msg = "trackingCfg 1 2 250 20 100 50 55 90";
+    msg = "trackingCfg 1 2 250 10 200 50 55 90";
     send_cfg(msg);
 
     // *****************STATIC DETECTION COMMANDS*********************
@@ -518,11 +518,11 @@ bool ttcRAdarObj::processingGtrackTarget(void)
         Output.ttc.push_back(Output.dis[i] / abs(Output.vel[i]));
         if (Output.ttc.at(i) > 99) Output.ttc.at(i) = 99;
         ROS_INFO("ID Track Object =============, %u ", ptTargets.tid[i]);
-        ROS_INFO("alpha:        deg,     %f", Output.alpha[i]*180/M_PI);
+//        ROS_INFO("alpha:        deg,     %f", Output.alpha[i]*180/M_PI);
         ROS_INFO("distance:     m,       %f", Output.dis[i]);
-        ROS_INFO("gamma:        deg,     %f", gamma*180/M_PI);
+//        ROS_INFO("gamma:        deg,     %f", gamma*180/M_PI);
         ROS_INFO("velocity:    m/s,     %f", Output.vel[i]);
-        ROS_INFO("is Approach:  m,       %f", ttcPosX);
+//        ROS_INFO("is Approach:  m,       %f", ttcPosX);
     }
 
     return true;

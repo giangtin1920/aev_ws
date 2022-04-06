@@ -45,3 +45,6 @@ build/aev_pkg/catkin_generated/aev_pkg-msg-extras.cmake.installspace.in
 build/aev_pkg/catkin_generated/installspace/aev_pkg-msg-extras.cmake
 build/aev_pkg/cmake/aev_pkg-genmsg-context.py
 build/aev_pkg/cmake/aev_pkg-genmsg.cmake
+build/aev_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar_Cfg.cpp.o
+build/aev_pkg/CMakeFiles/ttcRadar.dir/src/ttcRadar.cpp.o
+devel/lib/aev_pkg/ttcRadar
