@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg"
+messages_str = "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg"
 services_str = ""
 pkg_name = "aev_pkg"
 dependencies_str = "std_msgs"

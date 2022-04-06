@@ -363,17 +363,17 @@ aev_pkg_generate_messages_cpp/fast:
 .PHONY : aev_pkg_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named _aev_pkg_generate_messages_check_deps_ttcRadar_msg
+# Target rules for targets named _aev_pkg_generate_messages_check_deps_radar_msg
 
 # Build rule for target.
-_aev_pkg_generate_messages_check_deps_ttcRadar_msg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _aev_pkg_generate_messages_check_deps_ttcRadar_msg
-.PHONY : _aev_pkg_generate_messages_check_deps_ttcRadar_msg
+_aev_pkg_generate_messages_check_deps_radar_msg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _aev_pkg_generate_messages_check_deps_radar_msg
+.PHONY : _aev_pkg_generate_messages_check_deps_radar_msg
 
 # fast build rule for target.
-_aev_pkg_generate_messages_check_deps_ttcRadar_msg/fast:
-	$(MAKE) -f aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_ttcRadar_msg.dir/build.make aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_ttcRadar_msg.dir/build
-.PHONY : _aev_pkg_generate_messages_check_deps_ttcRadar_msg/fast
+_aev_pkg_generate_messages_check_deps_radar_msg/fast:
+	$(MAKE) -f aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_radar_msg.dir/build.make aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_radar_msg.dir/build
+.PHONY : _aev_pkg_generate_messages_check_deps_radar_msg/fast
 
 #=============================================================================
 # Target rules for targets named roscpp_generate_messages_py
@@ -676,7 +676,7 @@ help:
 	@echo "... aev_pkg_generate_messages_eus"
 	@echo "... aev_pkg_gencpp"
 	@echo "... aev_pkg_generate_messages_cpp"
-	@echo "... _aev_pkg_generate_messages_check_deps_ttcRadar_msg"
+	@echo "... _aev_pkg_generate_messages_check_deps_radar_msg"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_lisp"

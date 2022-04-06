@@ -4,7 +4,7 @@
 
 ttcRAdarObj ttcRadarObj;
 ros::Publisher ttcRadar_pub;
-aev_pkg::ttcRadar_msg ttcRadar_output_msg;
+aev_pkg::radar_msg ttcRadar_output_msg;
 
 void timer_uart_Callback(const ros::TimerEvent& )
 {
@@ -66,7 +66,7 @@ int main (int argc, char** argv)
     ros::init(argc, argv, "ttcRadar");
     ros::NodeHandle n;
 //    ttcRadar_pub = n.advertise<aev_pkg::ttcRadar_msg>("ttcRadar_Data", 1000);
-    ttcRadar_pub = n.advertise<aev_pkg::ttcRadar_msg>("Radar_Data", 1000);
+    ttcRadar_pub = n.advertise<aev_pkg::radar_msg>("Radar_Data", 1000);
     
     // Timer to receive data from Radar
     ros::Timer timer_uart = n.createTimer(ros::Duration(0.05), timer_uart_Callback);

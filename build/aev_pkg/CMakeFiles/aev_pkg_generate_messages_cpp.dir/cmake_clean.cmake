@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/aev_pkg_generate_messages_cpp"
-  "/home/giangtin/aev/aev_ws/devel/include/aev_pkg/ttcRadar_msg.h"
+  "/home/giangtin/aev/aev_ws/devel/include/aev_pkg/radar_msg.h"
 )
 
 # Per-language clean rules from dependency scanning.

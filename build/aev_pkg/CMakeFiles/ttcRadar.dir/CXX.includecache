@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/giangtin/aev/aev_ws/devel/include/aev_pkg/ttcRadar_msg.h
+/home/giangtin/aev/aev_ws/devel/include/aev_pkg/radar_msg.h
 string
 -
 vector
@@ -41,8 +41,8 @@ std_msgs/String.h
 -
 std_msgs/Empty.h
 -
-aev_pkg/ttcRadar_msg.h
-/home/giangtin/aev/aev_ws/src/aev_pkg/src/aev_pkg/ttcRadar_msg.h
+aev_pkg/radar_msg.h
+/home/giangtin/aev/aev_ws/src/aev_pkg/src/aev_pkg/radar_msg.h
 std_msgs/UInt8MultiArray.h
 /home/giangtin/aev/aev_ws/src/aev_pkg/src/std_msgs/UInt8MultiArray.h
 vector

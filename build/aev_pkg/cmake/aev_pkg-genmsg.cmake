@@ -17,9 +17,9 @@ add_custom_target(aev_pkg_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg" NAME_WE)
+get_filename_component(_filename "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg" NAME_WE)
 add_custom_target(_aev_pkg_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "aev_pkg" "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "aev_pkg" "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg" ""
 )
 
 #
@@ -29,7 +29,7 @@ add_custom_target(_aev_pkg_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(aev_pkg
-  "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg"
+  "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/aev_pkg
@@ -49,7 +49,7 @@ add_custom_target(aev_pkg_generate_messages_cpp
 add_dependencies(aev_pkg_generate_messages aev_pkg_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg" NAME_WE)
+get_filename_component(_filename "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg" NAME_WE)
 add_dependencies(aev_pkg_generate_messages_cpp _aev_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -62,7 +62,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS aev_pkg_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(aev_pkg
-  "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg"
+  "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/aev_pkg
@@ -82,7 +82,7 @@ add_custom_target(aev_pkg_generate_messages_eus
 add_dependencies(aev_pkg_generate_messages aev_pkg_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg" NAME_WE)
+get_filename_component(_filename "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg" NAME_WE)
 add_dependencies(aev_pkg_generate_messages_eus _aev_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -95,7 +95,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS aev_pkg_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(aev_pkg
-  "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg"
+  "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/aev_pkg
@@ -115,7 +115,7 @@ add_custom_target(aev_pkg_generate_messages_lisp
 add_dependencies(aev_pkg_generate_messages aev_pkg_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg" NAME_WE)
+get_filename_component(_filename "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg" NAME_WE)
 add_dependencies(aev_pkg_generate_messages_lisp _aev_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -128,7 +128,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS aev_pkg_generate_messages_lisp)
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(aev_pkg
-  "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg"
+  "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/aev_pkg
@@ -148,7 +148,7 @@ add_custom_target(aev_pkg_generate_messages_nodejs
 add_dependencies(aev_pkg_generate_messages aev_pkg_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg" NAME_WE)
+get_filename_component(_filename "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg" NAME_WE)
 add_dependencies(aev_pkg_generate_messages_nodejs _aev_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -161,7 +161,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS aev_pkg_generate_messages_nodejs)
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(aev_pkg
-  "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg"
+  "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/aev_pkg
@@ -181,7 +181,7 @@ add_custom_target(aev_pkg_generate_messages_py
 add_dependencies(aev_pkg_generate_messages aev_pkg_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg" NAME_WE)
+get_filename_component(_filename "/home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg" NAME_WE)
 add_dependencies(aev_pkg_generate_messages_py _aev_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

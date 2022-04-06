@@ -1,8 +1,8 @@
 
 "use strict";
 
-let ttcRadar_msg = require('./ttcRadar_msg.js');
+let radar_msg = require('./radar_msg.js');
 
 module.exports = {
-  ttcRadar_msg: ttcRadar_msg,
+  radar_msg: radar_msg,
 };

@@ -6,7 +6,7 @@
 #include <serial/serial.h>
 #include <std_msgs/String.h>
 #include <std_msgs/Empty.h>
-#include "aev_pkg/ttcRadar_msg.h"
+#include "aev_pkg/radar_msg.h"
 #include "std_msgs/UInt8MultiArray.h"
 #include <vector>
 #include <iostream>
@@ -17,8 +17,8 @@ using namespace std;
 
 #define CFG_LOOP_RATE 50
 
-#define ser_Cfg_Port_Name "/dev/ttyUSB0"
-#define ser_Data_Port_Name "/dev/ttyUSB1"
+#define ser_Cfg_Port_Name "/dev/ttyUSB_radarCfg"
+#define ser_Data_Port_Name "/dev/ttyUSB_radarData"
 
 // switch(modeRadar) case ENABLE_RADAR_TTC: ...
 #define modeRadar           1
@@ -154,7 +154,7 @@ class ttcRAdarObj
     bool data_handler(std_msgs::UInt8MultiArray raw_data, uint16_t dataLen);
     bool processingGtrackTarget(void);
     float processingPtMinDistance (structHeader frameHeader);
-    void clear_msg(aev_pkg::ttcRadar_msg &msg);
+    void clear_msg(aev_pkg::radar_msg &msg);
 
 
     private:

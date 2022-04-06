@@ -162,7 +162,7 @@ void ttcRAdarObj::start_radar(void)
     send_cfg(msg);
 
     // View config (degrees) : [ -1 <minAzimuthDeg> <maxAzimuthDeg> <minElevationDeg> <maxElevationDeg> ]
-    msg = "aoaFovCfg -1 -40 40 -10 10";
+    msg = "aoaFovCfg -1 -45 45 -10 10";
     send_cfg(msg);
 
     // Config point filtering in range direction (meter)
@@ -677,7 +677,7 @@ bool ttcRAdarObj::data_handler( std_msgs::UInt8MultiArray raw_data, uint16_t dat
     return is_data_ok;
 }
 
-void ttcRAdarObj::clear_msg(aev_pkg::ttcRadar_msg &msg)
+void ttcRAdarObj::clear_msg(aev_pkg::radar_msg &msg)
 {
     msg.numObj = 0;
     msg.IdObj.clear();

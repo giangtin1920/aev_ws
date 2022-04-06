@@ -111,11 +111,11 @@
 					<DistClean command="/usr/bin/make -f &quot;/home/giangtin/aev/aev_ws/build/aev_pkg/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="_aev_pkg_generate_messages_check_deps_ttcRadar_msg">
+			<Target title="_aev_pkg_generate_messages_check_deps_radar_msg">
 				<Option working_dir="/home/giangtin/aev/aev_ws/build/aev_pkg"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/giangtin/aev/aev_ws/build/aev_pkg/Makefile&quot;  VERBOSE=1 _aev_pkg_generate_messages_check_deps_ttcRadar_msg"/>
+					<Build command="/usr/bin/make -f &quot;/home/giangtin/aev/aev_ws/build/aev_pkg/Makefile&quot;  VERBOSE=1 _aev_pkg_generate_messages_check_deps_radar_msg"/>
 					<CompileFile command="/usr/bin/make -f &quot;/home/giangtin/aev/aev_ws/build/aev_pkg/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -f &quot;/home/giangtin/aev/aev_ws/build/aev_pkg/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -f &quot;/home/giangtin/aev/aev_ws/build/aev_pkg/Makefile&quot;  VERBOSE=1 clean"/>

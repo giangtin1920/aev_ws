@@ -258,19 +258,19 @@ aev_pkg_generate_messages_cpp/fast:
 .PHONY : aev_pkg_generate_messages_cpp/fast
 
 # Convenience name for target.
-aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_ttcRadar_msg.dir/rule:
-	cd /home/giangtin/aev/aev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_ttcRadar_msg.dir/rule
-.PHONY : aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_ttcRadar_msg.dir/rule
+aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_radar_msg.dir/rule:
+	cd /home/giangtin/aev/aev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_radar_msg.dir/rule
+.PHONY : aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_radar_msg.dir/rule
 
 # Convenience name for target.
-_aev_pkg_generate_messages_check_deps_ttcRadar_msg: aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_ttcRadar_msg.dir/rule
+_aev_pkg_generate_messages_check_deps_radar_msg: aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_radar_msg.dir/rule
 
-.PHONY : _aev_pkg_generate_messages_check_deps_ttcRadar_msg
+.PHONY : _aev_pkg_generate_messages_check_deps_radar_msg
 
 # fast build rule for target.
-_aev_pkg_generate_messages_check_deps_ttcRadar_msg/fast:
-	cd /home/giangtin/aev/aev_ws/build && $(MAKE) -f aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_ttcRadar_msg.dir/build.make aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_ttcRadar_msg.dir/build
-.PHONY : _aev_pkg_generate_messages_check_deps_ttcRadar_msg/fast
+_aev_pkg_generate_messages_check_deps_radar_msg/fast:
+	cd /home/giangtin/aev/aev_ws/build && $(MAKE) -f aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_radar_msg.dir/build.make aev_pkg/CMakeFiles/_aev_pkg_generate_messages_check_deps_radar_msg.dir/build
+.PHONY : _aev_pkg_generate_messages_check_deps_radar_msg/fast
 
 # Convenience name for target.
 aev_pkg/CMakeFiles/roscpp_generate_messages_py.dir/rule:
@@ -657,8 +657,8 @@ help:
 	@echo "... install/local"
 	@echo "... aev_pkg_gencpp"
 	@echo "... aev_pkg_generate_messages_cpp"
-	@echo "... _aev_pkg_generate_messages_check_deps_ttcRadar_msg"
 	@echo "... list_install_components"
+	@echo "... _aev_pkg_generate_messages_check_deps_radar_msg"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... edit_cache"

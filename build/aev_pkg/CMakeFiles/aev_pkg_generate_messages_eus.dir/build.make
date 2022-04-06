@@ -53,21 +53,21 @@ CMAKE_BINARY_DIR = /home/giangtin/aev/aev_ws/build
 # Include the progress variables for this target.
 include aev_pkg/CMakeFiles/aev_pkg_generate_messages_eus.dir/progress.make
 
-aev_pkg/CMakeFiles/aev_pkg_generate_messages_eus: /home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg/msg/ttcRadar_msg.l
+aev_pkg/CMakeFiles/aev_pkg_generate_messages_eus: /home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg/msg/radar_msg.l
 aev_pkg/CMakeFiles/aev_pkg_generate_messages_eus: /home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg/manifest.l
 
 
-/home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg/msg/ttcRadar_msg.l: /opt/ros/melodic/lib/geneus/gen_eus.py
-/home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg/msg/ttcRadar_msg.l: /home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from aev_pkg/ttcRadar_msg.msg"
-	cd /home/giangtin/aev/aev_ws/build/aev_pkg && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/giangtin/aev/aev_ws/src/aev_pkg/msg/ttcRadar_msg.msg -Iaev_pkg:/home/giangtin/aev/aev_ws/src/aev_pkg/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p aev_pkg -o /home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg/msg
+/home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg/msg/radar_msg.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg/msg/radar_msg.l: /home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from aev_pkg/radar_msg.msg"
+	cd /home/giangtin/aev/aev_ws/build/aev_pkg && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/giangtin/aev/aev_ws/src/aev_pkg/msg/radar_msg.msg -Iaev_pkg:/home/giangtin/aev/aev_ws/src/aev_pkg/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p aev_pkg -o /home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg/msg
 
 /home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg/manifest.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/giangtin/aev/aev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for aev_pkg"
 	cd /home/giangtin/aev/aev_ws/build/aev_pkg && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg aev_pkg std_msgs
 
 aev_pkg_generate_messages_eus: aev_pkg/CMakeFiles/aev_pkg_generate_messages_eus
-aev_pkg_generate_messages_eus: /home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg/msg/ttcRadar_msg.l
+aev_pkg_generate_messages_eus: /home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg/msg/radar_msg.l
 aev_pkg_generate_messages_eus: /home/giangtin/aev/aev_ws/devel/share/roseus/ros/aev_pkg/manifest.l
 aev_pkg_generate_messages_eus: aev_pkg/CMakeFiles/aev_pkg_generate_messages_eus.dir/build.make
 
