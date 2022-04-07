@@ -100,7 +100,7 @@ void ttcRAdarObj::start_radar(void)
     msg = "adcbufCfg -1 0 1 1 1";
     send_cfg(msg);
 
-    msg = "profileCfg 0 60 20 10 35 0 0 40 10 256 12500 0 0 30";
+    msg = "profileCfg 0 60 5 5 16 0 0 20 10 256 12500 0 0 30";
     send_cfg(msg);
 
     msg = "chirpCfg 0 0 0 0 0 0 0 1";
@@ -182,7 +182,7 @@ void ttcRAdarObj::start_radar(void)
     msg = "staticBoundaryBox -3 3 0 2 0 2";
     send_cfg(msg);
 
-    msg = "boundaryBox -5 5 0 25 0 2";
+    msg = "boundaryBox -10 10 0 30 0 2";
     send_cfg(msg);
 
     msg = "gatingParam 50 4 6 4 20";
@@ -197,7 +197,7 @@ void ttcRAdarObj::start_radar(void)
     msg = "maxAcceleration 8 8 8";
     send_cfg(msg);
 
-    msg = "trackingCfg 1 2 250 10 200 50 55 90";
+    msg = "trackingCfg 1 2 500 20 200 50 55 90";
     send_cfg(msg);
 
     // *****************STATIC DETECTION COMMANDS*********************
