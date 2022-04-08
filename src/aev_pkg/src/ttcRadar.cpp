@@ -9,12 +9,12 @@ aev_pkg::radar_msg ttcRadar_output_msg;
 void timer_uart_Callback(const ros::TimerEvent& )
 {
     static uint32_t msg_counter = 0;
-    uint16_t dataLen = ttcRadarObj.ser_Data_Port.available();
-    if (!dataLen) return;
-
     std_msgs::UInt8MultiArray raw_data;
+    uint16_t dataLen = ttcRadarObj.ser_Data_Port.available();
     ttcRadarObj.ser_Data_Port.read(raw_data.data, dataLen);
+
     ROS_INFO("Read: %u byte -----------------------------,", dataLen);
+    if (!dataLen) return;
 
     // Processing the raw_data
     if (!ttcRadarObj.data_handler(raw_data, dataLen)) return;
@@ -41,8 +41,8 @@ void timer_uart_Callback(const ros::TimerEvent& )
                 ttcRadar_output_msg.distance = ttcRadarObj.Output.dis[0];
             }
             ttcRadar_pub.publish(ttcRadar_output_msg);
-            // ROS_INFO("distance: %f ", ttcRadar_output_msg.distance);
             ROS_INFO("Public message ok (TTC) \r\n");
+//            ROS_INFO("distance: %f ", ttcRadar_output_msg.distance);
         }
         break;
 
@@ -59,14 +59,13 @@ void timer_uart_Callback(const ros::TimerEvent& )
 
         default:
         break;
-    }      
+    }
 }
 
 int main (int argc, char** argv)
 {
     ros::init(argc, argv, "ttcRadar");
     ros::NodeHandle n;
-//    ttcRadar_pub = n.advertise<aev_pkg::ttcRadar_msg>("ttcRadar_Data", 1000);
     ttcRadar_pub = n.advertise<aev_pkg::radar_msg>("Radar_Data", 1000);
     
     // Timer to receive data from Radar

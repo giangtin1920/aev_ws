@@ -80,135 +80,132 @@ void ttcRAdarObj::send_cfg(std::string msg)
 
 void ttcRAdarObj::start_radar(void)
 {
-    std::string msg;
+  std::string msg;
+  msg = "sensorStop";
+  send_cfg(msg);
 
-    msg = "sensorStop";
-    send_cfg(msg);
+  msg = "flushCfg";
+  send_cfg(msg);
 
-    msg = "flushCfg";
-    send_cfg(msg);
+  msg = "  dfeDataOutputMode  1  ";
+  send_cfg(msg);
 
-    msg = "dfeDataOutputMode 1";
-    send_cfg(msg);
+  msg = "  channelCfg  15  7  0  ";
+  send_cfg(msg);
 
-    msg = "channelCfg 15 7 0";
-    send_cfg(msg);
+  msg = "  adcCfg  2  1  ";
+  send_cfg(msg);
 
-    msg = "adcCfg 2 1";
-    send_cfg(msg);
+  msg = "  adcbufCfg  -1  0  1  1  1  ";
+  send_cfg(msg);
 
-    msg = "adcbufCfg -1 0 1 1 1";
-    send_cfg(msg);
+  msg = "  profileCfg  0  60  6  5  22  0  0  50  3  129  12500  0  0  30  ";
+  send_cfg(msg);
 
-    msg = "profileCfg 0 60 5 5 16 0 0 20 10 256 12500 0 0 30";
-    send_cfg(msg);
+  msg = "  chirpCfg  0  0  0  0  0  0  0  1  ";
+  send_cfg(msg);
 
-    msg = "chirpCfg 0 0 0 0 0 0 0 1";
-    send_cfg(msg);
+  msg = "  chirpCfg  1  1  0  0  0  0  0  4  ";
+  send_cfg(msg);
 
-    msg = "chirpCfg 1 1 0 0 0 0 0 4";
-    send_cfg(msg);
+  msg = "  chirpCfg  2  2  0  0  0  0  0  2  ";
+  send_cfg(msg);
 
-    msg = "chirpCfg 2 2 0 0 0 0 0 2";
-    send_cfg(msg);
+  // 55 is 55ms delay between 2 output frame
+  msg = "  frameCfg  0  2  32  0  51  1  0  ";
+  send_cfg(msg);
 
-    // 55 is 55ms delay between 2 output frame
-    msg = "frameCfg 0 2 32 0 55 1 0";
-    send_cfg(msg);
+  msg = "  lowPower  0  0  ";
+  send_cfg(msg);
 
-    msg = "lowPower 0 0";
-    send_cfg(msg);
+  msg = "  guiMonitor  -1  1  0  0  0  0  0  ";
+  send_cfg(msg);
 
-    msg = "guiMonitor -1 1 0 0 0 0 0";
-    send_cfg(msg);
+  //Threshold scale [0..100]
+  msg = "  cfarCfg  -1  0  2  8  4  3  0  2  0  ";
+  send_cfg(msg);
 
-    //Threshold scale [0..100]
-    msg = "cfarCfg -1 0 2 8 4 3 0 2 0";
-    send_cfg(msg);
-    msg = "cfarCfg -1 1 0 4 2 3 1 10 0";
-    send_cfg(msg);
+  msg = "  cfarCfg  -1  1  0  4  2  3  1  10  0  ";
+  send_cfg(msg);
 
-    msg = "multiObjBeamForming -1 1 0.5";
-    send_cfg(msg);
+  msg = "  multiObjBeamForming  -1  1  0.5  ";
+  send_cfg(msg);
 
-    msg = "clutterRemoval -1 1";
-    send_cfg(msg);
+  msg = "  clutterRemoval  -1  1  ";
+  send_cfg(msg);
 
-    msg = "calibDcRangeSig -1 0 -5 8 256";
-    send_cfg(msg);
+  msg = "  calibDcRangeSig  -1  0  -5  8  256  ";
+  send_cfg(msg);
 
-    msg = "extendedMaxVelocity -1 0";
-    send_cfg(msg);
+  msg = "  extendedMaxVelocity  -1  0  ";
+  send_cfg(msg);
 
-    msg = "bpmCfg -1 0 0 1";
-    send_cfg(msg);
+  msg = "  bpmCfg  -1  0  0  1  ";
+  send_cfg(msg);
 
-    msg = "lvdsStreamCfg -1 0 0 0";
-    send_cfg(msg);
+  msg = "  lvdsStreamCfg  -1  0  0  0  ";
+  send_cfg(msg);
 
-    msg = "compRangeBiasAndRxChanPhase 0.0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0";
-    send_cfg(msg);
+  msg = "  compRangeBiasAndRxChanPhase  0  1  0  1  0  1  0  1  0  1  0  1  0  1  0  1  0  1  0  1  0  1  0  1  0  ";
+  send_cfg(msg);
 
-    msg = "measureRangeBiasAndRxChanPhase 0 1.5 0.2";
-    send_cfg(msg);
+  msg = "  measureRangeBiasAndRxChanPhase  0  1.5  0.2  ";
+  send_cfg(msg);
 
-    msg = "CQRxSatMonitor 0 3 15 125 0";
-    send_cfg(msg);
+  msg = "  CQRxSatMonitor  0  3  15  125  0  ";
+  send_cfg(msg);
 
-    msg = "CQSigImgMonitor 0 115 6";
-    send_cfg(msg);
+  msg = "  CQSigImgMonitor  0  115  6  ";
+  send_cfg(msg);
 
-    msg = "analogMonitor 0 0";
-    send_cfg(msg);
+  msg = "  analogMonitor  0  0  ";
+  send_cfg(msg);
 
-    // View config (degrees) : [ -1 <minAzimuthDeg> <maxAzimuthDeg> <minElevationDeg> <maxElevationDeg> ]
-    msg = "aoaFovCfg -1 -60 60 0 30";
-    send_cfg(msg);
+  // View config (degrees) : [ -1 <minAzimuthDeg> <maxAzimuthDeg> <minElevationDeg> <maxElevationDeg> ]
+  msg = "  aoaFovCfg  -1  -60  60  0  30  ";
+  send_cfg(msg);
 
-    // Config point filtering in range direction (meter)
-    msg = "cfarFovCfg -1 0 0 30";
-    send_cfg(msg);
+  // Config point filtering in range direction (meter)
+  msg = "  cfarFovCfg  -1  0  0  30  ";
+  send_cfg(msg);
 
-    // Config point filtering in Doppler direction (meter/sec)
-    msg = "cfarFovCfg -1 1 -20 20";
-    send_cfg(msg);
+  // Config point filtering in Doppler direction (meter/sec)
+  msg = "  cfarFovCfg  -1  1  -20  20  ";
+  send_cfg(msg);
 
-    // msg = "calibData 0 0 0";
-    // send_cfg(msg);
+  // *****************TRACKING COMMANDS*****************************
+  // https://dev.ti.com/tirex/explore/content/mmwave_industrial_toolbox_4_7_0/labs/people_counting/docs/3D_people_counting_tracker_layer_tuning_guide.pdf
+  msg = "  staticBoundaryBox  -10  10  0  32  0  2  ";
+  send_cfg(msg);
 
-    // *****************TRACKING COMMANDS*****************************
-    // https://dev.ti.com/tirex/explore/content/mmwave_industrial_toolbox_4_7_0/labs/people_counting/docs/3D_people_counting_tracker_layer_tuning_guide.pdf
-    
-    msg = "staticBoundaryBox -3 3 0 2 0 2";
-    send_cfg(msg);
+  msg = "  boundaryBox  -10  10  0  32  0  2  ";
+  send_cfg(msg);
 
-    msg = "boundaryBox -10 10 0 30 0 2";
-    send_cfg(msg);
+  msg = "  gatingParam  30  4  6  4  20  ";
+  send_cfg(msg);
 
-    msg = "gatingParam 50 4 6 4 20";
-    send_cfg(msg);
+  msg = "  stateParam  3  1  1  1  1  ";
+  send_cfg(msg);
 
-    msg = "stateParam 3 1 1 1 1";
-    send_cfg(msg);
+  msg = "  allocationParam  200  150  0.05  5  16  20  ";
+  send_cfg(msg);
 
-    msg = "allocationParam 200 150 0.05 5 16 30";
-    send_cfg(msg);
+  msg = "  maxAcceleration  8  8  8  ";
+  send_cfg(msg);
 
-    msg = "maxAcceleration 8 8 8";
-    send_cfg(msg);
+  msg = "  trackingCfg  1  2  250  20  200  50  51  90  ";
+  send_cfg(msg);
 
-    msg = "trackingCfg 1 2 500 20 200 50 55 90";
-    send_cfg(msg);
+  // *****************STATIC DETECTION COMMANDS*********************
+  msg = "  heatmapGenCfg  -1  0  0  40  130  60  3  10  ";
+  send_cfg(msg);
 
-    // *****************STATIC DETECTION COMMANDS*********************
-    msg = "heatmapGenCfg -1 0  0 40 130 60.0 3.0 10";
-    send_cfg(msg);
+  msg = "  staticDetectionCfg  -1  0  -50  50  0  20  0.7  6  0.2  4  20  ";
+  send_cfg(msg);
 
-    msg = "staticDetectionCfg -1 0 -50.0 +50.0 -20.0 20.0 0.7 6.0 0.2 4 20.0";
-    send_cfg(msg);
+  msg = "sensorStart";
+  send_cfg(msg);
 
-    msg = "sensorStart";
-    send_cfg(msg);
 }
 
 void ttcRAdarObj::stop_radar(void)
@@ -227,9 +224,9 @@ structPacket ttcRAdarObj::getFramePacket(std_msgs::UInt8MultiArray raw_data, vec
 
     startIdx.clear();
     // Magic word = {2,1,4,3,6,5,8,7}
-    const int lenMagicWord = 7;
+    const uint16_t lenMagicWord = 7;
 
-    for (uint32_t i = 0; i < dataLen - lenMagicWord; i++) {
+    for (uint16_t i = 0; i < dataLen - lenMagicWord; i++) {
         // check start index of Magic word
         if (raw_data.data[i] == 2 && raw_data.data[i+1] == 1 && raw_data.data[i+2] == 4 && raw_data.data[i+3] == 3
             && raw_data.data[i+4] == 6 && raw_data.data[i+5] == 5 && raw_data.data[i+6] == 8 && raw_data.data[i+7] == 7)
@@ -250,6 +247,10 @@ structPacket ttcRAdarObj::getFramePacket(std_msgs::UInt8MultiArray raw_data, vec
     //Remove the data before the first start index
     for (auto i = 0; i < (framePacket.dataLen); i++) {
         framePacket.data.push_back(raw_data.data[startIdx[0] + i]);
+
+        // print framePacket
+        int a = framePacket.data[i];
+        cout << a << ' ';
     }
 
     return framePacket;
@@ -257,55 +258,56 @@ structPacket ttcRAdarObj::getFramePacket(std_msgs::UInt8MultiArray raw_data, vec
 
 structHeader ttcRAdarObj::getFrameHeader (structPacket framePacket)
 {
-	structHeader frameHeader;
+    structHeader frameHeader;
 
-	// check that all packet has been read
+    // check that all packet has been read
     frameHeader.totalPacketLen = framePacket.data[12] + framePacket.data[13] * 256.0 + framePacket.data[14] * 65536.0 + framePacket.data[15] * 1.6777216E+7;
-	uint32_t idX = 0;
+    uint32_t idX = 0;
 
-	// read the header
-	if (frameHeader.totalPacketLen == framePacket.dataLen) {
-		// word array to convert 4 bytes to a 32 bit number
-        // word = [1, 2**8, 2**16, 2**24]
+    // read the header
+    if (frameHeader.totalPacketLen != framePacket.dataLen) return frameHeader;
 
-        // Initialize the pointer index
-        for (auto idX = 0; idX < 8; idX++) {
-			frameHeader.magicWord[idX] = framePacket.data[idX];
-		}
-		idX += 8;
-        for (auto idX = 0; idX < 4; idX++) {
-			frameHeader.version[idX] = framePacket.data[idX + 8];
-		}
-		idX += 4;
-        frameHeader.totalPacketLen = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
-        idX += 4;
-        frameHeader.platform = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
-        idX += 4;
-        frameHeader.frameNumber = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
-        idX += 4;
-        frameHeader.timeCpuCycles = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
-        idX += 4;
-        frameHeader.numDetectedObj = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
-        idX += 4;
-        frameHeader.numTLVs = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
-        idX += 4;
-		frameHeader.subFrameNumber = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
-        idX += 4;
-        frameHeader.numStaticDetectedObj  = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
-        idX += 4;
- 	}
-	frameHeader.idX = idX;
+    // word array to convert 4 bytes to a 32 bit number
+    // word = [1, 2**8, 2**16, 2**24]
 
-    // ROS_INFO("totalPacketLen: %u", frameHeader.totalPacketLen);
+    // Initialize the pointer index
+    for (auto idX = 0; idX < 8; idX++) {
+        frameHeader.magicWord[idX] = framePacket.data[idX];
+    }
+    idX += 8;
+    for (auto idX = 0; idX < 4; idX++) {
+        frameHeader.version[idX] = framePacket.data[idX + 8];
+    }
+    idX += 4;
+    frameHeader.totalPacketLen = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
+    idX += 4;
+    frameHeader.platform = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
+    idX += 4;
+    frameHeader.frameNumber = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
+    idX += 4;
+    frameHeader.timeCpuCycles = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
+    idX += 4;
+    frameHeader.numDetectedObj = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
+    idX += 4;
+    frameHeader.numTLVs = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
+    idX += 4;
+    frameHeader.subFrameNumber = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
+    idX += 4;
+    frameHeader.numStaticDetectedObj  = framePacket.data[idX]*1 + framePacket.data[idX + 1]*256.0 + framePacket.data[idX + 2]*65536.0 + framePacket.data[idX + 3]*1.6777216E+7;
+    idX += 4;
+
+    frameHeader.idX = idX;
+
+    ROS_INFO("totalPacketLen: %u", frameHeader.totalPacketLen);
     // ROS_INFO("frameNumber: %u", frameHeader.frameNumber);
-    // ROS_INFO("numDetectedObj: %u", frameHeader.numDetectedObj);
+    ROS_INFO("numDetectedObj: %u", frameHeader.numDetectedObj);
     // ROS_INFO("numTLVs: %u \r\n", frameHeader.numTLVs);
-    // for(auto i=0; i<300; i++)
-    // {
-    //     ROS_INFO("frame %d: %u", i, framePacket.data[i]);
+    // for(auto i=0; i<framePacket.dataLen; i++) {
+    //   int a = framePacket.data[i];
+    //   cout << a << ' ';
     // }
 
-	return frameHeader;
+    return frameHeader;
 }
 
 
@@ -435,7 +437,7 @@ structTLV ttcRAdarObj::getTLV (structPacket framePacket, uint32_t numTLVs, uint3
     clearPtCloud();
 
     // read all (numTLVs)TLVs to ptCloud
-    for (auto tlvIdx = 0; tlvIdx < numTLVs; tlvIdx++) {
+    for (uint32_t tlvIdx = 0; tlvIdx < numTLVs; tlvIdx++) {
         tlv.payload.clear();
 
         // check the header of the TLV message
@@ -445,7 +447,7 @@ structTLV ttcRAdarObj::getTLV (structPacket framePacket, uint32_t numTLVs, uint3
         idX += 4;
         for (auto i = 0; i < tlv.length ; i++) {
                 tlv.payload.push_back(framePacket.data[idX + i]);
-            }
+        }
         idX += tlv.length;
         tlv.idX = idX;
         // ROS_INFO("type: %u  --------", tlv.type);
@@ -620,60 +622,51 @@ bool ttcRAdarObj::data_handler( std_msgs::UInt8MultiArray raw_data, uint16_t dat
 
     // Check for all possible locations of the magic word to startIdx
     structPacket framePacket = getFramePacket(raw_data, startIdx, dataLen);
-    u_int16_t numframesAvailable = framePacket.dataLen;
 
     // Processing
-    if (!numframesAvailable) return is_data_ok;
-
-    is_data_ok = true;
-
+    if (!framePacket.dataLen) return is_data_ok;
 
     // Read the Header messages
     structHeader frameHeader = getFrameHeader(framePacket);
     uint32_t idX = frameHeader.idX;
 
     // Check is_data_ok
-    if (frameHeader.numTLVs != 0)
+    if (!frameHeader.numTLVs) return (is_data_ok = false);
+    is_data_ok = true;
+
+    // Read the TLV messages
+    structTLV tlv = getTLV(framePacket, frameHeader.numTLVs, idX);
+    idX = tlv.idX;
+
+    // processing output
+    switch (modeRadar)
     {
-        // Read the TLV messages
-        structTLV tlv = getTLV(framePacket, frameHeader.numTLVs, idX);
-        idX = tlv.idX;
-
-        // processing output
-        switch (modeRadar)
-        {
-            case ENABLE_RADAR_TTC: {
-                bool isTrackedObj = processingGtrackTarget();
-            }
-            break;
-
-            case ENABLE_RADAR_MPC: {
-                float ptMinDistance = processingPtMinDistance(frameHeader);
-                // update output
-                if (frameHeader.numDetectedObj) {
-                    Output.isObject = true;
-                    Output.dis.push_back(ptMinDistance);
-                    ROS_INFO("distance ============= %f",ptMinDistance);
-                }
-                else {
-                    Output.isObject = false;
-                    Output.dis.push_back(ptMinDistance);
-                    ROS_INFO("distance ============= %f", ptMinDistance);
-                }
-
-            }
-            break;
-
-            default:
-            break;
+        case ENABLE_RADAR_TTC: {
+            bool isTrackedObj = processingGtrackTarget();
         }
+        break;
+
+        case ENABLE_RADAR_MPC: {
+            float ptMinDistance = processingPtMinDistance(frameHeader);
+            // update output
+            if (frameHeader.numDetectedObj) {
+                Output.isObject = true;
+                Output.dis.push_back(ptMinDistance);
+                ROS_INFO("distance ============= %f",ptMinDistance);
+            }
+            else {
+                Output.isObject = false;
+                Output.dis.push_back(ptMinDistance);
+                ROS_INFO("distance ============= %f", ptMinDistance);
+            }
+
+        }
+        break;
+
+        default:
+        break;
     }
-    else {
-        // is_data_ok = false;
-        Output.isObject = false;
-        ROS_INFO("distance ============= %f", Output.dis[0]);
-    }
-    
+
     return is_data_ok;
 }
 
