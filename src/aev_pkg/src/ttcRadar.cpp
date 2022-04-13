@@ -41,8 +41,8 @@ void timer_uart_Callback(const ros::TimerEvent& )
                 ttcRadar_output_msg.distance = ttcRadarObj.Output.dis[0];
             }
             ttcRadar_pub.publish(ttcRadar_output_msg);
+            ROS_INFO("isObject: %d ", ttcRadar_output_msg.isObject);
             ROS_INFO("Public message ok (TTC) \r\n");
-//            ROS_INFO("distance: %f ", ttcRadar_output_msg.distance);
         }
         break;
 

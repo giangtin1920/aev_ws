@@ -87,125 +87,124 @@ void ttcRAdarObj::start_radar(void)
   msg = "flushCfg";
   send_cfg(msg);
 
-  msg = "  dfeDataOutputMode  1  ";
+  msg = " dfeDataOutputMode 1 ";
   send_cfg(msg);
 
-  msg = "  channelCfg  15  7  0  ";
+  msg = " channelCfg 15 7 0 ";
   send_cfg(msg);
 
-  msg = "  adcCfg  2  1  ";
+  msg = " adcCfg 2 1 ";
   send_cfg(msg);
 
-  msg = "  adcbufCfg  -1  0  1  1  1  ";
+  msg = " adcbufCfg -1 0 1 1 1 ";
   send_cfg(msg);
 
-  msg = "  profileCfg  0  60  6  5  22  0  0  50  3  129  12500  0  0  30  ";
+  msg = " profileCfg 0 60 8 7 18.49 0 0 50 1 129 12499 0 0 158 ";
   send_cfg(msg);
 
-  msg = "  chirpCfg  0  0  0  0  0  0  0  1  ";
+  msg = " chirpCfg 0 0 0 0 0 0 0 1 ";
   send_cfg(msg);
 
-  msg = "  chirpCfg  1  1  0  0  0  0  0  4  ";
+  msg = " chirpCfg 1 1 0 0 0 0 0 4 ";
   send_cfg(msg);
 
-  msg = "  chirpCfg  2  2  0  0  0  0  0  2  ";
+  msg = " chirpCfg 2 2 0 0 0 0 0 2 ";
   send_cfg(msg);
 
   // 55 is 55ms delay between 2 output frame
-  msg = "  frameCfg  0  2  32  0  51  1  0  ";
+  msg = " frameCfg 0 2 32 0 50.01 1 0 ";
   send_cfg(msg);
 
-  msg = "  lowPower  0  0  ";
+  msg = " lowPower 0 0 ";
   send_cfg(msg);
 
-  msg = "  guiMonitor  -1  1  0  0  0  0  0  ";
+  msg = " guiMonitor -1 1 0 0 0 0 0 ";
   send_cfg(msg);
 
   //Threshold scale [0..100]
-  msg = "  cfarCfg  -1  0  2  8  4  3  0  2  0  ";
+  msg = " cfarCfg -1 0 2 8 4 3 0 2 1 ";
   send_cfg(msg);
 
-  msg = "  cfarCfg  -1  1  0  4  2  3  1  10  0  ";
+  msg = " cfarCfg -1 1 0 4 2 3 1 6 0 ";
   send_cfg(msg);
 
-  msg = "  multiObjBeamForming  -1  1  0.5  ";
+  msg = " multiObjBeamForming -1 1 0.5 ";
   send_cfg(msg);
 
-  msg = "  clutterRemoval  -1  1  ";
+  msg = " clutterRemoval -1 1 ";
   send_cfg(msg);
 
-  msg = "  calibDcRangeSig  -1  0  -5  8  256  ";
+  msg = " calibDcRangeSig -1 0 -5 8 256 ";
   send_cfg(msg);
 
-  msg = "  extendedMaxVelocity  -1  0  ";
+  msg = " extendedMaxVelocity -1 0 ";
   send_cfg(msg);
 
-  msg = "  bpmCfg  -1  0  0  1  ";
+  msg = " bpmCfg -1 0 0 1 ";
   send_cfg(msg);
 
-  msg = "  lvdsStreamCfg  -1  0  0  0  ";
+  msg = " lvdsStreamCfg -1 0 0 0 ";
   send_cfg(msg);
 
-  msg = "  compRangeBiasAndRxChanPhase  0  1  0  1  0  1  0  1  0  1  0  1  0  1  0  1  0  1  0  1  0  1  0  1  0  ";
+  msg = " compRangeBiasAndRxChanPhase 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 ";
   send_cfg(msg);
 
-  msg = "  measureRangeBiasAndRxChanPhase  0  1.5  0.2  ";
+  msg = " measureRangeBiasAndRxChanPhase 0 1.5 0.2 ";
   send_cfg(msg);
 
-  msg = "  CQRxSatMonitor  0  3  15  125  0  ";
+  msg = " CQRxSatMonitor 0 3 15 125 0 ";
   send_cfg(msg);
 
-  msg = "  CQSigImgMonitor  0  115  6  ";
+  msg = " CQSigImgMonitor 0 115 6 ";
   send_cfg(msg);
 
-  msg = "  analogMonitor  0  0  ";
+  msg = " analogMonitor 0 0 ";
   send_cfg(msg);
 
   // View config (degrees) : [ -1 <minAzimuthDeg> <maxAzimuthDeg> <minElevationDeg> <maxElevationDeg> ]
-  msg = "  aoaFovCfg  -1  -60  60  0  30  ";
+  msg = " aoaFovCfg -1 -60 60 0 30 ";
   send_cfg(msg);
 
   // Config point filtering in range direction (meter)
-  msg = "  cfarFovCfg  -1  0  0  30  ";
+  msg = " cfarFovCfg -1 0 0 30 ";
   send_cfg(msg);
 
   // Config point filtering in Doppler direction (meter/sec)
-  msg = "  cfarFovCfg  -1  1  -20  20  ";
+  msg = " cfarFovCfg -1 1 -20 20 ";
   send_cfg(msg);
 
   // *****************TRACKING COMMANDS*****************************
   // https://dev.ti.com/tirex/explore/content/mmwave_industrial_toolbox_4_7_0/labs/people_counting/docs/3D_people_counting_tracker_layer_tuning_guide.pdf
-  msg = "  staticBoundaryBox  -10  10  0  32  0  2  ";
+  msg = " staticBoundaryBox -3 3 0 2 0 2 ";
   send_cfg(msg);
 
-  msg = "  boundaryBox  -10  10  0  32  0  2  ";
+  msg = " boundaryBox -10 10 0 32 0 2 ";
   send_cfg(msg);
 
-  msg = "  gatingParam  30  4  6  4  20  ";
+  msg = " gatingParam 30 4 6 4 20 ";
   send_cfg(msg);
 
-  msg = "  stateParam  3  1  1  1  1  ";
+  msg = " stateParam 3 1 1 1 1 ";
   send_cfg(msg);
 
-  msg = "  allocationParam  200  150  0.05  5  16  20  ";
+  msg = " allocationParam 200 150 0.05 5 16 20 ";
   send_cfg(msg);
 
-  msg = "  maxAcceleration  8  8  8  ";
+  msg = " maxAcceleration 8 8 8 ";
   send_cfg(msg);
 
-  msg = "  trackingCfg  1  2  250  20  200  50  51  90  ";
+  msg = " trackingCfg 1 2 800 25 200 50 50.01 90 ";
   send_cfg(msg);
 
   // *****************STATIC DETECTION COMMANDS*********************
-  msg = "  heatmapGenCfg  -1  0  0  40  130  60  3  10  ";
+  msg = " heatmapGenCfg -1 1 0 40 130 60 3 10 ";
   send_cfg(msg);
 
-  msg = "  staticDetectionCfg  -1  0  -50  50  0  20  0.7  6  0.2  4  20  ";
+  msg = " staticDetectionCfg -1 0 -50 50 0 20 0.7 6 0.2 4 20 ";
   send_cfg(msg);
 
   msg = "sensorStart";
   send_cfg(msg);
-
 }
 
 void ttcRAdarObj::stop_radar(void)
@@ -213,6 +212,11 @@ void ttcRAdarObj::stop_radar(void)
     std::string msg;
     msg = "sensorStop";
     send_cfg(msg);
+    msg = "sensorStop";
+    send_cfg(msg);
+
+//    msg = "flushCfg";
+//    send_cfg(msg);
 }
 
 
@@ -298,9 +302,9 @@ structHeader ttcRAdarObj::getFrameHeader (structPacket framePacket)
 
     frameHeader.idX = idX;
 
-    ROS_INFO("totalPacketLen: %u", frameHeader.totalPacketLen);
+    // ROS_INFO("totalPacketLen: %u", frameHeader.totalPacketLen);
     // ROS_INFO("frameNumber: %u", frameHeader.frameNumber);
-    ROS_INFO("numDetectedObj: %u", frameHeader.numDetectedObj);
+    // ROS_INFO("numDetectedObj: %u", frameHeader.numDetectedObj);
     // ROS_INFO("numTLVs: %u \r\n", frameHeader.numTLVs);
     // for(auto i=0; i<framePacket.dataLen; i++) {
     //   int a = framePacket.data[i];
@@ -344,6 +348,7 @@ void ttcRAdarObj::clearPtCloud(void)
     Output.dis.clear();
     Output.vel.clear();
     Output.ttc.clear();
+    Output.isObject = false;
 
 }
 
@@ -494,9 +499,9 @@ bool ttcRAdarObj::processingGtrackTarget(void)
 {
     Output.numObj = ptTargets.tid.size();
     //
-    for (auto i = 0; i < Output.numObj; i++) {
+    for (uint16_t i = 0; i < Output.numObj; i++) {
 
-        if (!ptTargets.velY[i]) ptTargets.velY.at(i) = 0.0001;
+        if (!ptTargets.velY[i]) ptTargets.velY.at(i) = 0.0001;  // Dividing a number by Zero
         Output.IdObj.push_back(ptTargets.tid[i]);
         Output.isObject = true;
         Output.dis.push_back( sqrt(pow(ptTargets.posX[i],2) + pow(ptTargets.posY[i],2) ));
@@ -506,11 +511,12 @@ bool ttcRAdarObj::processingGtrackTarget(void)
 
         // gamma is angle of (velocity, vector(radar, point))
         float ttcPosX = 5.0f;
+        float maxttcPosX = 1; // width of AEVs (m)
         if (gamma >= 0 && gamma < M_PI_2) {
             ttcPosX = ptTargets.posX[i] - (ptTargets.velX[i]*ptTargets.posY[i])/ptTargets.velY[i];
         }
 
-        if (ttcPosX > -2 && ttcPosX < 2) {
+        if (ttcPosX > -maxttcPosX && ttcPosX < maxttcPosX) {
             Output.isApproach.push_back(true);
         }
         else {
@@ -542,9 +548,9 @@ float ttcRAdarObj::processingPtMinDistance (structHeader frameHeader)
     float rangePt = (float)(ptDetObj.y.size())/3;
     ROS_INFO("numDetected = %zu", ptDetObj.y.size());
 
-    for (int i = 0; i < ptDetObj.y.size(); i++) {
-        ROS_INFO("y= %f", ptDetObj.y[i]);
-    }
+    // for (int i = 0; i < ptDetObj.y.size(); i++) {
+    //    ROS_INFO("y= %f", ptDetObj.y[i]);
+    // }
 
     // check the numDetected, 
     if (ptDetObj.y.size() > 1) {
@@ -557,7 +563,7 @@ float ttcRAdarObj::processingPtMinDistance (structHeader frameHeader)
                     numRangePt++;
                 }
             }
-            ROS_INFO("numRangePt = %f", numRangePt);
+//            ROS_INFO("numRangePt = %f", numRangePt);
 
             if(numRangePt >= rangePt) {
                 ptMinDistance = ptMinDistance/(int)numRangePt;
@@ -574,7 +580,7 @@ float ttcRAdarObj::processingPtMinDistance (structHeader frameHeader)
     else {
         ptMinDistance = 20.0;
     }
-    ROS_INFO("outDisTmp = %f", ptMinDistance);
+//    ROS_INFO("outDisTmp = %f", ptMinDistance);
     
     // fillter 2
     float delta_2 = 0.8;
@@ -584,7 +590,7 @@ float ttcRAdarObj::processingPtMinDistance (structHeader frameHeader)
     // buffer output distance has 5 elements
     if (bufDistance.size() == 6) {
         for (int i = 0; i < bufDistance.size() - 1; i++) {
-        ROS_INFO("bufDis= %f", bufDistance[i+1]);
+//        ROS_INFO("bufDis= %f", bufDistance[i+1]);
         }
 
         bufDistance.erase(bufDistance.begin());
@@ -600,7 +606,7 @@ float ttcRAdarObj::processingPtMinDistance (structHeader frameHeader)
                     numRangePt_2++;
                 }
             }
-            ROS_INFO("numRangePt_2 = %f", numRangePt_2);
+//            ROS_INFO("numRangePt_2 = %f", numRangePt_2);
 
             if(numRangePt_2 >= rangePt_2) {
                 ptMinDistance = ptMinDistance/(int)numRangePt_2;
@@ -608,7 +614,7 @@ float ttcRAdarObj::processingPtMinDistance (structHeader frameHeader)
             }
             else {
                 ptMinDistance = bufDistance[0];
-                ROS_INFO("no filter 2");
+//                ROS_INFO("no filter 2");
             }
         }
     }
@@ -652,11 +658,13 @@ bool ttcRAdarObj::data_handler( std_msgs::UInt8MultiArray raw_data, uint16_t dat
             if (frameHeader.numDetectedObj) {
                 Output.isObject = true;
                 Output.dis.push_back(ptMinDistance);
+                ROS_INFO("\nisObject ============= %d",1);
                 ROS_INFO("distance ============= %f",ptMinDistance);
             }
             else {
                 Output.isObject = false;
                 Output.dis.push_back(ptMinDistance);
+                ROS_INFO("isObject ============= %d",0);
                 ROS_INFO("distance ============= %f", ptMinDistance);
             }
 
