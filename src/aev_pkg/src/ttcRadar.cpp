@@ -6,14 +6,16 @@ ttcRAdarObj ttcRadarObj;
 ros::Publisher ttcRadar_pub;
 aev_pkg::radar_msg ttcRadar_output_msg;
 
+
 void timer_uart_Callback(const ros::TimerEvent& )
 {
+    usleep(20000);  // timeout to receive all byte from Radar // baudrate 921600bps ~ 115200byte/s ~ 8.68us/byte ~ actual 10.851us/byte
     static uint32_t msg_counter = 0;
     std_msgs::UInt8MultiArray raw_data;
     uint16_t dataLen = ttcRadarObj.ser_Data_Port.available();
     ttcRadarObj.ser_Data_Port.read(raw_data.data, dataLen);
-
     ROS_INFO("Read: %u byte -----------------------------,", dataLen);
+
     if (!dataLen) return;
 
     // Processing the raw_data
@@ -41,7 +43,7 @@ void timer_uart_Callback(const ros::TimerEvent& )
                 ttcRadar_output_msg.distance = ttcRadarObj.Output.dis[0];
             }
             ttcRadar_pub.publish(ttcRadar_output_msg);
-            ROS_INFO("isObject: %d ", ttcRadar_output_msg.isObject);
+//            ROS_INFO("isObject: %d ", ttcRadar_output_msg.isObject);
             ROS_INFO("Public message ok (TTC) \r\n");
         }
         break;
@@ -69,6 +71,7 @@ int main (int argc, char** argv)
     ttcRadar_pub = n.advertise<aev_pkg::radar_msg>("Radar_Data", 1000);
     
     // Timer to receive data from Radar
+
     ros::Timer timer_uart = n.createTimer(ros::Duration(0.05), timer_uart_Callback);
 
     // Connect to COM port of Radar 
@@ -85,5 +88,5 @@ int main (int argc, char** argv)
     // While loop do nothing, data received by interrupt
     while(ros::ok()) {
         ros::spinOnce();
-    }   
+    }
 }
