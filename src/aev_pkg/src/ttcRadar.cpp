@@ -7,16 +7,26 @@ ros::Publisher ttcRadar_pub;
 aev_pkg::radar_msg ttcRadar_output_msg;
 
 
-void timer_uart_Callback(const ros::TimerEvent& )
+void timer_uart_Callback(const ros::TimerEvent&)
 {
-    usleep(20000);  // timeout to receive all byte from Radar // baudrate 921600bps ~ 115200byte/s ~ 8.68us/byte ~ actual 10.851us/byte
+//     usleep(90000);  // timeout to receive all byte from Radar // baudrate 921600bps ~ 115200byte/s ~ 8.68us/byte ~ actual 10.851us/byte
     static uint32_t msg_counter = 0;
     std_msgs::UInt8MultiArray raw_data;
-    uint16_t dataLen = ttcRadarObj.ser_Data_Port.available();
-    ttcRadarObj.ser_Data_Port.read(raw_data.data, dataLen);
-    ROS_INFO("Read: %u byte -----------------------------,", dataLen);
+//    uint16_t dataLen = ttcRadarObj.ser_Data_Port.available();
+//    ttcRadarObj.ser_Data_Port.read(raw_data.data, dataLen);
+//    ROS_INFO("Read: %u byte -----------------------------,", dataLen);
+
+    uint16_t dataLen = 0;
+    usleep(5000);
+    while(ttcRadarObj.ser_Data_Port.available()) {
+      uint16_t tmp = ttcRadarObj.ser_Data_Port.available();
+      dataLen +=  tmp;
+      ttcRadarObj.ser_Data_Port.read(raw_data.data, tmp);
+      usleep(5000);
+    }
 
     if (!dataLen) return;
+    ROS_INFO("Read: %u byte -----------------------------,", dataLen);
 
     // Processing the raw_data
     if (!ttcRadarObj.data_handler(raw_data, dataLen)) return;
@@ -69,10 +79,6 @@ int main (int argc, char** argv)
     ros::init(argc, argv, "ttcRadar");
     ros::NodeHandle n;
     ttcRadar_pub = n.advertise<aev_pkg::radar_msg>("Radar_Data", 1000);
-    
-    // Timer to receive data from Radar
-
-    ros::Timer timer_uart = n.createTimer(ros::Duration(0.05), timer_uart_Callback);
 
     // Connect to COM port of Radar 
     if (!ttcRadarObj.init_cfg_port()) return -1;
@@ -83,10 +89,16 @@ int main (int argc, char** argv)
     // }
     #endif
     
+    // TTC config or MPC config
     ttcRadarObj.start_radar();
+//    ttcRadarObj.start_radar_MPC();
+
+
+    // Timer to receive data from Radar
+    ros::Timer timer_uart = n.createTimer(ros::Duration(0.05), timer_uart_Callback);
 
     // While loop do nothing, data received by interrupt
     while(ros::ok()) {
-        ros::spinOnce();
+        ros::spin();
     }
 }

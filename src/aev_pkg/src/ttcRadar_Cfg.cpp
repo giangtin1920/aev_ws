@@ -99,7 +99,7 @@ void ttcRAdarObj::start_radar(void)
   msg = " adcbufCfg -1 0 1 1 1 ";
   send_cfg(msg);
 
-  msg = " profileCfg 0 60.25 100 25 69 0 0 50 10 256 6000 0 0 30 ";
+  msg = " profileCfg 0 60.25 4 3.9 22.73 0 0 41.91 1 166 9313 3 0 30 ";
   send_cfg(msg);
 
   msg = " chirpCfg 0 0 0 0 0 0 0 1 ";
@@ -112,7 +112,7 @@ void ttcRAdarObj::start_radar(void)
   send_cfg(msg);
 
   // 55 is 55ms delay between 2 output frame
-  msg = " frameCfg 0 1 32 0 50 1 0 ";
+  msg = " frameCfg 0 0 100 0 100 1 0 ";
   send_cfg(msg);
 
   msg = " lowPower 0 0 ";
@@ -122,10 +122,10 @@ void ttcRAdarObj::start_radar(void)
   send_cfg(msg);
 
   //Threshold scale [0..100]
-  msg = " cfarCfg -1 0 2 8 4 3 0 10 1 ";
+  msg = " cfarCfg -1 0 2 8 4 3 0 1 0 ";
   send_cfg(msg);
 
-  msg = " cfarCfg -1 1 0 4 2 3 1 10 0 ";
+  msg = " cfarCfg -1 1 0 4 2 3 1 2 0 ";
   send_cfg(msg);
 
   msg = " multiObjBeamForming -1 1 0.5 ";
@@ -162,11 +162,11 @@ void ttcRAdarObj::start_radar(void)
   send_cfg(msg);
 
   // View config (degrees) : [ -1 <minAzimuthDeg> <maxAzimuthDeg> <minElevationDeg> <maxElevationDeg> ]
-  msg = " aoaFovCfg -1 -60 60 0 30 ";
+  msg = " aoaFovCfg -1 -60 60 0 20 ";
   send_cfg(msg);
 
   // Config point filtering in range direction (meter)
-  msg = " cfarFovCfg -1 0 0 30 ";
+  msg = " cfarFovCfg -1 0 0 50 ";
   send_cfg(msg);
 
   // Config point filtering in Doppler direction (meter/sec)
@@ -175,19 +175,148 @@ void ttcRAdarObj::start_radar(void)
 
   // *****************TRACKING COMMANDS*****************************
   // https://dev.ti.com/tirex/explore/content/mmwave_industrial_toolbox_4_7_0/labs/people_counting/docs/3D_people_counting_tracker_layer_tuning_guide.pdf
-  msg = " staticBoundaryBox -3 3 0 2 0 2 ";
+  msg = " staticBoundaryBox -1 1 0 1 0 1 ";
   send_cfg(msg);
 
-  msg = " boundaryBox -8 2 0 50 0 2 ";
+  msg = " boundaryBox -6 6 0 50 0 1.5 ";
   send_cfg(msg);
 
-  msg = " gatingParam 50 4 6 4 20 ";
+  msg = " gatingParam 50 6 6 6 20 ";
   send_cfg(msg);
 
-  msg = " stateParam 3 1 1 1 1 ";
+  msg = " stateParam 3 1 2 1 1 ";
   send_cfg(msg);
 
-  msg = " allocationParam 200 150 0.05 3 16 20 ";
+  msg = " allocationParam 1000 950 0.01 5 20 20 ";
+  send_cfg(msg);
+
+  msg = " maxAcceleration 20 20 20 ";
+  send_cfg(msg);
+
+  msg = " trackingCfg 1 2 500 25 200 50 100 90 ";
+  send_cfg(msg);
+
+  // *****************STATIC DETECTION COMMANDS*********************
+  msg = " heatmapGenCfg -1 1 0 40 130 60 3 10 ";
+  send_cfg(msg);
+
+  msg = " staticDetectionCfg -1 0 -50 50 0 1 0.7 6 0.2 4 20 ";
+  send_cfg(msg);
+
+  msg = "sensorStart";
+  send_cfg(msg);
+}
+
+void ttcRAdarObj::start_radar_MPC(void)
+{
+  std::string msg;
+  msg = "sensorStop";
+  send_cfg(msg);
+
+  msg = "flushCfg";
+  send_cfg(msg);
+
+  msg = " dfeDataOutputMode 1 ";
+  send_cfg(msg);
+
+  msg = " channelCfg 15 7 0 ";
+  send_cfg(msg);
+
+  msg = " adcCfg 2 1 ";
+  send_cfg(msg);
+
+  msg = " adcbufCfg -1 0 1 1 1 ";
+  send_cfg(msg);
+
+  msg = " profileCfg 0 60.25 20 3.9 38 0 0 50 1 256 8000 0 0 30 ";
+  send_cfg(msg);
+
+  msg = " chirpCfg 0 0 0 0 0 0 0 1 ";
+  send_cfg(msg);
+
+  msg = " chirpCfg 1 1 0 0 0 0 0 4 ";
+  send_cfg(msg);
+
+  msg = " chirpCfg 2 2 0 0 0 0 0 2 ";
+  send_cfg(msg);
+
+  // 55 is 55ms delay between 2 output frame
+  msg = " frameCfg 0 2 32 0 50 1 0 ";
+  send_cfg(msg);
+
+  msg = " lowPower 0 0 ";
+  send_cfg(msg);
+
+  msg = " guiMonitor -1 1 0 0 0 0 0 ";
+  send_cfg(msg);
+
+  //Threshold scale [0..100]
+  msg = " cfarCfg -1 0 2 8 4 3 0 20 0 ";
+  send_cfg(msg);
+
+  msg = " cfarCfg -1 1 0 4 2 3 1 15 0 ";
+  send_cfg(msg);
+
+  msg = " multiObjBeamForming -1 1 0.5 ";
+  send_cfg(msg);
+
+  msg = " clutterRemoval -1 1 ";
+  send_cfg(msg);
+
+  msg = " calibDcRangeSig -1 0 -5 8 256 ";
+  send_cfg(msg);
+
+  msg = " extendedMaxVelocity -1 1 ";
+  send_cfg(msg);
+
+  msg = " bpmCfg -1 0 0 1 ";
+  send_cfg(msg);
+
+  msg = " lvdsStreamCfg -1 0 0 0 ";
+  send_cfg(msg);
+
+  msg = " compRangeBiasAndRxChanPhase 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 ";
+  send_cfg(msg);
+
+  msg = " measureRangeBiasAndRxChanPhase 0 1.5 0.2 ";
+  send_cfg(msg);
+
+  msg = " CQRxSatMonitor 0 3 15 125 0 ";
+  send_cfg(msg);
+
+  msg = " CQSigImgMonitor 0 115 6 ";
+  send_cfg(msg);
+
+  msg = " analogMonitor 0 0 ";
+  send_cfg(msg);
+
+  // View config (degrees) : [ -1 <minAzimuthDeg> <maxAzimuthDeg> <minElevationDeg> <maxElevationDeg> ]
+  msg = " aoaFovCfg -1 -60 60 0 30 ";
+  send_cfg(msg);
+
+  // Config point filtering in range direction (meter)
+  msg = " cfarFovCfg -1 0 0 10 ";
+  send_cfg(msg);
+
+  // Config point filtering in Doppler direction (meter/sec)
+  msg = " cfarFovCfg -1 1 -20 20 ";
+  send_cfg(msg);
+
+  // *****************TRACKING COMMANDS*****************************
+  // https://dev.ti.com/tirex/explore/content/mmwave_industrial_toolbox_4_7_0/labs/people_counting/docs/3D_people_counting_tracker_layer_tuning_guide.pdf
+  msg = " staticBoundaryBox -1 1 0 1 0 1 ";
+  send_cfg(msg);
+
+  msg = " boundaryBox -1.5 1.5 0 10 0 2 ";
+  send_cfg(msg);
+
+  msg = " gatingParam 4 4 6 4 20 ";
+  send_cfg(msg);
+
+  msg = " stateParam 5 2 20 2 5 ";
+  send_cfg(msg);
+
+  msg = " allocationParam 200 150 0.05 8 4 20 ";
   send_cfg(msg);
 
   msg = " maxAcceleration 8 8 8 ";
@@ -200,7 +329,7 @@ void ttcRAdarObj::start_radar(void)
   msg = " heatmapGenCfg -1 1 0 40 130 60 3 10 ";
   send_cfg(msg);
 
-  msg = " staticDetectionCfg -1 0 -50 50 0 20 0.7 6 0.2 4 20 ";
+  msg = " staticDetectionCfg -1 0 -50 50 0 2 0.7 6 0.2 4 20 ";
   send_cfg(msg);
 
   msg = "sensorStart";
@@ -218,7 +347,6 @@ void ttcRAdarObj::stop_radar(void)
 //    msg = "flushCfg";
 //    send_cfg(msg);
 }
-
 
 /*----------Frame Header----------------------------------*/
 
@@ -323,6 +451,9 @@ void ttcRAdarObj::clearPtCloud(void)
     ptDetObj.z.clear();
     ptDetObj.doppler.clear();
 
+    ptSideInfo.snr.clear();
+    ptSideInfo.noise.clear();
+
     ptTargets.tid.clear();
     // ptTargets.posX.push_back(data.myFloat[i * 4]);
     ptTargets.posX.clear();
@@ -367,6 +498,24 @@ void ttcRAdarObj::getDetObj(void)
             ptDetObj.z.push_back(   data.myFloat[i * 4]             *   sin(data.myFloat[i * 4 + 2])                        );
             ptDetObj.y.push_back(   cos(data.myFloat[i * 4 + 2])    *   cos(data.myFloat[i * 4 + 2]) * data.myFloat[i * 4]  );
             ptDetObj.x.push_back(   sin(data.myFloat[i * 4 + 2])    *   cos(data.myFloat[i * 4 + 2]) * data.myFloat[i * 4]  );
+
+            // ROS_INFO("ptDetObj = %f ", ptDetObj.z[i]);
+
+        }
+    }
+}
+
+void ttcRAdarObj::getSideInfo(void)
+{
+    int numDetectedObj = tlv.length/4;
+
+    if (numDetectedObj) {
+        for (uint32_t i = 0; i < tlv.length ; i+=4) {
+            ptSideInfo.snr.push_back(tlv.payload[i]*1 + tlv.payload[i+1]*256.0);
+            ptSideInfo.noise.push_back(tlv.payload[i+2]*1 + tlv.payload[i+3]*256.0);
+
+             ROS_INFO("snr   = %u ", ptSideInfo.snr[i]);
+             ROS_INFO("noise = %u ", ptSideInfo.noise[i]);
         }
     }
 }
@@ -430,6 +579,7 @@ void ttcRAdarObj::getGtrackTargetList(void)
     }
 }
 
+
 structTLV ttcRAdarObj::getTLV (structPacket framePacket, uint32_t numTLVs, uint32_t idX)
 {
     // clear all the elements of the vector container
@@ -456,13 +606,13 @@ structTLV ttcRAdarObj::getTLV (structPacket framePacket, uint32_t numTLVs, uint3
         switch (tlv.type) {
             // getGtrackPtCloud() == 1
             case MMWDEMO_UART_MSG_DETECTED_POINTS : {
-                getDetObj();
+                // getDetObj();
             }
             break;
 
             // getGtrackPtCloud() == 7
             case MMWDEMO_UART_MSG_DETECTED_POINTS_SIDE_INFO : {
-            // getDetObj();
+            // getSideInfo();
             }
             break;
 
@@ -536,6 +686,7 @@ bool ttcRAdarObj::processingGtrackTarget(void)
 
 float ttcRAdarObj::processingPtMinDistance (structHeader frameHeader)
 {
+
     // sorting vector distance in increasing order
     sort(ptDetObj.y.begin(), ptDetObj.y.end());
 

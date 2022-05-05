@@ -15,7 +15,7 @@
 #include <math.h>
 using namespace std;
 
-#define CFG_LOOP_RATE 50
+#define CFG_LOOP_RATE 100
 
 #define ser_Cfg_Port_Name "/dev/ttyUSB_radarCfg"
 #define ser_Data_Port_Name "/dev/ttyUSB_radarData"
@@ -87,9 +87,15 @@ struct structDetObj
 	// vector<float> elev;
 	vector<float> doppler;
 
-    vector<float> x;
+  vector<float> x;
 	vector<float> y;
 	vector<float> z;
+};
+
+struct structSideInfo
+{
+  vector<uint16_t> snr;
+  vector<uint16_t> noise;
 };
 
 struct structStaticDetObj
@@ -106,11 +112,11 @@ struct structTargets
 	vector<float> posX;
 	vector<float> posY;
 	vector<float> velX;
-    vector<float> velY;
+  vector<float> velY;
 	vector<float> accX;
 	vector<float> accY;
 	vector<float> posZ;
-    vector<float> velZ;
+  vector<float> velZ;
 	vector<float> accZ;
 };
 
@@ -138,6 +144,7 @@ class ttcRAdarObj
     serial::Serial ser_Data_Port;
     Radar_Output_Struct Output;
     structDetObj ptDetObj;
+    structSideInfo ptSideInfo;
     structStaticDetObj ptStaticDetObj;
     structTargets ptTargets;
     structTLV tlv;
@@ -147,8 +154,10 @@ class ttcRAdarObj
     bool init_cfg_port(void);
     bool init_data_port(void);
     void start_radar(void);
+    void start_radar_MPC(void);
     void stop_radar(void);
     void getDetObj(void);
+    void getSideInfo(void);
     void getStaticObj(void);
     void getGtrackTargetList(void);
     bool data_handler(std_msgs::UInt8MultiArray raw_data, uint16_t dataLen);
