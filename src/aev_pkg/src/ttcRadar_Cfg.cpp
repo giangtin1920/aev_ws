@@ -122,10 +122,10 @@ void ttcRAdarObj::start_radar(void)
   send_cfg(msg);
 
   //Threshold scale [0..100]
-  msg = " cfarCfg -1 0 2 8 4 3 0 1 0 ";
+  msg = " cfarCfg -1 0 2 8 4 3 0 10 0 ";
   send_cfg(msg);
 
-  msg = " cfarCfg -1 1 0 4 2 3 1 2 0 ";
+  msg = " cfarCfg -1 1 0 4 2 3 1 10 0 ";
   send_cfg(msg);
 
   msg = " multiObjBeamForming -1 1 0.5 ";
@@ -178,29 +178,29 @@ void ttcRAdarObj::start_radar(void)
   msg = " staticBoundaryBox -1 1 0 1 0 1 ";
   send_cfg(msg);
 
-  msg = " boundaryBox -6 6 0 50 0 1.5 ";
+  msg = " boundaryBox -5 1 1 50 0 1.5 ";
   send_cfg(msg);
 
-  msg = " gatingParam 50 6 6 6 20 ";
+  msg = " gatingParam 100 6 6 6 20 ";
   send_cfg(msg);
 
-  msg = " stateParam 3 1 2 1 1 ";
+  msg = " stateParam 3 2 3 2 2 ";
   send_cfg(msg);
 
-  msg = " allocationParam 1000 950 0.01 5 20 20 ";
+  msg = " allocationParam 880 830 0.01 4 20 20 ";
   send_cfg(msg);
 
-  msg = " maxAcceleration 20 20 20 ";
+  msg = " maxAcceleration 8 8 8 ";
   send_cfg(msg);
 
   msg = " trackingCfg 1 2 500 25 200 50 100 90 ";
   send_cfg(msg);
 
   // *****************STATIC DETECTION COMMANDS*********************
-  msg = " heatmapGenCfg -1 1 0 40 130 60 3 10 ";
+  msg = " heatmapGenCfg -1 1 0 10 130 60 3 10 ";
   send_cfg(msg);
 
-  msg = " staticDetectionCfg -1 0 -50 50 0 1 0.7 6 0.2 4 20 ";
+  msg = " staticDetectionCfg -1 0 -50 50 0 20 0.7 6 0.2 4 20 ";
   send_cfg(msg);
 
   msg = "sensorStart";
@@ -228,7 +228,7 @@ void ttcRAdarObj::start_radar_MPC(void)
   msg = " adcbufCfg -1 0 1 1 1 ";
   send_cfg(msg);
 
-  msg = " profileCfg 0 60.25 20 3.9 38 0 0 50 1 256 8000 0 0 30 ";
+  msg = " profileCfg 0 60 7 4 65.92 0 0 49.2 1 444 7288 0 0 30 ";
   send_cfg(msg);
 
   msg = " chirpCfg 0 0 0 0 0 0 0 1 ";
@@ -241,7 +241,7 @@ void ttcRAdarObj::start_radar_MPC(void)
   send_cfg(msg);
 
   // 55 is 55ms delay between 2 output frame
-  msg = " frameCfg 0 2 32 0 50 1 0 ";
+  msg = " frameCfg 0 0 48 0 100 1 0 ";
   send_cfg(msg);
 
   msg = " lowPower 0 0 ";
@@ -266,7 +266,7 @@ void ttcRAdarObj::start_radar_MPC(void)
   msg = " calibDcRangeSig -1 0 -5 8 256 ";
   send_cfg(msg);
 
-  msg = " extendedMaxVelocity -1 1 ";
+  msg = " extendedMaxVelocity -1 0 ";
   send_cfg(msg);
 
   msg = " bpmCfg -1 0 0 1 ";
@@ -310,19 +310,19 @@ void ttcRAdarObj::start_radar_MPC(void)
   msg = " boundaryBox -1.5 1.5 0 10 0 2 ";
   send_cfg(msg);
 
-  msg = " gatingParam 4 4 6 4 20 ";
+  msg = " gatingParam 4 2 2 2 20 ";
   send_cfg(msg);
 
-  msg = " stateParam 5 2 20 2 5 ";
+  msg = " stateParam 5 5 2 2 5 ";
   send_cfg(msg);
 
   msg = " allocationParam 200 150 0.05 8 4 20 ";
   send_cfg(msg);
 
-  msg = " maxAcceleration 8 8 8 ";
+  msg = " maxAcceleration 2 2 2 ";
   send_cfg(msg);
 
-  msg = " trackingCfg 1 2 500 25 200 50 50 90 ";
+  msg = " trackingCfg 1 2 500 25 200 50 100 90 ";
   send_cfg(msg);
 
   // *****************STATIC DETECTION COMMANDS*********************
@@ -612,13 +612,13 @@ structTLV ttcRAdarObj::getTLV (structPacket framePacket, uint32_t numTLVs, uint3
 
             // getGtrackPtCloud() == 7
             case MMWDEMO_UART_MSG_DETECTED_POINTS_SIDE_INFO : {
-            // getSideInfo();
+//             getSideInfo();
             }
             break;
 
             // getStaticObj == 8
             case MMWDEMO_UART_MSG_STATIC_DETECTED_POINTS : {
-                // getStaticObj();
+//                 getStaticObj();
             }
             break;
 
@@ -838,10 +838,23 @@ void ttcRAdarObj::clear_msg(aev_pkg::radar_msg &msg)
     msg.vel.clear();
     msg.ttc.clear();
     msg.safetyZone.clear();
+//    msg.staticPosX.clear();
+//    msg.staticPosY.clear();
 
     msg.isObject = false;
     msg.distance = 20;
 
 }
 
+void ttcRAdarObj::initParamTTC()
+{
+  paramTTC.safety = 10;
+  paramTTC.warning = 5;
+  paramTTC.accidence = 3;
+
+  paramTTC.carNormal = "white";
+  paramTTC.carSafety = "green";
+  paramTTC.carWarning = "yellow";
+  paramTTC.carAccidence = "red";
+}
 

@@ -128,6 +128,18 @@ union byte2float
 	~byte2float() {}
 };
 
+struct structParamTTC
+{
+  float accidence;
+  float warning;
+  float safety;
+  string carNormal;
+  string carSafety;
+  string carWarning;
+  string carAccidence;
+  vector<string> safetyZone;
+};
+
 class ttcRAdarObj
 {
 
@@ -150,6 +162,7 @@ class ttcRAdarObj
     structTLV tlv;
     vector<float> bufDistance;
     vector<uint16_t> startIdx;
+    structParamTTC paramTTC;
 
     bool init_cfg_port(void);
     bool init_data_port(void);
@@ -164,6 +177,7 @@ class ttcRAdarObj
     bool processingGtrackTarget(void);
     float processingPtMinDistance (structHeader frameHeader);
     void clear_msg(aev_pkg::radar_msg &msg);
+    void initParamTTC();
 
 
     private:
