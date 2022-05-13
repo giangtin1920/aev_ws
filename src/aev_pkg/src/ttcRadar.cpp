@@ -17,7 +17,154 @@ void readRadarData(uint16_t &dataLen, std_msgs::UInt8MultiArray &raw_data)
   }
 }
 
-void autoDrive() {
+void autoDrive()
+{
+  vector<string> state_description;
+  vector<string> state_key;
+  string key = "";
+  static float speed = 2.0;
+  static float steering = 0.0;
+
+  // param TTCController
+  float speed_max = 5.0;
+  float speed_steering = 5.0;
+  float steering_turn = 0.05;
+  float ratioSlowdown = 1.5;
+  float X_max = 2;
+  float X_min = -2;
+  float ttc_min = 3; // s
+  float dis_min = 20; // m
+
+  float duty = 0;
+  static float x = 1;
+  static float th = 1;
+  static uint32_t cnt = 0, cnt1 = 0, cnt2 = 0, cnt3 = 0, numframeFilter = 20;
+
+  cnt++;
+
+  // stop in 2s
+  if (speed < 1) {
+    cnt1++;
+    if (cnt1 == 40) {
+      cnt1 = 0;
+      speed = 2.0;
+      x = 1.5; th = 0;
+    }
+    else state_key.push_back("k");
+  }
+
+  // tracking and warning dangerous objects.
+  if (!ttcRadar_output_msg.numObj) {
+    // filter for slow down the speed
+    cnt3++;
+    if (cnt3 == numframeFilter) {
+      cnt3 = 0;
+      state_description.push_back("no obstacle");
+      state_key.push_back("none");
+//      speed = speed_max;
+      steering = 0;
+      x = 1.5; th = 0;
+    }
+    else {state_description.push_back("no obstacle"); state_key.push_back("none");}
+  }
+  else {
+
+    // get state_description and state_key for controller
+    for (uint8_t i = 0; i < ttcRadar_output_msg.numObj; i++) {
+
+      if (ttcRadar_output_msg.safetyZone[i] == "carAccidence" || ttcRadar_output_msg.safetyZone[i] == "carWarning") {
+
+        // duty is the period of deceleration between 2 consecutive times. it changes depending on the object distance.
+        duty = round(ttcRadar_output_msg.dis[i]/ratioSlowdown);
+        if (duty < 1) duty = 1;
+
+        if (ttcRadar_output_msg.posX[i] > X_min && ttcRadar_output_msg.posX[i] < X_max) {
+          state_description.push_back("front");
+          if (ttcRadar_output_msg.dis[i] < dis_min) {
+            if (cnt == (cnt/duty)*duty)
+              state_key.push_back("x"); else state_key.push_back("i");
+          }
+          else state_key.push_back("i");
+        }
+        else if (ttcRadar_output_msg.posX[i] >= X_max) {
+          state_description.push_back("right");
+          if (ttcRadar_output_msg.ttc[i] < ttc_min) {
+            state_key.push_back("u");
+            speed = speed_steering;
+            steering = steering_turn;
+          }
+          else state_key.push_back("i");
+        }
+        else if (ttcRadar_output_msg.posX[i] <= X_min) {
+          state_description.push_back("left");
+          if (ttcRadar_output_msg.ttc[i] < ttc_min) {
+            state_key.push_back("o");
+            speed = speed_steering;
+            steering = steering_turn;
+          }
+          else state_key.push_back("i");
+        }
+        else state_description.push_back("unknown state_description");
+      }
+      else {
+        // filter for slow down the speed
+        cnt2++;
+        if (cnt2 == numframeFilter) {
+          cnt2 = 0;
+          state_description.push_back("no obstacle");
+          state_key.push_back("none");
+//          speed = speed_max;
+          steering = 0;
+          x = 1.5; th = 0;
+        }
+        else {state_description.push_back("no obstacle"); state_key.push_back("none");}
+      }
+    }
+  }
+
+  // assign control command character (key), x is moveBindings
+
+
+  sort(state_key.begin(), state_key.end());
+  for (int i = 0; i < state_key.size(); ) {
+      if (state_key[i] == state_key[i+1]) {
+          state_key.erase(state_key.begin() + i);
+      }
+      else i++;
+  }
+
+  static vector<string> key_i{"i"};
+  static vector<string> key_o{"0"};
+  static vector<string> key_u{"u"};
+  static vector<string> key_x{"x"};
+  static vector<string> key_io{"i", "o"};
+  static vector<string> key_iu{"i", "u"};
+  static vector<string> key_ix{"i", "x"};
+  static vector<string> key_ou{"o", "u"};
+  static vector<string> key_ox{"o", "x"};
+  static vector<string> key_ux{"u", "x"};
+  static vector<string> key_none{"none"};
+
+  if (state_key == key_i) {x = 1; th = 0; key = "i";}
+  else if (state_key == key_o) {x = 1; th = 1; key = "o";}
+  else if (state_key == key_u) {x = 1; th = -1; key = "u";}
+  else if (state_key == key_x) {x = 0.8; th = 0; key = "x";}
+  else if (state_key == key_io) {x = 1; th = 1; key = "io";}
+  else if (state_key == key_iu) {x = 1; th = -1; key = "iu";}
+  else if (state_key == key_ix) {x = 0.8; th = 0; key = "ix";}
+  else if (state_key == key_ou) {x = 1; th = 0; key = "ou";}
+  else if (state_key == key_ox) {x = 1; th = 1; key = "ox";}
+  else if (state_key == key_ux) {x = 1; th = -1; key = "ux";}
+  else if (state_key == key_none) {key = "none";}
+
+  speed = x * speed;
+  steering = th * steering;
+
+  if (abs(speed) > speed_max) speed = speed_max;
+
+  ttcRadar_output_msg.ttcSpeed = speed;
+  ttcRadar_output_msg.ttcSteering = steering;
+  ttcRadar_output_msg.ttcKey = key;
 
 }
 
@@ -54,12 +201,15 @@ void timer_uart_Callback(const ros::TimerEvent&)
                 ttcRadar_output_msg.dis.push_back(ttcRadarObj.Output.dis[i]);
                 ttcRadar_output_msg.vel.push_back(ttcRadarObj.Output.vel[i]);
                 ttcRadar_output_msg.ttc.push_back(ttcRadarObj.Output.ttc[i]);
+                ttcRadar_output_msg.safetyZone.push_back(ttcRadarObj.Output.safetyZone[i]);
                 ttcRadar_output_msg.msg_counter = msg_counter;
                 ttcRadar_output_msg.isObject = ttcRadarObj.Output.isObject;
 
                 sort(ttcRadarObj.Output.dis.begin(), ttcRadarObj.Output.dis.end());
                 ttcRadar_output_msg.distance = ttcRadarObj.Output.dis[0];
             }
+            autoDrive();
+
 
 //            for (int i = 0; i < ttcRadarObj.ptStaticDetObj.x.size(); i++) {
 //                ttcRadar_output_msg.staticPosX.push_back(ttcRadarObj.ptStaticDetObj.x[i]);
@@ -67,8 +217,13 @@ void timer_uart_Callback(const ros::TimerEvent&)
 //            }
 
             ttcRadar_pub.publish(ttcRadar_output_msg);
-//            ROS_INFO("isObject: %d ", ttcRadar_output_msg.isObject);
+            ROS_INFO("isObject:             %d ", ttcRadar_output_msg.isObject);
+            ROS_INFO("ttcSpeed:     m/s,    %f", ttcRadar_output_msg.ttcSpeed);
+            ROS_INFO("ttcSteering:  m/s,    %f", ttcRadar_output_msg.ttcSteering);
+            ROS_INFO("ttcKey:               %s", ttcRadar_output_msg.ttcKey.c_str());
+
             ROS_INFO("Public message ok (TTC) \r\n");
+
         }
         break;
 
@@ -88,6 +243,9 @@ void timer_uart_Callback(const ros::TimerEvent&)
     }
 }
 
+
+
+
 int main (int argc, char** argv)
 {
     ros::init(argc, argv, "ttcRadar");
@@ -105,7 +263,7 @@ int main (int argc, char** argv)
     ttcRadarObj.start_radar();
 //    ttcRadarObj.start_radar_MPC();
 
-//    ttcRadarObj.initParamTTC();
+    ttcRadarObj.initParamTTC();
 
     // Timer to receive data from Radar
     ros::Timer timer_uart = n.createTimer(ros::Duration(0.05), timer_uart_Callback);

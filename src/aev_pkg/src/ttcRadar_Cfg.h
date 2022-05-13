@@ -47,6 +47,7 @@ typedef struct
     vector <float>  dis;
     vector <float> vel;
     vector <float>  ttc;
+    vector <string> safetyZone;
     bool isObject;
 
 } Radar_Output_Struct;

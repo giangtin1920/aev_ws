@@ -472,6 +472,7 @@ void ttcRAdarObj::clearPtCloud(void)
     Output.dis.clear();
     Output.vel.clear();
     Output.ttc.clear();
+    Output.safetyZone.clear();
     Output.isObject = false;
 
 }
@@ -673,12 +674,23 @@ bool ttcRAdarObj::processingGtrackTarget(void)
 
         Output.ttc.push_back(Output.dis[i] / abs(Output.vel[i]));
         if (Output.ttc.at(i) > 99) Output.ttc.at(i) = 99;
+
+        if (!Output.isApproach[i])
+          Output.safetyZone.push_back("carNormal");
+        else if(Output.ttc[i] < paramTTC.accidence)
+          Output.safetyZone.push_back("carAccidence");
+        else if(Output.ttc[i] < paramTTC.warning)
+          Output.safetyZone.push_back("carWarning");
+        else
+          Output.safetyZone.push_back("carSafety");
+
+
 //        ROS_INFO("ID Track Object =============, %u ", ptTargets.tid[i]);
 //        ROS_INFO("alpha:        deg,     %f", Output.alpha[i]*180/M_PI);
-        ROS_INFO("distance:     m,       %f", Output.dis[i]);
+        ROS_INFO("distance:     m,      %f", Output.dis[i]);
 //        ROS_INFO("gamma:        deg,     %f", gamma*180/M_PI);
-        ROS_INFO("velocity:    m/s,     %f", Output.vel[i]);
-//        ROS_INFO("is Approach:  m,       %f", ttcPosX);
+        ROS_INFO("velocity:     m/s,    %f", Output.vel[i]);
+        ROS_INFO("is Approach:  m,      %f", ttcPosX);
     }
 
     return true;
@@ -838,6 +850,8 @@ void ttcRAdarObj::clear_msg(aev_pkg::radar_msg &msg)
     msg.vel.clear();
     msg.ttc.clear();
     msg.safetyZone.clear();
+
+
 //    msg.staticPosX.clear();
 //    msg.staticPosY.clear();
 
@@ -848,13 +862,14 @@ void ttcRAdarObj::clear_msg(aev_pkg::radar_msg &msg)
 
 void ttcRAdarObj::initParamTTC()
 {
-  paramTTC.safety = 10;
-  paramTTC.warning = 5;
-  paramTTC.accidence = 3;
+  paramTTC.safety = 50;
+  paramTTC.warning = 30;
+  paramTTC.accidence = 1;
 
   paramTTC.carNormal = "white";
   paramTTC.carSafety = "green";
   paramTTC.carWarning = "yellow";
   paramTTC.carAccidence = "red";
 }
+
 
