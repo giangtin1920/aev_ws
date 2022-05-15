@@ -166,7 +166,7 @@ void ttcRAdarObj::start_radar(void)
   send_cfg(msg);
 
   // Config point filtering in range direction (meter)
-  msg = " cfarFovCfg -1 0 1 50 ";
+  msg = " cfarFovCfg -1 0 2 75 ";
   send_cfg(msg);
 
   // Config point filtering in Doppler direction (meter/sec)
@@ -184,7 +184,7 @@ void ttcRAdarObj::start_radar(void)
   msg = " gatingParam 50 5 5 2 20 ";
   send_cfg(msg);
 
-  msg = " stateParam 2 3 1 1 1 ";
+  msg = " stateParam 3 3 1 1 1 ";
   send_cfg(msg);
 
   msg = " allocationParam 200 100 0.05 5 16 20 ";
@@ -615,7 +615,7 @@ structTLV ttcRAdarObj::getTLV (structPacket framePacket, uint32_t numTLVs, uint3
 
             // getGtrackPtCloud() == 7
             case MMWDEMO_UART_MSG_DETECTED_POINTS_SIDE_INFO : {
-             getSideInfo();
+//             getSideInfo();
             }
             break;
 

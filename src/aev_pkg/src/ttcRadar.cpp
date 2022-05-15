@@ -26,12 +26,12 @@ void autoDrive()
   static float steering = 0.0;
 
   // param TTCController
-  float speed_max = 8.0;
-  float speed_min = 0.1;
+  float speed_max = 10;
+  float speed_min = 1;
   float speed_Nor = 2.0;
   float speed_steering = 5.0;
   float steering_turn = 0.05;
-  float ratioSlowdown = 6; // ~15 cnt giam 1 lan
+  float ratioSlowdown = 5; // ~15 cnt giam 1 lan cang gan cang nho
   float ratioSpeedup = 1.2;
   float X_max = 1;
   float X_min = -1;
@@ -41,7 +41,7 @@ void autoDrive()
   float duty = 0;
   static float x = 1;
   static float th = 1;
-  static uint32_t cnt = 0, cnt1 = 0, cnt2 = 0, cnt3 = 0, numframeFilter = 80;
+  static uint32_t cnt = 0, cnt1 = 0, cnt2 = 0, cnt3 = 0, numframeFilter = 100;
 
   cnt++;
 
@@ -53,7 +53,7 @@ void autoDrive()
       speed = speed_Nor;
       x = ratioSpeedup; th = 0;
     }
-    else state_key.push_back("k");
+    else {state_key.push_back("k"); x = 0.5;}
   }
 
   // tracking and warning dangerous objects.
@@ -110,7 +110,7 @@ void autoDrive()
         else state_description.push_back("unknown state_description");
       }
       else {
-        // filter for slow down the speed
+        // filter for lost frame
         cnt2++;
         if (cnt2 == 20) {
           cnt2 = 0;
