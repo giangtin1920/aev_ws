@@ -1,0 +1,125 @@
+std::string msg;																																								
+msg = "sensorStop";																																								
+send_cfg(msg);																																								
+																																								
+msg = "flushCfg";																																								
+send_cfg(msg);																																								
+																																								
+msg = "	dfeDataOutputMode	1	";																																					
+send_cfg(msg);																																								
+																																								
+msg = "	channelCfg	15	7	0	";																																			
+send_cfg(msg);																																								
+																																								
+msg = "	adcCfg	2	1	";																																				
+send_cfg(msg);																																								
+																																								
+msg = "	adcbufCfg	-1	0	1	1	1	";																																	
+send_cfg(msg);																																								
+																																								
+msg = "	profileCfg	0	60.25	8	7	28	0	0	20	1	256	12500	0	0	48	";																								
+send_cfg(msg);																																								
+																																								
+msg = "	chirpCfg	0	0	0	0	0	0	0	1	";																														
+send_cfg(msg);																																								
+																																								
+msg = "	chirpCfg	1	1	0	0	0	0	0	4	";																														
+send_cfg(msg);																																								
+																																								
+msg = "	chirpCfg	2	2	0	0	0	0	0	2	";																														
+send_cfg(msg);																																								
+																																								
+// 55 is 55ms delay between 2 output frame																																								
+msg = "	frameCfg	0	2	40	0	100	1	0	";																															
+send_cfg(msg);																																								
+																																								
+msg = "	lowPower	0	0	";																																				
+send_cfg(msg);																																								
+																																								
+msg = "	guiMonitor	-1	1	0	0	0	0	0	";																															
+send_cfg(msg);																																								
+																																								
+//Threshold scale [0..100]																																								
+msg = "	cfarCfg	-1	0	2	8	4	3	0	10	0	";																													
+send_cfg(msg);																																								
+																																								
+msg = "	cfarCfg	-1	1	0	4	2	3	1	20	0	";																													
+send_cfg(msg);																																								
+																																								
+msg = "	multiObjBeamForming	-1	1	0.5	";																																			
+send_cfg(msg);									 																															
+																																								
+msg = "	clutterRemoval	-1	1	";																																				
+send_cfg(msg);																																								
+																																								
+msg = "	calibDcRangeSig	-1	0	-5	8	256	";																																	
+send_cfg(msg);																																								
+																																								
+msg = "	extendedMaxVelocity	-1	0	";																																				
+send_cfg(msg);																																								
+																																								
+msg = "	bpmCfg	-1	0	0	1	";																																		
+send_cfg(msg);																																								
+																																								
+msg = "	lvdsStreamCfg	-1	0	0	0	";																																		
+send_cfg(msg);																																								
+																																								
+msg = "	compRangeBiasAndRxChanPhase	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	";													
+send_cfg(msg);																																								
+																																								
+msg = "	measureRangeBiasAndRxChanPhase	0	1.5	0.2	";																																			
+send_cfg(msg);																																								
+																																								
+msg = "	CQRxSatMonitor	0	3	15	125	0	";																																	
+send_cfg(msg);																																								
+																																								
+msg = "	CQSigImgMonitor	0	115	6	";																																			
+send_cfg(msg);																																								
+																																								
+msg = "	analogMonitor	0	0	";																																				
+send_cfg(msg);																																								
+																																								
+// View config (degrees) : [ -1 <minAzimuthDeg> <maxAzimuthDeg> <minElevationDeg> <maxElevationDeg> ]																																								
+msg = "	aoaFovCfg	-1	-60	60	0	20	";																																	
+send_cfg(msg);																																								
+																																								
+// Config point filtering in range direction (meter)																																								
+msg = "	cfarFovCfg	-1	0	1	50	";																																		
+send_cfg(msg);																																								
+																																								
+// Config point filtering in Doppler direction (meter/sec)																																								
+msg = "	cfarFovCfg	-1	1	-20	20	";																																		
+send_cfg(msg);																																								
+																																								
+// *****************TRACKING COMMANDS*****************************																																								
+// https://dev.ti.com/tirex/explore/content/mmwave_industrial_toolbox_4_7_0/labs/people_counting/docs/3D_people_counting_tracker_layer_tuning_guide.pdf																																								
+msg = "	staticBoundaryBox	-1	1	0	1	0	1	";																																
+send_cfg(msg);																																								
+																																								
+msg = "	boundaryBox	-8	2	0	50	0	1	";																																
+send_cfg(msg);																																								
+																																								
+msg = "	gatingParam	50	5	5	2	20	";																																	
+send_cfg(msg);																																								
+																																								
+msg = "	stateParam	3	3	1	1	1	";																																	
+send_cfg(msg);																																								
+																																								
+msg = "	allocationParam	200	100	0.05	5	16	20	";																																
+send_cfg(msg);																																								
+																																								
+msg = "	maxAcceleration	20	20	20	";																																			
+send_cfg(msg);																																								
+																																								
+msg = "	trackingCfg	1	2	500	25	200	50	100	90	";																														
+send_cfg(msg);																																								
+																																								
+// *****************STATIC DETECTION COMMANDS*********************																																								
+msg = "	heatmapGenCfg	-1	1	0	10	130	60	3	10	";																														
+send_cfg(msg);																																								
+																																								
+msg = "	staticDetectionCfg	-1	0	-50	50	0	20	0.7	6	0.2	4	20	";																											
+send_cfg(msg);																																								
+																																								
+msg = "sensorStart";																																								
+send_cfg(msg);																																								
