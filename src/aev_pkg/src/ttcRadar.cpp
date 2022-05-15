@@ -26,29 +26,32 @@ void autoDrive()
   static float steering = 0.0;
 
   // param TTCController
-  float speed_max = 5.0;
+  float speed_max = 8.0;
+  float speed_min = 0.1;
+  float speed_Nor = 2.0;
   float speed_steering = 5.0;
   float steering_turn = 0.05;
-  float ratioSlowdown = 1.5;
-  float X_max = 2;
-  float X_min = -2;
-  float ttc_min = 3; // s
+  float ratioSlowdown = 6; // ~15 cnt giam 1 lan
+  float ratioSpeedup = 1.2;
+  float X_max = 1;
+  float X_min = -1;
+  float ttc_min = 2; // s
   float dis_min = 20; // m
 
   float duty = 0;
   static float x = 1;
   static float th = 1;
-  static uint32_t cnt = 0, cnt1 = 0, cnt2 = 0, cnt3 = 0, numframeFilter = 20;
+  static uint32_t cnt = 0, cnt1 = 0, cnt2 = 0, cnt3 = 0, numframeFilter = 80;
 
   cnt++;
 
-  // stop in 2s
-  if (speed < 1) {
+  // stop in 4s numframeFilter = 80
+  if (speed < speed_min) {
     cnt1++;
-    if (cnt1 == 40) {
+    if (cnt1 == numframeFilter) {
       cnt1 = 0;
-      speed = 2.0;
-      x = 1.5; th = 0;
+      speed = speed_Nor;
+      x = ratioSpeedup; th = 0;
     }
     else state_key.push_back("k");
   }
@@ -63,7 +66,7 @@ void autoDrive()
       state_key.push_back("none");
 //      speed = speed_max;
       steering = 0;
-      x = 1.5; th = 0;
+      x = ratioSpeedup; th = 0;
     }
     else {state_description.push_back("no obstacle"); state_key.push_back("none");}
   }
@@ -109,13 +112,13 @@ void autoDrive()
       else {
         // filter for slow down the speed
         cnt2++;
-        if (cnt2 == numframeFilter) {
+        if (cnt2 == 20) {
           cnt2 = 0;
           state_description.push_back("no obstacle");
           state_key.push_back("none");
 //          speed = speed_max;
           steering = 0;
-          x = 1.5; th = 0;
+          x = ratioSpeedup; th = 0;
         }
         else {state_description.push_back("no obstacle"); state_key.push_back("none");}
       }
@@ -202,12 +205,16 @@ void timer_uart_Callback(const ros::TimerEvent&)
                 ttcRadar_output_msg.vel.push_back(ttcRadarObj.Output.vel[i]);
                 ttcRadar_output_msg.ttc.push_back(ttcRadarObj.Output.ttc[i]);
                 ttcRadar_output_msg.safetyZone.push_back(ttcRadarObj.Output.safetyZone[i]);
+
                 ttcRadar_output_msg.msg_counter = msg_counter;
                 ttcRadar_output_msg.isObject = ttcRadarObj.Output.isObject;
 
                 sort(ttcRadarObj.Output.dis.begin(), ttcRadarObj.Output.dis.end());
                 ttcRadar_output_msg.distance = ttcRadarObj.Output.dis[0];
             }
+            ttcRadar_output_msg.ptX = ttcRadarObj.ptDetObj.x;
+            ttcRadar_output_msg.ptY = ttcRadarObj.ptDetObj.y;
+            ttcRadar_output_msg.ptZ = ttcRadarObj.ptDetObj.z;
             autoDrive();
 
 

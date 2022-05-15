@@ -99,7 +99,7 @@ void ttcRAdarObj::start_radar(void)
   msg = " adcbufCfg -1 0 1 1 1 ";
   send_cfg(msg);
 
-  msg = " profileCfg 0 60.25 4 3.9 22.73 0 0 41.91 1 166 9313 3 0 30 ";
+  msg = " profileCfg 0 60.25 8 7 28 0 0 20 1 256 12500 0 0 48 ";
   send_cfg(msg);
 
   msg = " chirpCfg 0 0 0 0 0 0 0 1 ";
@@ -112,7 +112,7 @@ void ttcRAdarObj::start_radar(void)
   send_cfg(msg);
 
   // 55 is 55ms delay between 2 output frame
-  msg = " frameCfg 0 0 100 0 100 1 0 ";
+  msg = " frameCfg 0 0 140 0 100 1 0 ";
   send_cfg(msg);
 
   msg = " lowPower 0 0 ";
@@ -125,7 +125,7 @@ void ttcRAdarObj::start_radar(void)
   msg = " cfarCfg -1 0 2 8 4 3 0 10 0 ";
   send_cfg(msg);
 
-  msg = " cfarCfg -1 1 0 4 2 3 1 10 0 ";
+  msg = " cfarCfg -1 1 0 4 2 3 1 20 0 ";
   send_cfg(msg);
 
   msg = " multiObjBeamForming -1 1 0.5 ";
@@ -166,7 +166,7 @@ void ttcRAdarObj::start_radar(void)
   send_cfg(msg);
 
   // Config point filtering in range direction (meter)
-  msg = " cfarFovCfg -1 0 0 50 ";
+  msg = " cfarFovCfg -1 0 1 50 ";
   send_cfg(msg);
 
   // Config point filtering in Doppler direction (meter/sec)
@@ -178,19 +178,19 @@ void ttcRAdarObj::start_radar(void)
   msg = " staticBoundaryBox -1 1 0 1 0 1 ";
   send_cfg(msg);
 
-  msg = " boundaryBox -5 1 1 50 0 1.5 ";
+  msg = " boundaryBox -8 1 5 50 0 1 ";
   send_cfg(msg);
 
-  msg = " gatingParam 100 6 6 6 20 ";
+  msg = " gatingParam 50 5 5 2 20 ";
   send_cfg(msg);
 
-  msg = " stateParam 3 2 3 2 2 ";
+  msg = " stateParam 2 3 1 1 1 ";
   send_cfg(msg);
 
-  msg = " allocationParam 880 830 0.01 4 20 20 ";
+  msg = " allocationParam 200 100 0.05 5 16 20 ";
   send_cfg(msg);
 
-  msg = " maxAcceleration 8 8 8 ";
+  msg = " maxAcceleration 20 20 20 ";
   send_cfg(msg);
 
   msg = " trackingCfg 1 2 500 25 200 50 100 90 ";
@@ -228,7 +228,7 @@ void ttcRAdarObj::start_radar_MPC(void)
   msg = " adcbufCfg -1 0 1 1 1 ";
   send_cfg(msg);
 
-  msg = " profileCfg 0 60 7 4 65.92 0 0 49.2 1 444 7288 0 0 30 ";
+  msg = " profileCfg 0 60.25 4 3.9 22.73 0 0 41.91 1 166 9313 3 0 30 ";
   send_cfg(msg);
 
   msg = " chirpCfg 0 0 0 0 0 0 0 1 ";
@@ -241,7 +241,7 @@ void ttcRAdarObj::start_radar_MPC(void)
   send_cfg(msg);
 
   // 55 is 55ms delay between 2 output frame
-  msg = " frameCfg 0 0 48 0 100 1 0 ";
+  msg = " frameCfg 0 0 140 0 100 1 0 ";
   send_cfg(msg);
 
   msg = " lowPower 0 0 ";
@@ -251,7 +251,7 @@ void ttcRAdarObj::start_radar_MPC(void)
   send_cfg(msg);
 
   //Threshold scale [0..100]
-  msg = " cfarCfg -1 0 2 8 4 3 0 20 0 ";
+  msg = " cfarCfg -1 0 2 8 4 3 0 10 0 ";
   send_cfg(msg);
 
   msg = " cfarCfg -1 1 0 4 2 3 1 15 0 ";
@@ -291,11 +291,11 @@ void ttcRAdarObj::start_radar_MPC(void)
   send_cfg(msg);
 
   // View config (degrees) : [ -1 <minAzimuthDeg> <maxAzimuthDeg> <minElevationDeg> <maxElevationDeg> ]
-  msg = " aoaFovCfg -1 -60 60 0 30 ";
+  msg = " aoaFovCfg -1 -40 40 0 20 ";
   send_cfg(msg);
 
   // Config point filtering in range direction (meter)
-  msg = " cfarFovCfg -1 0 0 10 ";
+  msg = " cfarFovCfg -1 0 1 50 ";
   send_cfg(msg);
 
   // Config point filtering in Doppler direction (meter/sec)
@@ -307,29 +307,29 @@ void ttcRAdarObj::start_radar_MPC(void)
   msg = " staticBoundaryBox -1 1 0 1 0 1 ";
   send_cfg(msg);
 
-  msg = " boundaryBox -1.5 1.5 0 10 0 2 ";
+  msg = " boundaryBox -4 1 2 50 0 1.5 ";
   send_cfg(msg);
 
-  msg = " gatingParam 4 2 2 2 20 ";
+  msg = " gatingParam 200 6 6 6 20 ";
   send_cfg(msg);
 
-  msg = " stateParam 5 5 2 2 5 ";
+  msg = " stateParam 3 1 1 1 1 ";
   send_cfg(msg);
 
-  msg = " allocationParam 200 150 0.05 8 4 20 ";
+  msg = " allocationParam 2200 2150 0.01 10 20 20 ";
   send_cfg(msg);
 
-  msg = " maxAcceleration 2 2 2 ";
+  msg = " maxAcceleration 8 8 8 ";
   send_cfg(msg);
 
   msg = " trackingCfg 1 2 500 25 200 50 100 90 ";
   send_cfg(msg);
 
   // *****************STATIC DETECTION COMMANDS*********************
-  msg = " heatmapGenCfg -1 1 0 40 130 60 3 10 ";
+  msg = " heatmapGenCfg -1 1 0 10 130 60 3 10 ";
   send_cfg(msg);
 
-  msg = " staticDetectionCfg -1 0 -50 50 0 2 0.7 6 0.2 4 20 ";
+  msg = " staticDetectionCfg -1 0 -50 50 0 20 0.7 6 0.2 4 20 ";
   send_cfg(msg);
 
   msg = "sensorStart";
@@ -500,7 +500,9 @@ void ttcRAdarObj::getDetObj(void)
             ptDetObj.y.push_back(   cos(data.myFloat[i * 4 + 2])    *   cos(data.myFloat[i * 4 + 2]) * data.myFloat[i * 4]  );
             ptDetObj.x.push_back(   sin(data.myFloat[i * 4 + 2])    *   cos(data.myFloat[i * 4 + 2]) * data.myFloat[i * 4]  );
 
-            // ROS_INFO("ptDetObj = %f ", ptDetObj.z[i]);
+//            ROS_INFO("x = %f ", ptDetObj.x[i]);
+//            ROS_INFO("y = %f ", ptDetObj.y[i]);
+//            ROS_INFO("z = %f ------", ptDetObj.z[i]);
 
         }
     }
@@ -607,13 +609,13 @@ structTLV ttcRAdarObj::getTLV (structPacket framePacket, uint32_t numTLVs, uint3
         switch (tlv.type) {
             // getGtrackPtCloud() == 1
             case MMWDEMO_UART_MSG_DETECTED_POINTS : {
-                // getDetObj();
+//                 getDetObj();
             }
             break;
 
             // getGtrackPtCloud() == 7
             case MMWDEMO_UART_MSG_DETECTED_POINTS_SIDE_INFO : {
-//             getSideInfo();
+             getSideInfo();
             }
             break;
 
@@ -691,6 +693,7 @@ bool ttcRAdarObj::processingGtrackTarget(void)
 //        ROS_INFO("gamma:        deg,     %f", gamma*180/M_PI);
         ROS_INFO("velocity:     m/s,    %f", Output.vel[i]);
         ROS_INFO("is Approach:  m,      %f", ttcPosX);
+        ROS_INFO("TTC:          s,      %f", Output.ttc[i]);
     }
 
     return true;
@@ -850,7 +853,9 @@ void ttcRAdarObj::clear_msg(aev_pkg::radar_msg &msg)
     msg.vel.clear();
     msg.ttc.clear();
     msg.safetyZone.clear();
-
+    msg.ptX.clear();
+    msg.ptY.clear();
+    msg.ptZ.clear();
 
 //    msg.staticPosX.clear();
 //    msg.staticPosY.clear();
@@ -862,8 +867,8 @@ void ttcRAdarObj::clear_msg(aev_pkg::radar_msg &msg)
 
 void ttcRAdarObj::initParamTTC()
 {
-  paramTTC.safety = 50;
-  paramTTC.warning = 30;
+  paramTTC.safety = 30;
+  paramTTC.warning = 10;
   paramTTC.accidence = 1;
 
   paramTTC.carNormal = "white";
