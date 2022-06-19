@@ -21,54 +21,55 @@ void autoDrive()
 {
   vector<string> state_description;
   vector<string> state_key;
-  string key = "";
+  vector<float> speed_tmp;
+  string key = " ";
   static float speed = 2.0;
   static float steering = 0.0;
+  float ratioSpeed = 0.0;
 
   // param TTCController
-  float speed_max = 10;
+  float speed_max = 15;
   float speed_min = 1;
   float speed_Nor = 2.0;
-  float speed_steering = 5.0;
+  float speed_turn = 5.0;
   float steering_turn = 0.05;
-  float ratioSlowdown = 5; // ~15 cnt giam 1 lan cang gan cang nho
+//  float ratioSlowdown = 20; // ~15 cnt giam 1 lan - khoang cach cang gan cang nho #5 #6
   float ratioSpeedup = 1.2;
-  float X_max = 1;
-  float X_min = -1;
-  float ttc_min = 2; // s
-  float dis_min = 20; // m
+  float X_max = 1.2;
+  float X_min = -1.2;
+  float ttc_min = 3; // s
+  float dis_min = 60; // m
 
-  float duty = 0;
+//  float duty = 0;
   static float x = 1;
   static float th = 1;
-  static uint32_t cnt = 0, cnt1 = 0, cnt2 = 0, cnt3 = 0, numframeFilter = 100;
+  static uint32_t cnt = 0, cnt1 = 0, cnt2 = 0, cnt3 = 0, numframeFilter = 60;
 
   cnt++;
 
-  // stop in 4s numframeFilter = 80
+  // stop in 4s numframeFilter = 800
   if (speed < speed_min) {
     cnt1++;
-    if (cnt1 == numframeFilter) {
+    if (cnt1 == numframeFilter+20) {
       cnt1 = 0;
-      speed = speed_Nor;
+      speed_tmp.push_back(speed_Nor);
       x = ratioSpeedup; th = 0;
     }
-    else {state_key.push_back("k"); x = 0.5;}
+    else {state_description.push_back("stop"); state_key.push_back("k"); x = 0; th = 0;}
   }
 
   // tracking and warning dangerous objects.
   if (!ttcRadar_output_msg.numObj) {
-    // filter for slow down the speed
     cnt3++;
+    ROS_INFO("%u", cnt3);
     if (cnt3 == numframeFilter) {
       cnt3 = 0;
       state_description.push_back("no obstacle");
-      state_key.push_back("none");
-//      speed = speed_max;
+      state_key.push_back("i");
       steering = 0;
       x = ratioSpeedup; th = 0;
     }
-    else {state_description.push_back("no obstacle"); state_key.push_back("none");}
+    else {state_description.push_back("no obstacle"); state_key.push_back("i");}
   }
   else {
 
@@ -77,15 +78,25 @@ void autoDrive()
 
       if (ttcRadar_output_msg.safetyZone[i] == "carAccidence" || ttcRadar_output_msg.safetyZone[i] == "carWarning") {
 
-        // duty is the period of deceleration between 2 consecutive times. it changes depending on the object distance.
-        duty = round(ttcRadar_output_msg.dis[i]/ratioSlowdown);
-        if (duty < 1) duty = 1;
+        // 6m
+//        ratioSpeed = (-0.814 + 0.179*ttcRadar_output_msg.dis[i] + -0.00662*pow(ttcRadar_output_msg.dis[i], 2)
+//                      + 0.000107*pow(ttcRadar_output_msg.dis[i],3) + -0.000000624*pow(ttcRadar_output_msg.dis[i],4));
+
+        // 10m
+//        ratioSpeed = (-1.98 + 0.281*ttcRadar_output_msg.dis[i] + -9.68E-03*pow(ttcRadar_output_msg.dis[i], 2)
+//                      + 1.44E-04*pow(ttcRadar_output_msg.dis[i],3) + -7.82E-07*pow(ttcRadar_output_msg.dis[i],4));
+
+        // 20m
+        ratioSpeed = (-0.498 + 0.0367*ttcRadar_output_msg.dis[i] + 4.25E-03*pow(ttcRadar_output_msg.dis[i],2) + -4.75E-04*pow(ttcRadar_output_msg.dis[i],3) + 1.79E-05*pow(ttcRadar_output_msg.dis[i],4) + -2.85E-07*pow(ttcRadar_output_msg.dis[i],5) + 1.62E-09*pow(ttcRadar_output_msg.dis[i],6));
+
+        if (ratioSpeed > 1) ratioSpeed = 1;
+        if (ratioSpeed < 0) ratioSpeed = 0;
 
         if (ttcRadar_output_msg.posX[i] > X_min && ttcRadar_output_msg.posX[i] < X_max) {
           state_description.push_back("front");
           if (ttcRadar_output_msg.dis[i] < dis_min) {
-            if (cnt == (cnt/duty)*duty)
-              state_key.push_back("x"); else state_key.push_back("i");
+            speed_tmp.push_back(speed_max*ratioSpeed);
+            state_key.push_back("x");
           }
           else state_key.push_back("i");
         }
@@ -93,7 +104,7 @@ void autoDrive()
           state_description.push_back("right");
           if (ttcRadar_output_msg.ttc[i] < ttc_min) {
             state_key.push_back("u");
-            speed = speed_steering;
+            speed_tmp.push_back(speed_turn);
             steering = steering_turn;
           }
           else state_key.push_back("i");
@@ -102,7 +113,7 @@ void autoDrive()
           state_description.push_back("left");
           if (ttcRadar_output_msg.ttc[i] < ttc_min) {
             state_key.push_back("o");
-            speed = speed_steering;
+            speed_tmp.push_back(speed_turn);
             steering = steering_turn;
           }
           else state_key.push_back("i");
@@ -115,12 +126,11 @@ void autoDrive()
         if (cnt2 == 20) {
           cnt2 = 0;
           state_description.push_back("no obstacle");
-          state_key.push_back("none");
-//          speed = speed_max;
+          state_key.push_back("i");
           steering = 0;
           x = ratioSpeedup; th = 0;
         }
-        else {state_description.push_back("no obstacle"); state_key.push_back("none");}
+        else {state_description.push_back("previous state"); state_key.push_back("none");}
       }
     }
   }
@@ -128,6 +138,7 @@ void autoDrive()
   // assign control command character (key), x is moveBindings
 
 
+  sort(speed_tmp.begin(), speed_tmp.end());
   sort(state_key.begin(), state_key.end());
   for (int i = 0; i < state_key.size(); ) {
       if (state_key[i] == state_key[i+1]) {
@@ -137,7 +148,8 @@ void autoDrive()
   }
 
   static vector<string> key_i{"i"};
-  static vector<string> key_o{"0"};
+  static vector<string> key_k{"k"};
+  static vector<string> key_o{"o"};
   static vector<string> key_u{"u"};
   static vector<string> key_x{"x"};
   static vector<string> key_io{"i", "o"};
@@ -148,7 +160,8 @@ void autoDrive()
   static vector<string> key_ux{"u", "x"};
   static vector<string> key_none{"none"};
 
-  if (state_key == key_i) {x = 1; th = 0; key = "i";}
+  if (state_key == key_i) {/*x = 1; th = 0;*/ key = "i";}
+  else if (state_key == key_k) {x = 0; th = 0; key = "k";}
   else if (state_key == key_o) {x = 1; th = 1; key = "o";}
   else if (state_key == key_u) {x = 1; th = -1; key = "u";}
   else if (state_key == key_x) {x = 0.8; th = 0; key = "x";}
@@ -160,6 +173,9 @@ void autoDrive()
   else if (state_key == key_ux) {x = 1; th = -1; key = "ux";}
   else if (state_key == key_none) {key = "none";}
 
+  if (speed_tmp.size()) {
+    speed = speed_tmp[0];
+  }
   speed = x * speed;
   steering = th * steering;
 

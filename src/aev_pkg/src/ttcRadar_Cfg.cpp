@@ -162,7 +162,7 @@ void ttcRAdarObj::start_radar(void)
   send_cfg(msg);
 
   // View config (degrees) : [ -1 <minAzimuthDeg> <maxAzimuthDeg> <minElevationDeg> <maxElevationDeg> ]
-  msg = " aoaFovCfg -1 -60 60 0 20 ";
+  msg = " aoaFovCfg -1 -60 60 0 10 ";
   send_cfg(msg);
 
   // Config point filtering in range direction (meter)
@@ -178,13 +178,13 @@ void ttcRAdarObj::start_radar(void)
   msg = " staticBoundaryBox -1 1 0 1 0 1 ";
   send_cfg(msg);
 
-  msg = " boundaryBox -8 1 5 50 0 1 ";
+  msg = " boundaryBox -6 1 5 75 0 1 ";
   send_cfg(msg);
 
   msg = " gatingParam 50 5 5 2 20 ";
   send_cfg(msg);
 
-  msg = " stateParam 3 3 1 1 1 ";
+  msg = " stateParam 3 3 3 1 1 ";
   send_cfg(msg);
 
   msg = " allocationParam 200 100 0.05 5 16 20 ";
@@ -867,8 +867,8 @@ void ttcRAdarObj::clear_msg(aev_pkg::radar_msg &msg)
 
 void ttcRAdarObj::initParamTTC()
 {
-  paramTTC.safety = 30;
-  paramTTC.warning = 10;
+  paramTTC.safety = 50;
+  paramTTC.warning = 30;
   paramTTC.accidence = 1;
 
   paramTTC.carNormal = "white";
