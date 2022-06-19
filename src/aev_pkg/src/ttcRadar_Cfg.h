@@ -15,7 +15,7 @@
 #include <math.h>
 using namespace std;
 
-#define CFG_LOOP_RATE 50
+#define CFG_LOOP_RATE 100
 
 #define ser_Cfg_Port_Name "/dev/ttyUSB_radarCfg"
 #define ser_Data_Port_Name "/dev/ttyUSB_radarData"
@@ -47,6 +47,7 @@ typedef struct
     vector <float>  dis;
     vector <float> vel;
     vector <float>  ttc;
+    vector <string> safetyZone;
     bool isObject;
 
 } Radar_Output_Struct;
@@ -87,9 +88,15 @@ struct structDetObj
 	// vector<float> elev;
 	vector<float> doppler;
 
-    vector<float> x;
+  vector<float> x;
 	vector<float> y;
 	vector<float> z;
+};
+
+struct structSideInfo
+{
+  vector<uint16_t> snr;
+  vector<uint16_t> noise;
 };
 
 struct structStaticDetObj
@@ -106,11 +113,11 @@ struct structTargets
 	vector<float> posX;
 	vector<float> posY;
 	vector<float> velX;
-    vector<float> velY;
+  vector<float> velY;
 	vector<float> accX;
 	vector<float> accY;
 	vector<float> posZ;
-    vector<float> velZ;
+  vector<float> velZ;
 	vector<float> accZ;
 };
 
@@ -120,6 +127,18 @@ union byte2float
 	vector<uint8_t>  myByte;
 	vector<float> myFloat;
 	~byte2float() {}
+};
+
+struct structParamTTC
+{
+  float accidence;
+  float warning;
+  float safety;
+  string carNormal;
+  string carSafety;
+  string carWarning;
+  string carAccidence;
+  vector<string> safetyZone;
 };
 
 class ttcRAdarObj
@@ -138,23 +157,28 @@ class ttcRAdarObj
     serial::Serial ser_Data_Port;
     Radar_Output_Struct Output;
     structDetObj ptDetObj;
+    structSideInfo ptSideInfo;
     structStaticDetObj ptStaticDetObj;
     structTargets ptTargets;
     structTLV tlv;
     vector<float> bufDistance;
     vector<uint16_t> startIdx;
+    structParamTTC paramTTC;
 
     bool init_cfg_port(void);
     bool init_data_port(void);
     void start_radar(void);
+    void start_radar_MPC(void);
     void stop_radar(void);
     void getDetObj(void);
+    void getSideInfo(void);
     void getStaticObj(void);
     void getGtrackTargetList(void);
     bool data_handler(std_msgs::UInt8MultiArray raw_data, uint16_t dataLen);
     bool processingGtrackTarget(void);
     float processingPtMinDistance (structHeader frameHeader);
     void clear_msg(aev_pkg::radar_msg &msg);
+    void initParamTTC();
 
 
     private:

@@ -1,0 +1,454 @@
+[0m[ INFO] [1652596904.604911991]: Radar Config Port initialized[0m
+[0m[ INFO] [1652596904.607518155]: Radar Data Port initialized[0m
+[0m[ INFO] [1652596904.607566894]: Send: sensorStop[0m
+[0m[ INFO] [1652596904.617845077]: -Read: sensorStop
+Ignored: Sensor is already stopped
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.627971880]: Send: flushCfg[0m
+[0m[ INFO] [1652596904.638339493]: -Read: flushCfg
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.648231842]: Send:  dfeDataOutputMode 1 [0m
+[0m[ INFO] [1652596904.658396473]: -Read:  dfeDataOutputMode 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.668410210]: Send:  channelCfg 15 7 0 [0m
+[0m[ INFO] [1652596904.678554113]: -Read:  channelCfg 15 7 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.688615009]: Send:  adcCfg 2 1 [0m
+[0m[ INFO] [1652596904.698957683]: -Read:  adcCfg 2 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.708763221]: Send:  adcbufCfg -1 0 1 1 1 [0m
+[0m[ INFO] [1652596904.719137675]: -Read:  adcbufCfg -1 0 1 1 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.729136685]: Send:  profileCfg 0 60.25 8 7 28 0 0 20 1 256 12500 0 0 48 [0m
+[0m[ INFO] [1652596904.739555389]: -Read:  profileCfg 0 60.25 8 7 28 0 0 20 1 256 12500 0 0 48 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.749450139]: Send:  chirpCfg 0 0 0 0 0 0 0 1 [0m
+[0m[ INFO] [1652596904.759865191]: -Read:  chirpCfg 0 0 0 0 0 0 0 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.769805174]: Send:  chirpCfg 1 1 0 0 0 0 0 4 [0m
+[0m[ INFO] [1652596904.779899962]: -Read:  chirpCfg 1 1 0 0 0 0 0 4 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.790103378]: Send:  chirpCfg 2 2 0 0 0 0 0 2 [0m
+[0m[ INFO] [1652596904.800228288]: -Read:  chirpCfg 2 2 0 0 0 0 0 2 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.810244844]: Send:  frameCfg 0 0 140 0 100 1 0 [0m
+[0m[ INFO] [1652596904.820402717]: -Read:  frameCfg 0 0 140 0 100 1 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.830382775]: Send:  lowPower 0 0 [0m
+[0m[ INFO] [1652596904.840668905]: -Read:  lowPower 0 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.850574535]: Send:  guiMonitor -1 1 0 0 0 0 0 [0m
+[0m[ INFO] [1652596904.860735434]: -Read:  guiMonitor -1 1 0 0 0 0 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.870758226]: Send:  cfarCfg -1 0 2 8 4 3 0 10 0 [0m
+[0m[ INFO] [1652596904.880862969]: -Read:  cfarCfg -1 0 2 8 4 3 0 10 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.890872011]: Send:  cfarCfg -1 1 0 4 2 3 1 20 0 [0m
+[0m[ INFO] [1652596904.901262420]: -Read:  cfarCfg -1 1 0 4 2 3 1 20 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.911020393]: Send:  multiObjBeamForming -1 1 0.5 [0m
+[0m[ INFO] [1652596904.921109801]: -Read:  multiObjBeamForming -1 1 0.5 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.931128694]: Send:  clutterRemoval -1 1 [0m
+[0m[ INFO] [1652596904.941301812]: -Read:  clutterRemoval -1 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.951301508]: Send:  calibDcRangeSig -1 0 -5 8 256 [0m
+[0m[ INFO] [1652596904.961368737]: -Read:  calibDcRangeSig -1 0 -5 8 256 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.971488703]: Send:  extendedMaxVelocity -1 0 [0m
+[0m[ INFO] [1652596904.981631104]: -Read:  extendedMaxVelocity -1 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596904.991612850]: Send:  bpmCfg -1 0 0 1 [0m
+[0m[ INFO] [1652596905.001767621]: -Read:  bpmCfg -1 0 0 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.011721525]: Send:  lvdsStreamCfg -1 0 0 0 [0m
+[0m[ INFO] [1652596905.021803301]: -Read:  lvdsStreamCfg -1 0 0 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.031886104]: Send:  compRangeBiasAndRxChanPhase 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 [0m
+[0m[ INFO] [1652596905.042055437]: -Read:  compRangeBiasAndRxChanPhase 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.052034820]: Send:  measureRangeBiasAndRxChanPhase 0 1.5 0.2 [0m
+[0m[ INFO] [1652596905.062200698]: -Read:  measureRangeBiasAndRxChanPhase 0 1.5 0.2 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.072210123]: Send:  CQRxSatMonitor 0 3 15 125 0 [0m
+[0m[ INFO] [1652596905.082377040]: -Read:  CQRxSatMonitor 0 3 15 125 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.092381919]: Send:  CQSigImgMonitor 0 115 6 [0m
+[0m[ INFO] [1652596905.102529701]: -Read:  CQSigImgMonitor 0 115 6 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.112576736]: Send:  analogMonitor 0 0 [0m
+[0m[ INFO] [1652596905.122748747]: -Read:  analogMonitor 0 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.132770877]: Send:  aoaFovCfg -1 -60 60 0 20 [0m
+[0m[ INFO] [1652596905.142933621]: -Read:  aoaFovCfg -1 -60 60 0 20 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.152936792]: Send:  cfarFovCfg -1 0 1 50 [0m
+[0m[ INFO] [1652596905.163051110]: -Read:  cfarFovCfg -1 0 1 50 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.173070605]: Send:  cfarFovCfg -1 1 -20 20 [0m
+[0m[ INFO] [1652596905.183190563]: -Read:  cfarFovCfg -1 1 -20 20 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.193251875]: Send:  staticBoundaryBox -1 1 0 1 0 1 [0m
+[0m[ INFO] [1652596905.203486257]: -Read:  staticBoundaryBox -1 1 0 1 0 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.213384867]: Send:  boundaryBox -8 1 5 50 0 1 [0m
+[0m[ INFO] [1652596905.223595974]: -Read:  boundaryBox -8 1 5 50 0 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.233510359]: Send:  gatingParam 50 5 5 2 20 [0m
+[0m[ INFO] [1652596905.243575449]: -Read:  gatingParam 50 5 5 2 20 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.253674886]: Send:  stateParam 2 3 1 1 1 [0m
+[0m[ INFO] [1652596905.263740829]: -Read:  stateParam 2 3 1 1 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.273799523]: Send:  allocationParam 200 100 0.05 5 16 20 [0m
+[0m[ INFO] [1652596905.283888915]: -Read:  allocationParam 200 100 0.05 5 16 20 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.293849542]: Send:  maxAcceleration 20 20 20 [0m
+[0m[ INFO] [1652596905.303948498]: -Read:  maxAcceleration 20 20 20 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.314069430]: Send:  trackingCfg 1 2 500 25 200 50 100 90 [0m
+[0m[ INFO] [1652596905.324172897]: -Read:  trackingCfg 1 2 500 25 200 50 100 90 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.334174291]: Send:  heatmapGenCfg -1 1 0 10 130 60 3 10 [0m
+[0m[ INFO] [1652596905.344336909]: -Read:  heatmapGenCfg -1 1 0 10 130 60 3 10 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.354303664]: Send:  staticDetectionCfg -1 0 -50 50 0 20 0.7 6 0.2 4 20 [0m
+[0m[ INFO] [1652596905.364471925]: -Read:  staticDetectionCfg -1 0 -50 50 0 20 0.7 6 0.2 4 20 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1652596905.374506718]: Send: sensorStart[0m
+[0m[ INFO] [1652596905.384625246]: -Read: sensorStart
+[0m
+[0m[ INFO] [1652596905.555742383]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596905.555874815]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596905.556000596]: isObject:             0 [0m
+[0m[ INFO] [1652596905.556054749]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596905.556082150]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596905.556147744]: ttcKey:               none[0m
+[0m[ INFO] [1652596905.556273613]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596905.655607582]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596905.655719256]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596905.655862576]: isObject:             0 [0m
+[0m[ INFO] [1652596905.655911092]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596905.655934166]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596905.655954940]: ttcKey:               none[0m
+[0m[ INFO] [1652596905.655978558]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596905.755834715]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596905.755944790]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596905.756112963]: isObject:             0 [0m
+[0m[ INFO] [1652596905.756160150]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596905.756183361]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596905.756203372]: ttcKey:               none[0m
+[0m[ INFO] [1652596905.756230886]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596905.855878667]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596905.856019774]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596905.856253553]: isObject:             0 [0m
+[0m[ INFO] [1652596905.856329233]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596905.856419244]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596905.856498542]: ttcKey:               none[0m
+[0m[ INFO] [1652596905.856566050]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596905.955689452]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596905.955821013]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596905.955951026]: isObject:             0 [0m
+[0m[ INFO] [1652596905.956013777]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596905.956071400]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596905.956123116]: ttcKey:               none[0m
+[0m[ INFO] [1652596905.956173436]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596906.055831390]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596906.055964099]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596906.056090446]: isObject:             0 [0m
+[0m[ INFO] [1652596906.056151305]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596906.056211007]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596906.056265099]: ttcKey:               none[0m
+[0m[ INFO] [1652596906.056320339]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596906.155604883]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596906.155735408]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596906.155863111]: isObject:             0 [0m
+[0m[ INFO] [1652596906.155924929]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596906.155982036]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596906.156035128]: ttcKey:               none[0m
+[0m[ INFO] [1652596906.156092948]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596906.255719072]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596906.255850029]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596906.255993804]: isObject:             0 [0m
+[0m[ INFO] [1652596906.256049166]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596906.256104648]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596906.256156295]: ttcKey:               none[0m
+[0m[ INFO] [1652596906.256207645]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596906.355698090]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596906.355826098]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596906.355958916]: isObject:             0 [0m
+[0m[ INFO] [1652596906.356038797]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596906.356097781]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596906.356150363]: ttcKey:               none[0m
+[0m[ INFO] [1652596906.356203348]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596906.455731622]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596906.455862746]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596906.456009480]: isObject:             0 [0m
+[0m[ INFO] [1652596906.456068412]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596906.456125374]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596906.456178232]: ttcKey:               none[0m
+[0m[ INFO] [1652596906.456231020]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596906.555828548]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596906.555958284]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596906.556083173]: isObject:             0 [0m
+[0m[ INFO] [1652596906.556146859]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596906.556205073]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596906.556260787]: ttcKey:               none[0m
+[0m[ INFO] [1652596906.556317977]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596906.655772343]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596906.655900019]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596906.656039754]: isObject:             0 [0m
+[0m[ INFO] [1652596906.656102287]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596906.656157453]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596906.656229377]: ttcKey:               none[0m
+[0m[ INFO] [1652596906.656277415]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596906.755900407]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596906.756022224]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596906.756162442]: isObject:             0 [0m
+[0m[ INFO] [1652596906.756225114]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596906.756273004]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596906.756319956]: ttcKey:               none[0m
+[0m[ INFO] [1652596906.756365813]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596906.855795305]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596906.855926275]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596906.856050875]: isObject:             0 [0m
+[0m[ INFO] [1652596906.856110918]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596906.856167733]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596906.856218669]: ttcKey:               none[0m
+[0m[ INFO] [1652596906.856274474]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596906.955747510]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596906.955874860]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596906.956027499]: isObject:             0 [0m
+[0m[ INFO] [1652596906.956083542]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596906.956140881]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596906.956192541]: ttcKey:               none[0m
+[0m[ INFO] [1652596906.956248765]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596907.055881048]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596907.056010287]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596907.056194453]: isObject:             0 [0m
+[0m[ INFO] [1652596907.056254939]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596907.056308194]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596907.056361407]: ttcKey:               none[0m
+[0m[ INFO] [1652596907.056414416]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596907.905706506]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596907.905838473]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596907.905973365]: isObject:             0 [0m
+[0m[ INFO] [1652596907.906034302]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596907.906092233]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596907.906148115]: ttcKey:               none[0m
+[0m[ INFO] [1652596907.906206033]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596908.005660543]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596908.005792775]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596908.005946888]: isObject:             0 [0m
+[0m[ INFO] [1652596908.006000188]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596908.006054442]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596908.006149423]: ttcKey:               none[0m
+[0m[ INFO] [1652596908.006238935]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596908.105437017]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596908.105583387]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596908.105711521]: isObject:             0 [0m
+[0m[ INFO] [1652596908.105788393]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596908.105832947]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596908.105856109]: ttcKey:               none[0m
+[0m[ INFO] [1652596908.105880588]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596908.205596288]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596908.205707218]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596908.205876531]: isObject:             0 [0m
+[0m[ INFO] [1652596908.205925188]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596908.205948355]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596908.205970726]: ttcKey:               none[0m
+[0m[ INFO] [1652596908.205990673]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596908.305037827]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596908.305116496]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596908.305177884]: isObject:             0 [0m
+[0m[ INFO] [1652596908.305204661]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596908.305226722]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596908.305247526]: ttcKey:               none[0m
+[0m[ INFO] [1652596908.305268262]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596908.404939190]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596908.404971348]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596908.405002744]: isObject:             0 [0m
+[0m[ INFO] [1652596908.405010869]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596908.405016579]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596908.405024868]: ttcKey:               none[0m
+[0m[ INFO] [1652596908.405032076]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596908.504905328]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596908.504939256]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596908.504986577]: isObject:             0 [0m
+[0m[ INFO] [1652596908.504997764]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596908.505003161]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596908.505008174]: ttcKey:               none[0m
+[0m[ INFO] [1652596908.505012602]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596908.604943451]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596908.604976685]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596908.605006705]: isObject:             0 [0m
+[0m[ INFO] [1652596908.605016070]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596908.605021515]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596908.605026525]: ttcKey:               none[0m
+[0m[ INFO] [1652596908.605031405]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596908.704937292]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596908.705042055]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596908.705173726]: isObject:             0 [0m
+[0m[ INFO] [1652596908.705215522]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596908.705267116]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596908.705299092]: ttcKey:               none[0m
+[0m[ INFO] [1652596908.705318308]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596908.804966728]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596908.805092593]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596908.805180472]: isObject:             0 [0m
+[0m[ INFO] [1652596908.805228736]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596908.805277941]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596908.805297506]: ttcKey:               none[0m
+[0m[ INFO] [1652596908.805317566]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596908.904933155]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596908.905023757]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596908.905135436]: isObject:             0 [0m
+[0m[ INFO] [1652596908.905173723]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596908.905197069]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596908.905228368]: ttcKey:               none[0m
+[0m[ INFO] [1652596908.905253967]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596909.005031412]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596909.005141830]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596909.005239367]: isObject:             0 [0m
+[0m[ INFO] [1652596909.005288080]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596909.005315204]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596909.005333437]: ttcKey:               none[0m
+[0m[ INFO] [1652596909.005348923]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596909.105132245]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596909.105225495]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596909.105313277]: isObject:             0 [0m
+[0m[ INFO] [1652596909.105352009]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596909.105402256]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596909.105434133]: ttcKey:               none[0m
+[0m[ INFO] [1652596909.105463696]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596909.205104527]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596909.205206791]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596909.205343036]: isObject:             0 [0m
+[0m[ INFO] [1652596909.205387220]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596909.205409961]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596909.205428508]: ttcKey:               none[0m
+[0m[ INFO] [1652596909.205447213]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596909.305078458]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596909.305201844]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596909.305334196]: isObject:             0 [0m
+[0m[ INFO] [1652596909.305390078]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596909.305421631]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596909.305442323]: ttcKey:               none[0m
+[0m[ INFO] [1652596909.305461196]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596909.404977202]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596909.405082618]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596909.405264135]: isObject:             0 [0m
+[0m[ INFO] [1652596909.405320713]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596909.405363909]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596909.405387900]: ttcKey:               none[0m
+[0m[ INFO] [1652596909.405408196]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596909.505091477]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596909.505194740]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596909.505294611]: isObject:             0 [0m
+[0m[ INFO] [1652596909.505337004]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596909.505358844]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596909.505377777]: ttcKey:               none[0m
+[0m[ INFO] [1652596909.505397301]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596909.605131345]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596909.605237070]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596909.605339394]: isObject:             0 [0m
+[0m[ INFO] [1652596909.605382052]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596909.605408380]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596909.605438672]: ttcKey:               none[0m
+[0m[ INFO] [1652596909.605467632]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596909.704995520]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596909.705084552]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596909.705210646]: isObject:             0 [0m
+[0m[ INFO] [1652596909.705272011]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596909.705326092]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596909.705358088]: ttcKey:               none[0m
+[0m[ INFO] [1652596909.705416143]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596909.805147373]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596909.805251311]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596909.805374997]: isObject:             0 [0m
+[0m[ INFO] [1652596909.805445128]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596909.805485427]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596909.805522235]: ttcKey:               none[0m
+[0m[ INFO] [1652596909.805582282]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1652596909.905172620]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1652596909.905275029]: numDetectedObj: 0[0m
+[0m[ INFO] [1652596909.905393082]: isObject:             0 [0m
+[0m[ INFO] [1652596909.905462279]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1652596909.905513932]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1652596909.905564203]: ttcKey:               none[0m
+[0m[ INFO] [1652596909.905614544]: Public message ok (TTC) 
+

@@ -1,0 +1,254 @@
+[0m[ INFO] [1653466107.534360048]: Radar Config Port initialized[0m
+[0m[ INFO] [1653466107.573982705]: Radar Data Port initialized[0m
+[0m[ INFO] [1653466107.574208766]: Send: sensorStop[0m
+[0m[ INFO] [1653466107.584280146]: -Read: sensorStop
+[0m
+[0m[ INFO] [1653466107.594313109]: Send: flushCfg[0m
+[0m[ INFO] [1653466107.604341648]: -Read: Done
+mmwDemo:/>flushCfg
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.614376863]: Send:  dfeDataOutputMode 1 [0m
+[0m[ INFO] [1653466107.624448962]: -Read:  dfeDataOutputMode 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.634465315]: Send:  channelCfg 15 7 0 [0m
+[0m[ INFO] [1653466107.644518313]: -Read:  channelCfg 15 7 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.654592836]: Send:  adcCfg 2 1 [0m
+[0m[ INFO] [1653466107.664676374]: -Read:  adcCfg 2 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.674689663]: Send:  adcbufCfg -1 0 1 1 1 [0m
+[0m[ INFO] [1653466107.684687085]: -Read:  adcbufCfg -1 0 1 1 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.694791181]: Send:  profileCfg 0 60.25 8 7 28 0 0 20 1 256 12500 0 0 48 [0m
+[0m[ INFO] [1653466107.704797417]: -Read:  profileCfg 0 60.25 8 7 28 0 0 20 1 256 12500 0 0 48 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.714883716]: Send:  chirpCfg 0 0 0 0 0 0 0 1 [0m
+[0m[ INFO] [1653466107.724921541]: -Read:  chirpCfg 0 0 0 0 0 0 0 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.734929267]: Send:  chirpCfg 1 1 0 0 0 0 0 4 [0m
+[0m[ INFO] [1653466107.745017962]: -Read:  chirpCfg 1 1 0 0 0 0 0 4 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.755090479]: Send:  chirpCfg 2 2 0 0 0 0 0 2 [0m
+[0m[ INFO] [1653466107.765127861]: -Read:  chirpCfg 2 2 0 0 0 0 0 2 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.775202532]: Send:  frameCfg 0 0 140 0 100 1 0 [0m
+[0m[ INFO] [1653466107.785209302]: -Read:  frameCfg 0 0 140 0 100 1 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.795291334]: Send:  lowPower 0 0 [0m
+[0m[ INFO] [1653466107.805317915]: -Read:  lowPower 0 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.815341554]: Send:  guiMonitor -1 1 0 0 0 0 0 [0m
+[0m[ INFO] [1653466107.825412357]: -Read:  guiMonitor -1 1 0 0 0 0 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.835443686]: Send:  cfarCfg -1 0 2 8 4 3 0 10 0 [0m
+[0m[ INFO] [1653466107.845513806]: -Read:  cfarCfg -1 0 2 8 4 3 0 10 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.855582138]: Send:  cfarCfg -1 1 0 4 2 3 1 20 0 [0m
+[0m[ INFO] [1653466107.865623573]: -Read:  cfarCfg -1 1 0 4 2 3 1 20 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.875698389]: Send:  multiObjBeamForming -1 1 0.5 [0m
+[0m[ INFO] [1653466107.885688319]: -Read:  multiObjBeamForming -1 1 0.5 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.895743308]: Send:  clutterRemoval -1 1 [0m
+[0m[ INFO] [1653466107.905853778]: -Read:  clutterRemoval -1 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.915829070]: Send:  calibDcRangeSig -1 0 -5 8 256 [0m
+[0m[ INFO] [1653466107.925940920]: -Read:  calibDcRangeSig -1 0 -5 8 256 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.935921890]: Send:  extendedMaxVelocity -1 0 [0m
+[0m[ INFO] [1653466107.945987151]: -Read:  extendedMaxVelocity -1 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.956061092]: Send:  bpmCfg -1 0 0 1 [0m
+[0m[ INFO] [1653466107.966056450]: -Read:  bpmCfg -1 0 0 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.976159310]: Send:  lvdsStreamCfg -1 0 0 0 [0m
+[0m[ INFO] [1653466107.986165424]: -Read:  lvdsStreamCfg -1 0 0 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466107.996161398]: Send:  compRangeBiasAndRxChanPhase 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 [0m
+[0m[ INFO] [1653466108.006271113]: -Read:  compRangeBiasAndRxChanPhase 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.016256659]: Send:  measureRangeBiasAndRxChanPhase 0 1.5 0.2 [0m
+[0m[ INFO] [1653466108.026363283]: -Read:  measureRangeBiasAndRxChanPhase 0 1.5 0.2 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.036368367]: Send:  CQRxSatMonitor 0 3 15 125 0 [0m
+[0m[ INFO] [1653466108.046449735]: -Read:  CQRxSatMonitor 0 3 15 125 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.056479811]: Send:  CQSigImgMonitor 0 115 6 [0m
+[0m[ INFO] [1653466108.066562264]: -Read:  CQSigImgMonitor 0 115 6 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.076627238]: Send:  analogMonitor 0 0 [0m
+[0m[ INFO] [1653466108.086696749]: -Read:  analogMonitor 0 0 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.096718024]: Send:  aoaFovCfg -1 -60 60 0 10 [0m
+[0m[ INFO] [1653466108.106830113]: -Read:  aoaFovCfg -1 -60 60 0 10 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.116810801]: Send:  cfarFovCfg -1 0 2 75 [0m
+[0m[ INFO] [1653466108.126961401]: -Read:  cfarFovCfg -1 0 2 75 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.136882569]: Send:  cfarFovCfg -1 1 -20 20 [0m
+[0m[ INFO] [1653466108.147038616]: -Read:  cfarFovCfg -1 1 -20 20 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.157028484]: Send:  staticBoundaryBox -1 1 0 1 0 1 [0m
+[0m[ INFO] [1653466108.167075259]: -Read:  staticBoundaryBox -1 1 0 1 0 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.177119327]: Send:  boundaryBox -6 1 5 75 0 1 [0m
+[0m[ INFO] [1653466108.187153088]: -Read:  boundaryBox -6 1 5 75 0 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.197263823]: Send:  gatingParam 50 5 5 2 20 [0m
+[0m[ INFO] [1653466108.207345194]: -Read:  gatingParam 50 5 5 2 20 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.217338111]: Send:  stateParam 3 3 3 1 1 [0m
+[0m[ INFO] [1653466108.227434373]: -Read:  stateParam 3 3 3 1 1 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.237440483]: Send:  allocationParam 200 100 0.05 5 16 20 [0m
+[0m[ INFO] [1653466108.247536759]: -Read:  allocationParam 200 100 0.05 5 16 20 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.257535422]: Send:  maxAcceleration 20 20 20 [0m
+[0m[ INFO] [1653466108.267584656]: -Read:  maxAcceleration 20 20 20 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.277633765]: Send:  trackingCfg 1 2 500 25 200 50 100 90 [0m
+[0m[ INFO] [1653466108.287774935]: -Read:  trackingCfg 1 2 500 25 200 50 100 90 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.297769259]: Send:  heatmapGenCfg -1 1 0 10 130 60 3 10 [0m
+[0m[ INFO] [1653466108.307888243]: -Read:  heatmapGenCfg -1 1 0 10 130 60 3 10 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.317877163]: Send:  staticDetectionCfg -1 0 -50 50 0 20 0.7 6 0.2 4 20 [0m
+[0m[ INFO] [1653466108.327986246]: -Read:  staticDetectionCfg -1 0 -50 50 0 20 0.7 6 0.2 4 20 
+Done
+mmwDemo:/>[0m
+[0m[ INFO] [1653466108.337949314]: Send: sensorStart[0m
+[0m[ INFO] [1653466108.348094723]: -Read: sensorStart
+[0m
+[0m[ INFO] [1653466108.418676478]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1653466108.418782923]: numDetectedObj: 0[0m
+[0m[ INFO] [1653466108.418841394]: 1[0m
+[0m[ INFO] [1653466108.419011965]: isObject:             0 [0m
+[0m[ INFO] [1653466108.419081821]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1653466108.419115492]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1653466108.419146796]: ttcKey:               i[0m
+[0m[ INFO] [1653466108.419168770]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1653466108.518606533]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1653466108.518704533]: numDetectedObj: 0[0m
+[0m[ INFO] [1653466108.518742857]: 2[0m
+[0m[ INFO] [1653466108.518807320]: isObject:             0 [0m
+[0m[ INFO] [1653466108.518849941]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1653466108.518871714]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1653466108.518891185]: ttcKey:               i[0m
+[0m[ INFO] [1653466108.518909251]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1653466108.618494220]: Read: 128 byte -----------------------------,[0m
+[0m[ INFO] [1653466108.618602772]: numDetectedObj: 2[0m
+[0m[ INFO] [1653466108.618652712]: 3[0m
+[0m[ INFO] [1653466108.618720576]: isObject:             0 [0m
+[0m[ INFO] [1653466108.618765895]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1653466108.618786805]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1653466108.618806048]: ttcKey:               i[0m
+[0m[ INFO] [1653466108.618824133]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1653466108.718566851]: Read: 96 byte -----------------------------,[0m
+[0m[ INFO] [1653466108.718626472]: numDetectedObj: 1[0m
+[0m[ INFO] [1653466108.718652237]: 4[0m
+[0m[ INFO] [1653466108.718706667]: isObject:             0 [0m
+[0m[ INFO] [1653466108.718731584]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1653466108.718751040]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1653466108.718769142]: ttcKey:               i[0m
+[0m[ INFO] [1653466108.718786834]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1653466108.818386792]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1653466108.818435597]: numDetectedObj: 0[0m
+[0m[ INFO] [1653466108.818453864]: 5[0m
+[0m[ INFO] [1653466108.818498488]: isObject:             0 [0m
+[0m[ INFO] [1653466108.818510776]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1653466108.818516761]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1653466108.818521952]: ttcKey:               i[0m
+[0m[ INFO] [1653466108.818527137]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1653466108.918436232]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1653466108.918475333]: numDetectedObj: 0[0m
+[0m[ INFO] [1653466108.918499937]: 6[0m
+[0m[ INFO] [1653466108.918529369]: isObject:             0 [0m
+[0m[ INFO] [1653466108.918546223]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1653466108.918560645]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1653466108.918573735]: ttcKey:               i[0m
+[0m[ INFO] [1653466108.918580738]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1653466109.018416743]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1653466109.018457059]: numDetectedObj: 0[0m
+[0m[ INFO] [1653466109.018480180]: 7[0m
+[0m[ INFO] [1653466109.018505954]: isObject:             0 [0m
+[0m[ INFO] [1653466109.018522814]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1653466109.018536267]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1653466109.018545772]: ttcKey:               i[0m
+[0m[ INFO] [1653466109.018555854]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1653466109.118410273]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1653466109.118453869]: numDetectedObj: 0[0m
+[0m[ INFO] [1653466109.118477467]: 8[0m
+[0m[ INFO] [1653466109.118503876]: isObject:             0 [0m
+[0m[ INFO] [1653466109.118520292]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1653466109.118535213]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1653466109.118544172]: ttcKey:               i[0m
+[0m[ INFO] [1653466109.118551905]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1653466109.218351430]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1653466109.218389413]: numDetectedObj: 0[0m
+[0m[ INFO] [1653466109.218411553]: 9[0m
+[0m[ INFO] [1653466109.218439309]: isObject:             0 [0m
+[0m[ INFO] [1653466109.218454476]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1653466109.218468309]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1653466109.218475417]: ttcKey:               i[0m
+[0m[ INFO] [1653466109.218483103]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1653466109.318408653]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1653466109.318448961]: numDetectedObj: 0[0m
+[0m[ INFO] [1653466109.318471020]: 10[0m
+[0m[ INFO] [1653466109.318501775]: isObject:             0 [0m
+[0m[ INFO] [1653466109.318521371]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1653466109.318535404]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1653466109.318548517]: ttcKey:               i[0m
+[0m[ INFO] [1653466109.318556546]: Public message ok (TTC) 
+[0m
+[0m[ INFO] [1653466109.418432946]: Read: 64 byte -----------------------------,[0m
+[0m[ INFO] [1653466109.418480751]: numDetectedObj: 0[0m
+[0m[ INFO] [1653466109.418503992]: 11[0m
+[0m[ INFO] [1653466109.418534097]: isObject:             0 [0m
+[0m[ INFO] [1653466109.418555026]: ttcSpeed:     m/s,    2.000000[0m
+[0m[ INFO] [1653466109.418568580]: ttcSteering:  m/s,    0.000000[0m
+[0m[ INFO] [1653466109.418
